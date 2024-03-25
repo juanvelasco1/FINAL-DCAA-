@@ -20,6 +20,7 @@
 		"balanced-match": "^1.0.2",
 		"boxen": "^7.0.0",
 		"brace-expansion": "^1.1.11",
+		"build": "^0.1.4",
 		"bytes": "^3.0.0",
 		"camelcase": "^7.0.1",
 		"chalk": "^5.0.1",
@@ -90,7 +91,8 @@
 		"wrap-ansi": "^8.1.0"
 	},
 	"scripts": {
-		"start": "serve"
+		"start": "serve",
+		"build": "build"
 	},
 	"author": "",
 	"license": "ISC",
