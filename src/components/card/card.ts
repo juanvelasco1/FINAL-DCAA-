@@ -1,43 +1,43 @@
 export enum Attribute {
 	'photo' = 'photo',
-  'name' = 'name',
+	'name' = 'name',
 
 	'image' = 'image',
-  'tag' = 'tag',
+	'tag' = 'tag',
 	'description' = 'description',
-
 }
 
 class Card extends HTMLElement {
 	photo?: string;
-  name?: string;
-  image?: string;
+	name?: string;
+	image?: string;
 	description?: string;
 	tag?: string;
-
 
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
 	}
 
-
 	static get observedAttributes() {
 		const attrs: Record<Attribute, null> = {
-	photo: null,
-  name: null,
-  image: null,
-	description:null,
-	tag: null,
-	};
+			photo: null,
+			name: null,
+			image: null,
+			description: null,
+			tag: null,
+		};
 
 		return Object.keys(attrs);
+	}
 
 	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
-   if (newValue !== oldValue) { // hacer el swicht y dejarlo con caso por defecto
-      this[propName] = newValue;
-		}}
-		//this.render();
+		switch (propName) {
+			default:
+				this[propName] = newValue;
+				break;
+		}
+		this.render();
 	}
 
 	connectedCallback() {

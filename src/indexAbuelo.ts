@@ -1,6 +1,6 @@
 import { postData } from './data/postData';
 
-import { commentsData } from './data/commentsdata';
+import { commentsData } from './data/commentsData';
 
 import { userData } from './data/userData';
 
@@ -9,8 +9,8 @@ import './components/indexPadre';
 import MyCard, { Attribute } from './components/card/card';
 import Card from './components/card/card';
 
-import MyComments, { Attributes } from './components/comments/comments';
-import Comment from './components/comments/comments';
+import MyComments, { Attributes } from './components/card/Comments/comments';
+import Comment from './components/card/Comments/comments';
 
 class AppContainer extends HTMLElement {
 	homes: MyCard[] = [];
@@ -36,12 +36,12 @@ class AppContainer extends HTMLElement {
 		});
 
 		commentsData.forEach((user) => {
-			const homeCard = this.ownerDocument.createElement('my-card') as MyCard;
-			homeCard.setAttribute(Attribute.photo, user.comment.photo);
-			homeCard.setAttribute(Attribute.name, user.comment.name);
-			homeCard.setAttribute(Attribute.texts, user.comment.texts);
+			const homeComment = this.ownerDocument.createElement('my-comments') as MyComments;
+			homeComment.setAttribute(Attributes.photo, user.comment.photo);
+			homeComment.setAttribute(Attributes.name, user.comment.name);
+			homeComment.setAttribute(Attributes.texts, user.comment.texts);
 
-			this.homes.push(homeCard);
+			this.homes.push(homeComment);
 		});
 	}
 
