@@ -1,0 +1,36 @@
+.photo {
+	position: absolute;
+	width: 92px;
+	height: 92px;
+	left: 499px;
+	top: 1184px;
+}
+
+.name {
+	position: absolute;
+	width: 132px;
+	height: 44px;
+	left: 607px;
+	top: 1184px;
+
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 44px;
+	color: #000000;
+}
+
+.texts {
+	position: absolute;
+	width: 415px;
+	height: 39px;
+	left: 607px;
+	top: 1228px;
+
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 28px;
+	line-height: 140%;
+}
