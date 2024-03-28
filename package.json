@@ -92,7 +92,7 @@
 	},
 	"scripts": {
 		"start": "serve",
-		"build": "build"
+		"build": "webpack --watch --mode=production"
 	},
 	"author": "",
 	"license": "ISC",
