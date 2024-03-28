@@ -1,38 +1,36 @@
 export enum Attributes {
 	'photo' = 'photo',
-  'name' = 'name',
-  'texts' = 'texts',
-
+	'name' = 'name',
+	'texts' = 'texts',
 }
 
 class Comment extends HTMLElement {
 	photo?: string;
-  name?: string;
+	name?: string;
 	texts?: string;
-
-
 
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
 	}
 
-
 	static get observedAttributes() {
 		const attrs: Record<Attributes, null> = {
-	photo: null,
-  name: null,
-  texts: null,
-
-	};
+			photo: null,
+			name: null,
+			texts: null,
+		};
 
 		return Object.keys(attrs);
+	}
 
-	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
-   if (newValue !== oldValue) {
-      this[propName] = newValue;
-		}}
-		//this.render();
+	attributeChangedCallback(propName: Attributes, oldValue: string | undefined, newValue: string | undefined) {
+		switch (propName) {
+			default:
+				this[propName] = newValue;
+				break;
+		}
+		this.render();
 	}
 
 	connectedCallback() {
