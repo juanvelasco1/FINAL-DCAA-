@@ -14,6 +14,7 @@ import Comment from './components/card/Comments/comments';
 
 class AppContainer extends HTMLElement {
 	homes: MyCard[] = [];
+	home: MyComments[] = [];
 
 	constructor() {
 		super();
@@ -41,7 +42,7 @@ class AppContainer extends HTMLElement {
 			homeComment.setAttribute(Attributes.name, user.comment.name);
 			homeComment.setAttribute(Attributes.texts, user.comment.texts);
 
-			this.homes.push(homeComment);
+			this.home.push(homeComment);
 		});
 	}
 
