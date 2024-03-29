@@ -1,4 +1,4 @@
-export enum tag {
+export enum AttributeTag {
 	'tag' = 'tag',
 }
 
@@ -10,15 +10,15 @@ class Tags extends HTMLElement {
 		this.attachShadow({ mode: 'open' });
 	}
 
-	static get observedsection() {
-		const attrs: Record<tag, null> = {
+	static get observedAttributes() {
+		const attrs: Record<AttributeTag, null> = {
 			tag: null,
 		};
 
 		return Object.keys(attrs);
 	}
 
-	attributeChangedCallback(propName: tag, oldValue: string | undefined, newValue: string | undefined) {
+	attributeChangedCallback(propName: AttributeTag, oldValue: string | undefined, newValue: string | undefined) {
 		switch (propName) {
 			default:
 				this[propName] = newValue;
@@ -35,7 +35,7 @@ class Tags extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
       <section>
-      <p> <strong>${this.tag}></strong></p>
+      <p> <strong>${this.tag}</strong></p>
 
       </section>
       `;
@@ -43,5 +43,5 @@ class Tags extends HTMLElement {
 	}
 }
 
+customElements.define('my-tags', Tags);
 export default Tags;
-customElements.define('my-Tags', Tags);

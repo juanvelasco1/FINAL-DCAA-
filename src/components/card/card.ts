@@ -1,8 +1,7 @@
-import styles from './card.css';
+import stylesCard from './card.css';
 export enum Attribute {
 	'photo' = 'photo',
 	'name' = 'name',
-
 	'image' = 'image',
 	'tag' = 'tag',
 	'description' = 'description',
@@ -48,14 +47,18 @@ class Card extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
-      <section>
-      <img src="${this.photo}">
-      <h3>${this.name}</h3>
+			<style>
+			${stylesCard}
+			</style>
 
-      <img src="${this.image}">
-      <p> <strong>${this.tag}></strong></p>
-       <p>${this.description}</p>
-      </section>
+			<section class='card'>
+			<img src=${this.photo}>
+			<h3>${this.name}</h3>
+
+			<img src=${this.image}>
+			<p> <strong>${this.tag}</strong></p>
+			<p>${this.description}</p>
+			</section>
       `;
 		}
 	}

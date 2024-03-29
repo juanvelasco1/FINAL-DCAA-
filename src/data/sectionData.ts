@@ -4,14 +4,14 @@ interface DataShape {
 
 export const sectionData: DataShape[] = [
 	{
-		image: 'src"./Images/Home_active.png"',
+		image: './Images/Home_active.png',
 	},
 
 	{
-		image: 'src"./Images/Saved_disabled.png"',
+		image: './Images/Saved_disabled.png',
 	},
 
 	{
-		image: 'src"./Images/Create_disabled.pngg"',
+		image: './Images/Create_disabled.png',
 	},
 ];

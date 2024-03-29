@@ -1,24 +1,24 @@
-export enum sections {
-	'image' = 'image',
+export enum AttributeSection {
+	'img' = 'img',
 }
 
 class Section extends HTMLElement {
-	image?: string;
+	img?: string;
 
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
 	}
 
-	static get observedsection() {
-		const attrs: Record<sections, null> = {
-			image: null,
+	static get observedAttributes() {
+		const attrs: Record<AttributeSection, null> = {
+			img: null,
 		};
 
 		return Object.keys(attrs);
 	}
 
-	attributeChangedCallback(propName: sections, oldValue: string | undefined, newValue: string | undefined) {
+	attributeChangedCallback(propName: AttributeSection, oldValue: string | undefined, newValue: string | undefined) {
 		switch (propName) {
 			default:
 				this[propName] = newValue;
@@ -35,7 +35,7 @@ class Section extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
       <section>
-      <img src="${this.image}">
+      <img src=${this.img}>
 
       </section>
       `;
@@ -43,5 +43,5 @@ class Section extends HTMLElement {
 	}
 }
 
+customElements.define('my-section', Section);
 export default Section;
-customElements.define('my-Section', Section);
