@@ -11,7 +11,8 @@ import Card from './components/card/card';
 
 import MyComments, { Attributes } from './components/card/Comments/comments';
 import Comment from './components/card/Comments/comments';
-import styles from './indexAbuelo.css';
+
+import styles from './styles.css';
 
 class AppContainer extends HTMLElement {
 	homes: MyCard[] = [];
