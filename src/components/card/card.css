@@ -1,10 +1,11 @@
-.card {
-	position: absolute;
-	width: 1311px;
-	height: 1256px;
-	left: 454px;
-	top: 230px;
-}
+@media (max-width: 400px) {
+	.card {
+		position: absolute;
+		width: 1311px;
+		height: 1256px;
+		left: 454px;
+		top: 230px;
+	}
 
 	.photo {
 		position: absolute;
