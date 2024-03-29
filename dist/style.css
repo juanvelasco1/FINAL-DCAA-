@@ -1,24 +1,26 @@
-Home {
-	position: relative;
-	width: 1920px;
-	height: 2254px;
+@media (max-width: 400px) {
+	Home {
+		position: relative;
+		width: 1920px;
+		height: 2254px;
 
-	background: #ffffff;
-}
+		background: #ffffff;
+	}
 
-Rectangle {
-	position: absolute;
-	width: 1920px;
-	height: 130px;
-	left: 0px;
-	top: 0px;
-	background: #2000fb;
-}
+	Rectangle {
+		position: absolute;
+		width: 1920px;
+		height: 130px;
+		left: 0px;
+		top: 0px;
+		background: #2000fb;
+	}
 
-post {
-	position: absolute;
-	width: 1311px;
-	height: 1256px;
-	left: 454px;
-	top: 230px;
+	post {
+		position: absolute;
+		width: 1311px;
+		height: 1256px;
+		left: 454px;
+		top: 230px;
+	}
 }
