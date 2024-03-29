@@ -1,8 +1,8 @@
-export enum section {
+export enum sections {
 	'image' = 'image',
 }
 
-class Comment extends HTMLElement {
+class Section extends HTMLElement {
 	image?: string;
 
 	constructor() {
@@ -11,14 +11,14 @@ class Comment extends HTMLElement {
 	}
 
 	static get observedsection() {
-		const attrs: Record<section, null> = {
+		const attrs: Record<sections, null> = {
 			image: null,
 		};
 
 		return Object.keys(attrs);
 	}
 
-	attributeChangedCallback(propName: section, oldValue: string | undefined, newValue: string | undefined) {
+	attributeChangedCallback(propName: sections, oldValue: string | undefined, newValue: string | undefined) {
 		switch (propName) {
 			default:
 				this[propName] = newValue;
@@ -43,5 +43,5 @@ class Comment extends HTMLElement {
 	}
 }
 
-export default Comment;
-customElements.define('my-comments', Comment);
+export default Section;
+customElements.define('my-Section', Section);

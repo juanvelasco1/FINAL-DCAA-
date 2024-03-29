@@ -18,9 +18,9 @@ export const commentsData: DataShape[] = [
 	},
 	{
 		comment: {
-			id: 1,
+			id: 2,
 			photo: 'src="./Images/Andrés-Salazar.png "',
-			name: 'Lina Rengifo',
+			name: 'Sebastian Quintero',
 			texts: 'Ill be there!',
 		},
 	},

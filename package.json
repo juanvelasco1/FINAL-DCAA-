@@ -1,5 +1,6 @@
 {
 	"devDependencies": {
+		"css-loader": "^6.10.0",
 		"serve": "^14.2.1",
 		"ts-loader": "^9.5.1",
 		"typescript": "^5.4.2",

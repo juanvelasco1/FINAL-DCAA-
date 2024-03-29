@@ -1,20 +1,36 @@
+//padre
+import './components/indexPadre';
+
+//import Datas
 import { postData } from './data/postData';
 
 import { commentsData } from './data/commentsData';
 
 import { userData } from './data/userData';
 
-import './components/indexPadre';
+import { sectionData } from './data/sectionData';
 
+import { tagsData } from './data/tagsData';
+
+//import Components
 import MyCard, { Attribute } from './components/card/card';
 import Card from './components/card/card';
 
 import MyComments, { Attributes } from './components/card/Comments/comments';
-import Comment from './components/card/Comments/comments';
+import Commen from './components/card/Comments/comments';
 
+import MySections, { sections } from './components/navBar/sections/sections';
+import Section from './components/navBar/sections/sections';
+
+import MyTags, { tag } from './components/navBar/tags/tags';
+import Tags from './components/navBar/tags/tags';
+
+//CODE
 class AppContainer extends HTMLElement {
 	homes: MyCard[] = [];
 	home: MyComments[] = [];
+	navSection: MySections[] = [];
+	navTags: MyTags[] = [];
 
 	constructor() {
 		super();
@@ -43,6 +59,20 @@ class AppContainer extends HTMLElement {
 			homeComment.setAttribute(Attributes.texts, user.comment.texts);
 
 			this.home.push(homeComment);
+		});
+
+		sectionData.forEach((user) => {
+			const section = this.ownerDocument.createElement('my-Section') as MySections;
+			section.setAttribute(sections.image, user.image);
+
+			this.navSection.push(section);
+		});
+
+		tagsData.forEach((user) => {
+			const tagtag = this.ownerDocument.createElement('my-Tags') as MyTags;
+			tagtag.setAttribute(tag.tag, user.tag);
+
+			this.navTags.push(tagtag);
 		});
 	}
 

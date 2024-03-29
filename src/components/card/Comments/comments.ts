@@ -1,3 +1,4 @@
+import styles from './comments.css';
 export enum Attributes {
 	'photo' = 'photo',
 	'name' = 'name',
