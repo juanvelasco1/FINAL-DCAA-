@@ -11,6 +11,7 @@ import Card from './components/card/card';
 
 import MyComments, { Attributes } from './components/card/Comments/comments';
 import Comment from './components/card/Comments/comments';
+import styles from './indexAbuelo.css';
 
 class AppContainer extends HTMLElement {
 	homes: MyCard[] = [];
@@ -52,9 +53,17 @@ class AppContainer extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			this.homes.forEach((home) => {
-				this.shadowRoot?.appendChild(home);
+			this.shadowRoot.innerHTML = `
+				<style>
+				${styles}
+				</style>
+				`;
+			const container = this.ownerDocument.createElement('section');
+			container.className = 'container';
+			this.homes.forEach((myCard) => {
+				container.appendChild(myCard);
 			});
+			this.shadowRoot?.appendChild(container);
 		}
 	}
 }

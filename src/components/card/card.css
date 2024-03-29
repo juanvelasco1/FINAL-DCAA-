@@ -1,75 +1,77 @@
-.card {
-	position: absolute;
-	width: 1311px;
-	height: 1256px;
-	left: 454px;
-	top: 230px;
-}
+@media (max-width: 400px) {
+	.card {
+		position: absolute;
+		width: 1311px;
+		height: 1256px;
+		left: 454px;
+		top: 230px;
+	}
 
-.photo {
-	position: absolute;
-	width: 92px;
-	height: 92px;
-	left: 501px;
-	top: 257px;
-}
+	.photo {
+		position: absolute;
+		width: 92px;
+		height: 92px;
+		left: 501px;
+		top: 257px;
+	}
 
-.name {
-	/* Andrés Salazar */
+	.name {
+		/* Andrés Salazar */
 
-	position: absolute;
-	width: 250px;
-	height: 44px;
-	left: 636px;
-	top: 281px;
+		position: absolute;
+		width: 250px;
+		height: 44px;
+		left: 636px;
+		top: 281px;
 
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 700;
-	font-size: 32px;
-	line-height: 44px;
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 44px;
 
-	color: #000000;
-}
+		color: #000000;
+	}
 
-.image {
-	position: absolute;
-	width: 1089px;
-	height: 472px;
-	left: 568px;
-	top: 436px;
-	border-radius: 0px;
-}
+	.image {
+		position: absolute;
+		width: 1089px;
+		height: 472px;
+		left: 568px;
+		top: 436px;
+		border-radius: 0px;
+	}
 
-.tag {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	padding: 0px 20px;
-	gap: 14.88px;
+	.tag {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 0px 20px;
+		gap: 14.88px;
 
-	position: absolute;
-	width: 123px;
-	height: 60px;
-	left: 668px;
-	top: 882px;
+		position: absolute;
+		width: 123px;
+		height: 60px;
+		left: 668px;
+		top: 882px;
 
-	/* green */
-	background: #8fff3c;
-	border-radius: 22.3126px;
-}
+		/* green */
+		background: #8fff3c;
+		border-radius: 22.3126px;
+	}
 
-.description {
-	position: absolute;
-	width: 804px;
-	height: 102px;
-	left: 491px;
-	top: 996px;
+	.description {
+		position: absolute;
+		width: 804px;
+		height: 102px;
+		left: 491px;
+		top: 996px;
 
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 24px;
-	line-height: 140%;
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 140%;
+	}
 }
