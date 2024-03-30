@@ -1,4 +1,6 @@
 import stylesCard from './card.css';
+//import img from '../../data/Images/Andrés-Salazar.png';
+
 export enum Attribute {
 	'photo' = 'photo',
 	'name' = 'name',
