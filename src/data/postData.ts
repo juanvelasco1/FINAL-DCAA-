@@ -12,7 +12,7 @@ export const postData: DataShape[] = [
 	{
 		user: {
 			name: 'Sofía',
-			imgProfile: './',
+			imgProfile: './Images/Andrés-Salazar.png',
 		},
 		image: '../data/Images/datathon.png',
 		description:
