@@ -10,8 +10,8 @@ import { commentsData } from './data/commentsData';
 import MyCard, { Attribute } from './components/card/card';
 
 import MyComments, { Attributes } from './components/card/Comments/comments';
-
-import NavBar from './components/navBar/navBar';
+import Comment from './components/card/Comments/comments';
+import styles from './indexAbuelo.css';
 
 //CODE
 class AppContainer extends HTMLElement {
@@ -45,12 +45,19 @@ class AppContainer extends HTMLElement {
 	}
 
 	render() {
-		this.homes.forEach((home) => {
-			this.shadowRoot?.appendChild(home);
-		});
-
-		const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
-		this.shadowRoot?.appendChild(navBar);
+		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = `
+				<style>
+				${styles}
+				</style>
+				`;
+			const container = this.ownerDocument.createElement('section');
+			container.className = 'container';
+			this.homes.forEach((myCard) => {
+				container.appendChild(myCard);
+			});
+			this.shadowRoot?.appendChild(container);
+		}
 	}
 }
 
