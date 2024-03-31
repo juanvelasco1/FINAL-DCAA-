@@ -1,3 +1,6 @@
+import { loadCss } from '../../../utils/styles';
+import stylesTag from './tags.css';
+
 export enum AttributeTag {
 	'tag' = 'tag',
 }
@@ -33,6 +36,7 @@ class Tags extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
+			loadCss(this, stylesTag);
 			this.shadowRoot.innerHTML = `
       <section>
       <p> <strong>${this.tag}</strong></p>
@@ -40,6 +44,10 @@ class Tags extends HTMLElement {
       </section>
       `;
 		}
+
+		const cssTag = this.ownerDocument.createElement('style');
+		cssTag.innerHTML = stylesTag;
+		this.shadowRoot?.appendChild(cssTag);
 	}
 }
 

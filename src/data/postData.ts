@@ -11,8 +11,8 @@ interface DataShape {
 export const postData: DataShape[] = [
 	{
 		user: {
-			name: 'Sofía',
-			imgProfile: './Images/Andrés-Salazar.png',
+			name: 'Andrés Salazar',
+			imgProfile: './Images/Andres-Salazar.png',
 		},
 		image: '../data/Images/datathon.png',
 		description:

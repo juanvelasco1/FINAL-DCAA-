@@ -1,5 +1,7 @@
-import stylesCard from './card.css';
-//import img from '../../data/Images/Andrés-Salazar.png';
+import { loadCss } from '../../utils/styles';
+import stylesCard from '../card/card.css';
+import img from '../../data/Images/Andres-Salazar.png';
+import image from '../../data/Images/datathon.png';
 
 export enum Attribute {
 	'photo' = 'photo',
@@ -48,21 +50,35 @@ class Card extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = `
-			<style>
-			${stylesCard}
-			</style>
+			loadCss(this, stylesCard);
+			this.shadowRoot.innerHTML += `
+
+			<link rel="stylesheet" href="../src/Components/card/card.css">
 
 			<section class='card'>
 			<img src=${this.photo}>
 			<h3>${this.name}</h3>
 
 			<img src=${this.image}>
+			<img src="../../data/Images/like.png">
+			<img src="../../data/Images/comment.png">
 			<p> <strong>${this.tag}</strong></p>
+			<img src="../../data/Images/save.png">
 			<p>${this.description}</p>
 			</section>
       `;
 		}
+		const cssCard = this.ownerDocument.createElement('style');
+		cssCard.innerHTML = stylesCard;
+		this.shadowRoot?.appendChild(cssCard);
+
+		const photo = document.createElement('img');
+		photo.innerHTML = img;
+		this.shadowRoot?.appendChild(photo);
+
+		const imag = document.createElement('img');
+		imag.innerHTML = image;
+		this.shadowRoot?.appendChild(imag);
 	}
 }
 

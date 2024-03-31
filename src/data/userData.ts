@@ -8,7 +8,7 @@ interface DataShape {
 export const userData: DataShape[] = [
 	{
 		name: 'Andres salazar',
-		photo: './Images/Andrés-Salazar.png',
+		photo: './Images/Andres-Salazar.png',
 		mail: 'andres.salazar.u.icesi.edu.co',
 		password: '12345678',
 	},
