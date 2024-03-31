@@ -1,0 +1,15 @@
+.container {
+	flex-direction: column;
+	position: relative;
+	width: 1920px;
+	height: 2254px;
+}
+@media (max-width: 400px) {
+	.container {
+		flex-direction: column;
+	}
+}
+
+* {
+	background-color: aqua;
+}
