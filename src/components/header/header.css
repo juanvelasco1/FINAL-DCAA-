@@ -1,5 +1,5 @@
 @media (max-width: 400px) {
-	.header {
+	#header {
 		position: absolute;
 		width: 1920px;
 		height: 130px;
@@ -17,15 +17,6 @@
 		height: 74.92px;
 		left: 261px;
 		top: 27px;
-	}
-
-	.icesi {
-		/* icesi*/
-		position: absolute;
-		width: 197.44px;
-		height: 79.74px;
-		left: 60px;
-		top: 8px;
 	}
 
 	.notification {
