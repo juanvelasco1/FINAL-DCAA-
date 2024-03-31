@@ -7,7 +7,9 @@ import { tagsData } from '../../data/tagsData';
 import Section, { AttributeSection } from './sections/sections';
 
 import Tags, { AttributeTag } from './tags/tags';
-
+//import css
+import { loadCss } from '../../utils/styles';
+import stylesNavbar from './navBar.css';
 //CODE
 class NavBar extends HTMLElement {
 	navSection: Section[] = [];

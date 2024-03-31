@@ -1,5 +1,5 @@
 @media (max-width: 400px) {
-	navBar {
+	.NavBar {
 		position: absolute;
 		width: 1920px;
 		height: 130px;
@@ -10,7 +10,7 @@
 		background: #2000fb;
 	}
 
-	search {
+	.navSection {
 		position: absolute;
 		left: 12.5%;
 		right: 20.83%;

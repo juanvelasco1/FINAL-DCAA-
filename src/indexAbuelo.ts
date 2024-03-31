@@ -61,13 +61,6 @@ class AppContainer extends HTMLElement {
 	}
 
 	render() {
-		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = `
-			<style>
-			${styles}
-			</style>
-			`;
-		}
 		this.header.forEach((home) => {
 			this.shadowRoot?.appendChild(home);
 		});

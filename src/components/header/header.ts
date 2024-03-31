@@ -40,40 +40,17 @@ class Header extends HTMLElement {
 		this.render();
 	}
 
-	/*<style>
-			${stylesHeader}
-			</style> */
-
 	render() {
 		if (this.shadowRoot) {
 			loadCss(this, stylesHeader);
 			this.shadowRoot.innerHTML = `
-
-			<link rel="stylesheet" href="../src/Components/header/header.css">
-
-			<section class='header'>
-			<img src=${this.logo}>
-			<img src=${this.notification}>
-      <img src=${this.photo}>
-			</section>
-      `;
+				<section class='header'>
+					<img src="${this.logo}">
+					<img src="${this.notification}">
+					<img src="${this.photo}">
+				</section>
+			`;
 		}
-
-		const cssHeader = this.ownerDocument.createElement('style');
-		cssHeader.innerHTML = stylesHeader;
-		this.shadowRoot?.appendChild(cssHeader);
-
-		/*const imgLogo = document.createElement('img');
-		imgLogo.innerHTML = logo;
-		this.shadowRoot?.appendChild(imgLogo);
-
-		const imgNotification = document.createElement('img');
-		imgNotification.innerHTML = notification;
-		this.shadowRoot?.appendChild(imgNotification);
-
-		const imgPhoto = document.createElement('img');
-		imgPhoto.innerHTML = photo;
-		this.shadowRoot?.appendChild(imgPhoto);*/
 	}
 }
 

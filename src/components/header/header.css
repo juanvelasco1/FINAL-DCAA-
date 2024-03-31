@@ -1,0 +1,46 @@
+@media (max-width: 400px) {
+	.header {
+		position: absolute;
+		width: 1920px;
+		height: 130px;
+		left: 0px;
+		top: 0px;
+		margin: 0 auto;
+		/* principal Blue */
+		background: #2000fb;
+	}
+
+	.logo {
+		/* unired*/
+		position: absolute;
+		width: 222px;
+		height: 74.92px;
+		left: 261px;
+		top: 27px;
+	}
+
+	.icesi {
+		/* icesi*/
+		position: absolute;
+		width: 197.44px;
+		height: 79.74px;
+		left: 60px;
+		top: 8px;
+	}
+
+	.notification {
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		left: 1677px;
+		top: 40px;
+	}
+
+	.photo {
+		position: absolute;
+		width: 96px;
+		height: 96px;
+		left: 1771px;
+		top: 17px;
+	}
+}
