@@ -1,7 +1,6 @@
-import { loadCss } from '../../utils/styles';
+import { loadCss } from '../../../utils/styles';
 import stylesComment from './comments.css';
 
-import photo1 from '../../../data/Images/Andres-Salazar.png';
 export enum Attributes {
 	'photo' = 'photo',
 	'name' = 'name',
@@ -60,9 +59,9 @@ class Comment extends HTMLElement {
 		cssComment.innerHTML = stylesComment;
 		this.shadowRoot?.appendChild(cssComment);
 
-		const imgPhoto = document.createElement('img');
+		/*const imgPhoto = document.createElement('img');
 		imgPhoto.innerHTML = photo1;
-		this.shadowRoot?.appendChild(imgPhoto);
+		this.shadowRoot?.appendChild(imgPhoto);*/
 	}
 }
 

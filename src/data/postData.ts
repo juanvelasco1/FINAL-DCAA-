@@ -1,3 +1,6 @@
+import img from '../asset/Andres-Salazar.png';
+import image from '../asset/datathon.png';
+
 interface DataShape {
 	user: {
 		name: string;
@@ -12,9 +15,9 @@ export const postData: DataShape[] = [
 	{
 		user: {
 			name: 'Andrés Salazar',
-			imgProfile: './Images/Andres-Salazar.png',
+			imgProfile: img,
 		},
-		image: '../data/Images/datathon.png',
+		image: image,
 		description:
 			'On March 1, 2 and 8, Datathon will be held again, a learning day in data analytics that will be held at the Icesi University in alliance with Structum and SAP.',
 		tag: 'Events',

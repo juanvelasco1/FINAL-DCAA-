@@ -1,17 +1,20 @@
+import home from '../asset/Home_active.png';
+import saved from '../asset/Saved_disabled.png';
+import create from '../asset/Create_disabled.png';
 interface DataShape {
 	image: string;
 }
 
 export const sectionData: DataShape[] = [
 	{
-		image: './Images/Home_active.png',
+		image: home,
 	},
 
 	{
-		image: './Images/Saved_disabled.png',
+		image: saved,
 	},
 
 	{
-		image: './Images/Create_disabled.png',
+		image: create,
 	},
 ];

@@ -27,6 +27,14 @@ class AppContainer extends HTMLElement {
 		super();
 		this.attachShadow({ mode: 'open' });
 
+		headerData.forEach((user) => {
+			const headerHeader = this.ownerDocument.createElement('my-header') as MyHeader;
+			headerHeader.setAttribute(AttributeHeader.logo, user.logo);
+			headerHeader.setAttribute(AttributeHeader.photo, user.photo);
+			headerHeader.setAttribute(AttributeHeader.notification, user.notification);
+			this.header.push(headerHeader);
+		});
+
 		postData.forEach((post) => {
 			const homeCard = this.ownerDocument.createElement('my-card') as MyCard;
 			homeCard.setAttribute(Attribute.name, post.user.name);
@@ -43,14 +51,6 @@ class AppContainer extends HTMLElement {
 			homeComment.setAttribute(Attributes.name, user.comment.name);
 			homeComment.setAttribute(Attributes.texts, user.comment.texts);
 			this.home.push(homeComment);
-		});
-
-		headerData.forEach((user) => {
-			const headerHeader = this.ownerDocument.createElement('my-header') as MyHeader;
-			headerHeader.setAttribute(AttributeHeader.logo, user.logo);
-			headerHeader.setAttribute(AttributeHeader.photo, user.photo);
-			headerHeader.setAttribute(AttributeHeader.notification, user.notification);
-			this.header.push(headerHeader);
 		});
 	}
 

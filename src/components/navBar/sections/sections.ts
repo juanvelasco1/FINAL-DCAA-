@@ -1,8 +1,5 @@
 import { loadCss } from '../../../utils/styles';
 import stylesSections from './sections.css';
-import home from '../../../data/Images/Home_active.png';
-import saved from '../../../data/Images/Saved_disabled.png';
-import create from '../../../data/Images/Create_disabled.png';
 
 export enum AttributeSection {
 	'img' = 'img',
@@ -59,7 +56,7 @@ class Section extends HTMLElement {
 		cssSections.innerHTML = stylesSections;
 		this.shadowRoot?.appendChild(cssSections);
 
-		const imgHome = document.createElement('img');
+		/*const imgHome = document.createElement('img');
 		imgHome.innerHTML = home;
 		this.shadowRoot?.appendChild(imgHome);
 
@@ -69,7 +66,7 @@ class Section extends HTMLElement {
 
 		const imgCreate = document.createElement('img');
 		imgCreate.innerHTML = create;
-		this.shadowRoot?.appendChild(imgCreate);
+		this.shadowRoot?.appendChild(imgCreate);*/
 	}
 }
 

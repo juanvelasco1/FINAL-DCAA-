@@ -1,8 +1,5 @@
 import { loadCss } from '../../utils/styles';
 import stylesHeader from './header.css';
-import logo from '../../data/Images/logo and icesi.png';
-import notification from '../../data/Images/notifications.png';
-import photo from '../../data/Images/Andres-Salazar.png';
 
 export enum AttributeHeader {
 	'logo' = 'logo',
@@ -66,7 +63,7 @@ class Header extends HTMLElement {
 		cssHeader.innerHTML = stylesHeader;
 		this.shadowRoot?.appendChild(cssHeader);
 
-		const imgLogo = document.createElement('img');
+		/*const imgLogo = document.createElement('img');
 		imgLogo.innerHTML = logo;
 		this.shadowRoot?.appendChild(imgLogo);
 
@@ -76,7 +73,7 @@ class Header extends HTMLElement {
 
 		const imgPhoto = document.createElement('img');
 		imgPhoto.innerHTML = photo;
-		this.shadowRoot?.appendChild(imgPhoto);
+		this.shadowRoot?.appendChild(imgPhoto);*/
 	}
 }
 
