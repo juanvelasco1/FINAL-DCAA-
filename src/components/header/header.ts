@@ -48,10 +48,12 @@ class Header extends HTMLElement {
 		if (this.shadowRoot) {
 			loadCss(this, stylesHeader);
 			this.shadowRoot.innerHTML = `
-
+			<style>
+			${stylesHeader}
+			</style>
 			<link rel="stylesheet" href="../src/Components/header/header.css">
 
-			<section class='header'>
+			<section class='section-header'>
 			<img src=${this.logo}>
 			<img src=${this.notification}>
       <img src=${this.photo}>

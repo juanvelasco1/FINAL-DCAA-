@@ -43,10 +43,12 @@ class Section extends HTMLElement {
 			loadCss(this, stylesSections);
 			this.shadowRoot.innerHTML = `
 
-
+			<style>
+			${stylesSections}
+			</style>
 			<link rel="stylesheet" href="../src/Components/card/card.css">
 
-      <section>
+      <section class='section-sections'>
       <img src=${this.img}>
 
       </section>

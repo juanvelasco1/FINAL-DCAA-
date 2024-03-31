@@ -8,6 +8,8 @@ import Section, { AttributeSection } from './sections/sections';
 
 import Tags, { AttributeTag } from './tags/tags';
 
+import navBarStyles from './navBar.css';
+
 //CODE
 class NavBar extends HTMLElement {
 	navSection: Section[] = [];
@@ -36,6 +38,10 @@ class NavBar extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
+			const cssBanner = this.ownerDocument.createElement('style');
+			cssBanner.innerHTML = navBarStyles;
+			this.shadowRoot?.appendChild(cssBanner);
+
 			const sectionNav = this.ownerDocument.createElement('section');
 			sectionNav.className = 'section-nav';
 

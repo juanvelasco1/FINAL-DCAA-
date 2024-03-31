@@ -38,7 +38,10 @@ class Tags extends HTMLElement {
 		if (this.shadowRoot) {
 			loadCss(this, stylesTag);
 			this.shadowRoot.innerHTML = `
-      <section>
+			<style>
+			${stylesTag}
+			</style>
+      <section class='section-tags'>
       <p> <strong>${this.tag}</strong></p>
 
       </section>

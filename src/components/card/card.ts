@@ -50,10 +50,12 @@ class Card extends HTMLElement {
 		if (this.shadowRoot) {
 			loadCss(this, stylesCard);
 			this.shadowRoot.innerHTML = `
-
+			<style>
+			${stylesCard}
+			</style>
 			<link rel="stylesheet" href="../src/Components/card/card.css">
 
-			<section class='card'>
+			<section class='section-card'>
 			<img src=${this.photo}>
 			<h3>${this.name}</h3>
 
