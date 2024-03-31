@@ -1,5 +1,5 @@
 @media (max-width: 400px) {
-	.navBar {
+	navBar {
 		position: absolute;
 		width: 1920px;
 		height: 130px;
@@ -10,7 +10,7 @@
 		background: #2000fb;
 	}
 
-	.search {
+	search {
 		position: absolute;
 		left: 12.5%;
 		right: 20.83%;
@@ -20,13 +20,11 @@
 		border: 4.75px solid #ffffff;
 	}
 
-	.image {
+	image {
 		position: absolute;
-		width: 96px;
-		height: 96px;
+		width: 9px;
+		height: 9px;
 		left: 1771px;
 		top: 17px;
-
-		background: url(image.png);
 	}
 }

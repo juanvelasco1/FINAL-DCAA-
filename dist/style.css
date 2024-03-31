@@ -1,9 +1,10 @@
 @media (max-width: 800px) {
-	Home {
+	body {
 		position: relative;
 		width: 1920px;
 		height: 2254px;
-
+		justify-content: center;
+		align-items: center;
 		background: #ffffff;
 	}
 
@@ -22,5 +23,11 @@
 		height: 1256px;
 		left: 454px;
 		top: 230px;
+	}
+
+	p {
+		text-align: center;
+		justify-content: center;
+		align-items: center;
 	}
 }

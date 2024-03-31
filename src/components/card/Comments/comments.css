@@ -1,5 +1,5 @@
 @media (max-width: 400px) {
-	.photo {
+	photo {
 		position: absolute;
 		width: 92px;
 		height: 92px;
@@ -7,7 +7,7 @@
 		top: 1184px;
 	}
 
-	.name {
+	name {
 		position: absolute;
 		width: 132px;
 		height: 44px;
@@ -22,7 +22,7 @@
 		color: #000000;
 	}
 
-	.texts {
+	texts {
 		position: absolute;
 		width: 415px;
 		height: 39px;

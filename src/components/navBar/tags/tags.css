@@ -1,5 +1,5 @@
 @media (max-width: 237px) {
-	.container {
+	container {
 		/* Rectangle 295 */
 
 		position: absolute;
@@ -14,7 +14,7 @@
 }
 
 @media (max-width: 150px) {
-	.tagsTitle {
+	tagsTitle {
 		position: absolute;
 		width: 136px;
 		height: 49px;
@@ -28,7 +28,7 @@
 		color: #000000;
 	}
 
-	.tags {
+	tags {
 		width: 161px;
 		height: 60px;
 		font-family: 'Montserrat';

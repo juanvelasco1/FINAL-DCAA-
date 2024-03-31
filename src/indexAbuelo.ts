@@ -17,6 +17,8 @@ import MyHeader, { AttributeHeader } from './components/header/header';
 
 import NavBar from './components/navBar/navBar';
 
+import * as styles from './styles.css';
+
 //CODE
 class AppContainer extends HTMLElement {
 	homes: MyCard[] = [];
@@ -59,6 +61,13 @@ class AppContainer extends HTMLElement {
 	}
 
 	render() {
+		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = `
+			<style>
+			${styles}
+			</style>
+			`;
+		}
 		this.header.forEach((home) => {
 			this.shadowRoot?.appendChild(home);
 		});

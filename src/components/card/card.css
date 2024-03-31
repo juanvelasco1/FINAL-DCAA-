@@ -1,13 +1,15 @@
 @media (max-width: 400px) {
-	.card {
+	body {
 		position: absolute;
 		width: 1311px;
 		height: 1256px;
 		left: 454px;
 		top: 230px;
+		justify-content: center;
+		align-items: center;
 	}
 
-	.photo {
+	photo {
 		position: absolute;
 		width: 92px;
 		height: 92px;
@@ -15,7 +17,7 @@
 		top: 257px;
 	}
 
-	.name {
+	name {
 		/* Andrés Salazar */
 
 		position: absolute;
@@ -33,7 +35,7 @@
 		color: #000000;
 	}
 
-	.image {
+	image {
 		position: absolute;
 		width: 1089px;
 		height: 472px;
@@ -42,7 +44,7 @@
 		border-radius: 0px;
 	}
 
-	.tag {
+	tag {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -61,7 +63,7 @@
 		border-radius: 22.3126px;
 	}
 
-	.description {
+	description {
 		position: absolute;
 		width: 804px;
 		height: 102px;
