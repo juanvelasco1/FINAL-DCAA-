@@ -49,6 +49,7 @@ class Card extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			loadCss(this, stylesCard);
+
 			this.shadowRoot.innerHTML = `
 			<style>
 			${stylesCard}
@@ -62,17 +63,16 @@ class Card extends HTMLElement {
 			<img src=${this.image}>
 
 			<button class="heart" type="button">
-			<img class="like" src="../../asset/like.png">
-			<img class="likeF" src="../../asset/like-full.png">
+			<img class="like" id="likeButton" src="/src/asset/like.png">
 			</button>
 
-			<img src="../../asset/comment.png">
+			<img src="/src/asset/comment.png">
 			<p> <strong>${this.tag}</strong></p>
 
 			<button class="bookmark" type="button">
-			<img class="save" src="../../asset/save.png">
-			<img class="saveF" src="../../asset/save-full.png>
+			<img class="save" id='saveButton' src="/src/asset/save.png">
 			</button>
+
 			<p>${this.description}</p>
 			</section>
       `;
@@ -81,31 +81,44 @@ class Card extends HTMLElement {
 		cssCard.innerHTML = stylesCard;
 		this.shadowRoot?.appendChild(cssCard);
 
-		const changeButton = document.querySelector('like') as HTMLElement | null;
-		console.log('changeButton', changeButton);
+		const changeButton = this.shadowRoot?.getElementById('likeButton');
 
-		if (changeButton) {
-			changeButton.addEventListener('click', function () {
-				const like = document.getElementById('like');
-				const image1 = document.getElementById('image1');
-				const image2 = document.getElementById('image2');
-				const likeF = document.getElementById('likeF');
+		changeButton?.addEventListener('click', function () {
+			if (changeButton.getAttribute('src') === '/src/asset/like.png') {
+				changeButton.setAttribute('src', '/src/asset/like-full.png');
+			} else {
+				changeButton.setAttribute('src', '/src/asset/like.png');
+			}
+		});
 
-				if (like && image1 && image2 && likeF) {
-					like.style.display = image1.style.display === 'none' ? 'block' : 'none';
-					likeF.style.display = image2.style.display === 'none' ? 'block' : 'none';
-				}
-			});
-		}
+		const changeButtonSave = this.shadowRoot?.getElementById('saveButton');
 
-		/*	const photo = document.createElement('img');
-		photo.innerHTML = img;
-		this.shadowRoot?.appendChild(photo);
+		changeButtonSave?.addEventListener('click', function () {
+			if (changeButtonSave.getAttribute('src') === '/src/asset/save.png') {
+				changeButtonSave.setAttribute('src', '/src/asset/save-full.png');
+			} else {
+				changeButtonSave.setAttribute('src', '/src/asset/save.png');
+			}
+		});
 
-		const imag = document.createElement('img');
-		imag.innerHTML = image;
-		this.shadowRoot?.appendChild(imag);*/
+		// const like = document.getElementById('like');
+		// const image1 = document.getElementById('image1');
+		// const image2 = document.getElementById('image2');
+		// const likeF = document.getElementById('likeF');
+
+		// if (like && image1 && image2 && likeF) {
+		// 	like.style.display = image1.style.display === 'none' ? 'block' : 'none';
+		// 	likeF.style.display = image2.style.display === 'none' ? 'block' : 'none';
+		// }
 	}
+
+	/*	const photo = document.createElement('img');
+	photo.innerHTML = img;
+	this.shadowRoot?.appendChild(photo);
+
+	const imag = document.createElement('img');
+	imag.innerHTML = image;
+	this.shadowRoot?.appendChild(imag);*/
 }
 
 export default Card;

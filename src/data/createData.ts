@@ -6,7 +6,7 @@ import list from '../asset/List.png';
 import emoji from '../asset/Fat Emoji.png';
 
 interface DataShape {
-	exit: string;
+	exits: { exit: string; type: string };
 	photo: string;
 	texts: string;
 	image: string;
@@ -17,7 +17,7 @@ interface DataShape {
 
 export const createData: DataShape[] = [
 	{
-		exit: exit,
+		exits: { exit: exit, type: 'create' },
 		photo: photo,
 		texts: 'What is happening?',
 		image: image,

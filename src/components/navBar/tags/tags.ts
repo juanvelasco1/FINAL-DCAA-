@@ -42,7 +42,9 @@ class Tags extends HTMLElement {
 			${stylesTag}
 			</style>
       <section class='section-tags'>
-      <p> <strong>${this.tag}</strong></p>
+      <button id="tagButton" class="tagB" type="button">
+			 ${this.tag}
+			 </button>
 
       </section>
       `;
@@ -51,6 +53,28 @@ class Tags extends HTMLElement {
 		const cssTag = this.ownerDocument.createElement('style');
 		cssTag.innerHTML = stylesTag;
 		this.shadowRoot?.appendChild(cssTag);
+
+		/*const changeColor = this.shadowRoot?.getElementById('tagButton');
+
+		changeColor?.addEventListener('click', function () {
+			if (changeColor.style.backgroundColor === '#bdbdbd') {
+				changeColor.style.backgroundColor = '#8fff3c';
+			} else if (changeColor.style.backgroundColor === '#8fff3c') {
+				changeColor.style.backgroundColor = '#bdbdbd';
+			}
+		});*/
+
+		const changeColor = this.shadowRoot?.getElementById('tagButton');
+		let isGray = true; // Estado inicial del botón (gris)
+
+		changeColor?.addEventListener('click', function () {
+			if (isGray) {
+				changeColor.style.backgroundColor = '#8fff3c'; // Cambiar a verde
+			} else {
+				changeColor.style.backgroundColor = '#bdbdbd'; // Cambiar a gris
+			}
+			isGray = !isGray; // Cambiar el estado del botón
+		});
 	}
 }
 

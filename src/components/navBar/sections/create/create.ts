@@ -60,7 +60,7 @@ class Create extends HTMLElement {
 			${stylesCreate}
 			</style>
 
-      <section class='section-create'>
+      <section class='hidden-create' id="myCreate">
       <img src="${this.exit}">
       <img src="${this.photo}">
       <p>${this.texts}</p>

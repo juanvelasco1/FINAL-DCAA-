@@ -73,7 +73,7 @@ class AppContainer extends HTMLElement {
 
 		createData.forEach((user) => {
 			const navCreate = this.ownerDocument.createElement('my-create') as MyCreate;
-			navCreate.setAttribute(AttributeCreate.exit, user.exit);
+			navCreate.setAttribute(AttributeCreate.exit, user.exits.exit);
 			navCreate.setAttribute(AttributeCreate.photo, user.photo);
 			navCreate.setAttribute(AttributeCreate.texts, user.texts);
 			navCreate.setAttribute(AttributeCreate.image, user.image);
@@ -102,8 +102,20 @@ class AppContainer extends HTMLElement {
 			this.shadowRoot?.appendChild(home);
 		});
 
+		this.create.forEach((home) => {
+			console.log(home);
+			this.shadowRoot?.appendChild(home);
+		});
+
+		this.notifications.forEach((home) => {
+			console.log(home);
+			this.shadowRoot?.appendChild(home);
+		});
+
 		const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
 		this.shadowRoot?.appendChild(navBar);
+
+		// console.log(this.ownerDocument.getElementById("myCreate"))
 	}
 }
 

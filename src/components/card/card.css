@@ -104,4 +104,31 @@
 		padding-left: 10px;
 		padding-top: 13px;
 	}
+	.save {
+		cursor: pointer;
+	}
+
+	.save:hover {
+		opacity: 0.4;
+		transition: 0.3s;
+	}
+
+	.save:active {
+		transform: scale(0.9);
+	}
+
+	.saveF {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
+
+	.bookmark {
+		border: 0;
+		background: none;
+		padding-left: 10px;
+		padding-top: 13px;
+	}
 }

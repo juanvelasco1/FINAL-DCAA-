@@ -22,6 +22,7 @@ class NavBar extends HTMLElement {
 		sectionData.forEach((user) => {
 			const section = this.ownerDocument.createElement('my-section') as Section;
 			section.setAttribute(AttributeSection.img, user.image);
+			section.setAttribute(AttributeSection.type, user.type);
 			this.navSection.push(section);
 		});
 

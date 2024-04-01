@@ -1,4 +1,4 @@
-import { loadCss } from '../notifications/notifications.css';
+import { loadCss } from '../../../utils/styles';
 import stylesNotifications from './notifications.css';
 
 export enum AttributeNotifications {
@@ -86,4 +86,4 @@ class Notifications extends HTMLElement {
 }
 
 export default Notifications;
-customElements.define('my-header', Notifications);
+customElements.define('my-notifications', Notifications);
