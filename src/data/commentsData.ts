@@ -1,3 +1,4 @@
+import photo1 from '../asset/Andres-Salazar.png';
 interface DataShape {
 	comment: {
 		photo: string;
@@ -11,16 +12,16 @@ export const commentsData: DataShape[] = [
 	{
 		comment: {
 			id: 1,
-			photo: 'src="./Images/Andrés-Salazar.png "',
+			photo: photo1,
 			name: 'Lina Rengifo',
 			texts: 'Great, what a great event!',
 		},
 	},
 	{
 		comment: {
-			id: 1,
-			photo: 'src="./Images/Andrés-Salazar.png "',
-			name: 'Lina Rengifo',
+			id: 2,
+			photo: photo1,
+			name: 'Sebastian Quintero',
 			texts: 'Ill be there!',
 		},
 	},

@@ -1,3 +1,6 @@
+import { loadCss } from '../../../utils/styles';
+import stylesComment from './comments.css';
+
 export enum Attributes {
 	'photo' = 'photo',
 	'name' = 'name',
@@ -39,14 +42,26 @@ class Comment extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
+			loadCss(this, stylesComment);
 			this.shadowRoot.innerHTML = `
+			<style>
+			${stylesComment}
+			</style>
+
       <section>
       <img src="${this.photo}">
-      <h3>${this.name}</h3>
+      <h5>${this.name}</h5>
       <p>${this.texts}</p>
       </section>
       `;
 		}
+		const cssComment = this.ownerDocument.createElement('style');
+		cssComment.innerHTML = stylesComment;
+		this.shadowRoot?.appendChild(cssComment);
+
+		/*const imgPhoto = document.createElement('img');
+		imgPhoto.innerHTML = photo1;
+		this.shadowRoot?.appendChild(imgPhoto);*/
 	}
 }
 
