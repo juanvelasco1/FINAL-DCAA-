@@ -48,16 +48,18 @@ class Card extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = '';
 			loadCss(this, stylesCard);
-			this.shadowRoot.innerHTML = `
+			this.shadowRoot.innerHTML += `
 
 			<link rel="stylesheet" href="../src/Components/card/card.css">
 
 			<section class='card'>
-			<img src=${this.photo}>
+			<img src=${this.photo}class='photo'>
 			<h3>${this.name}</h3>
-
-			<img src=${this.image}>
+      <div>
+			<img src="${this.image}" class='image'>
+			</div>
 			<img src="../../asset/like.png">
 			<img src="../../asset/comment.png">
 			<p> <strong>${this.tag}</strong></p>
