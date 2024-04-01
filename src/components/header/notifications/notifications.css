@@ -1,0 +1,9 @@
+.section-notifications {
+	border: 2px solid black;
+	/* position: absolute;
+  z-index: 2; */
+}
+
+.hidden-notifications {
+	display: none;
+}

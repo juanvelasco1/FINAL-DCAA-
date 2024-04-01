@@ -33,7 +33,6 @@
 	}
 }
 
-
 @media (max-width: 400px) {
 	#header {
 		position: absolute;
@@ -70,14 +69,4 @@
 		left: 1771px;
 		top: 17px;
 	}
-}
-
-.section-notifications {
-	border: 2px solid black;
-	/* position: absolute;
-  z-index: 2; */
-}
-
-.hidden-notofications {
-	display: none;
 }

@@ -66,21 +66,34 @@ class Header extends HTMLElement {
 		cssHeader.innerHTML = stylesHeader;
 		this.shadowRoot?.appendChild(cssHeader);
 
-		const imgButton = this.shadowRoot?.querySelector('header');
-		const myCreatedSection = this.ownerDocument
+		/*const myNotifications = document.querySelector('my-notifications');
+		const imgNotification = this.shadowRoot?.getElementById('myNotifications');
+
+		if (imgNotification && myNotifications) {
+			imgNotification.addEventListener('click', () => {
+				if (myNotifications.classList.contains('hidden-notifications')) {
+					myNotifications.classList.remove('hidden-notifications');
+				} else {
+					myNotifications.classList.add('hidden-notifications');
+				}
+			});*/
+
+		const notiButton = this.shadowRoot?.querySelector('section');
+		const myCreatedNoti = this.ownerDocument
 			.querySelector('app-container')
 			?.shadowRoot?.querySelector('my-notifications')
 			?.shadowRoot?.getElementById('myNotifications');
 
-		if (this.type === 'noti') {
-			imgButton?.addEventListener('click', () => {
+		//	if (this.type === 'noti') {
+		if (this.notification === '../asset/notifications.png') {
+			notiButton?.addEventListener('click', () => {
 				console.log('Hola');
-				if (myCreatedSection?.className === 'hidden-notifications') {
-					console.log(myCreatedSection);
-					myCreatedSection.className = 'section-notifications';
-				} else if (myCreatedSection?.className === 'section-notifications') {
-					console.log(myCreatedSection);
-					myCreatedSection.className = 'hidden-notifications';
+				if (myCreatedNoti?.className === 'hidden-notifications') {
+					console.log(myCreatedNoti);
+					myCreatedNoti.className = 'section-notifications';
+				} else if (myCreatedNoti?.className === 'section-notifications') {
+					console.log(myCreatedNoti);
+					myCreatedNoti.className = 'hidden-notifications';
 				}
 			});
 
@@ -89,7 +102,7 @@ class Header extends HTMLElement {
 				?.shadowRoot?.querySelector('my-notifications')
 				?.shadowRoot?.getElementById('myNotifications');
 
-		/*const imgLogo = document.createElement('img');
+			/*const imgLogo = document.createElement('img');
 		imgLogo.innerHTML = logo;
 		this.shadowRoot?.appendChild(imgLogo);
 
@@ -100,8 +113,8 @@ class Header extends HTMLElement {
 		const imgPhoto = document.createElement('img');
 		imgPhoto.innerHTML = photo;
 		this.shadowRoot?.appendChild(imgPhoto);*/
+		}
 	}
-}
 }
 export default Header;
 customElements.define('my-header', Header);

@@ -1,4 +1,5 @@
-import photo1 from '../asset/Andres-Salazar.png';
+import photo1 from '../asset/Lina Rengifo.png';
+import photo2 from '../asset/Sebastian Quintero.png';
 interface DataShape {
 	comment: {
 		photo: string;
@@ -20,7 +21,7 @@ export const commentsData: DataShape[] = [
 	{
 		comment: {
 			id: 2,
-			photo: photo1,
+			photo: photo2,
 			name: 'Sebastian Quintero',
 			texts: 'Ill be there!',
 		},
