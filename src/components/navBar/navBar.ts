@@ -7,6 +7,8 @@ import { tagsData } from '../../data/tagsData';
 import Section, { AttributeSection } from './sections/sections';
 
 import Tags, { AttributeTag } from './tags/tags';
+import navBarStyles from './navBar.css';
+
 //import css
 import { loadCss } from '../../utils/styles';
 import stylesNavbar from './navBar.css';
@@ -24,6 +26,7 @@ class NavBar extends HTMLElement {
 		sectionData.forEach((user) => {
 			const section = this.ownerDocument.createElement('my-section') as Section;
 			section.setAttribute(AttributeSection.img, user.image);
+			section.setAttribute(AttributeSection.type, user.type);
 			this.navSection.push(section);
 		});
 
@@ -41,6 +44,10 @@ class NavBar extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			loadCss(this, style)
+
+			const cssBanner = this.ownerDocument.createElement('style');
+			cssBanner.innerHTML = navBarStyles;
+			this.shadowRoot?.appendChild(cssBanner);
 
 			const sectionNav = this.ownerDocument.createElement('section');
 			sectionNav.className = 'navSection';

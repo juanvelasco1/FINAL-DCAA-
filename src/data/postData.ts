@@ -22,4 +22,34 @@ export const postData: DataShape[] = [
 			'On March 1, 2 and 8, Datathon will be held again, a learning day in data analytics that will be held at the Icesi University in alliance with Structum and SAP.',
 		tag: 'Events',
 	},
+	{
+		user: {
+			name: 'Andrés Salazar',
+			imgProfile: img,
+		},
+		image: image,
+		description:
+			'On March 1, 2 and 8, Datathon will be held again, a learning day in data analytics that will be held at the Icesi University in alliance with Structum and SAP.',
+		tag: 'Events',
+	},
+	{
+		user: {
+			name: 'Andrés Salazar',
+			imgProfile: img,
+		},
+		image: image,
+		description:
+			'On March 1, 2 and 8, Datathon will be held again, a learning day in data analytics that will be held at the Icesi University in alliance with Structum and SAP.',
+		tag: 'Events',
+	},
+	{
+		user: {
+			name: 'Andrés Salazar',
+			imgProfile: img,
+		},
+		image: image,
+		description:
+			'On March 1, 2 and 8, Datathon will be held again, a learning day in data analytics that will be held at the Icesi University in alliance with Structum and SAP.',
+		tag: 'Events',
+	},
 ];

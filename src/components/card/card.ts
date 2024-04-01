@@ -48,22 +48,31 @@ class Card extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = '';
 			loadCss(this, stylesCard);
-			this.shadowRoot.innerHTML += `
+			this.shadowRoot.innerHTML = `
+
+			<style>
+			${stylesCard}
+			</style>
 
 			<link rel="stylesheet" href="../src/Components/card/card.css">
 
 			<section class='card'>
-			<img src=${this.photo}class='photo'>
+			<img src=${this.photo} class='photo'>
 			<h3>${this.name}</h3>
-      <div>
-			<img src="${this.image}" class='image'>
-			</div>
-			<img src="../../asset/like.png">
-			<img src="../../asset/comment.png">
+
+			<img src=${this.image}  class='image'>
+			<button class="heart" type="button">
+			<img class="like" id="likeButton" src="/src/asset/like.png">
+			</button>
+
+			<img src="/src/asset/comment.png">
 			<p> <strong>${this.tag}</strong></p>
-			<img src="../../asset/save.png">
+
+			<button class="bookmark" type="button">
+			<img class="save" id='saveButton' src="/src/asset/save.png">
+			</button>
+
 			<p>${this.description}</p>
 			</section>
       `;
@@ -72,14 +81,44 @@ class Card extends HTMLElement {
 		cssCard.innerHTML = stylesCard;
 		this.shadowRoot?.appendChild(cssCard);
 
-		/*	const photo = document.createElement('img');
-		photo.innerHTML = img;
-		this.shadowRoot?.appendChild(photo);
+		const changeButton = this.shadowRoot?.getElementById('likeButton');
 
-		const imag = document.createElement('img');
-		imag.innerHTML = image;
-		this.shadowRoot?.appendChild(imag);*/
+		changeButton?.addEventListener('click', function () {
+			if (changeButton.getAttribute('src') === '/src/asset/like.png') {
+				changeButton.setAttribute('src', '/src/asset/like-full.png');
+			} else {
+				changeButton.setAttribute('src', '/src/asset/like.png');
+			}
+		});
+
+		const changeButtonSave = this.shadowRoot?.getElementById('saveButton');
+
+		changeButtonSave?.addEventListener('click', function () {
+			if (changeButtonSave.getAttribute('src') === '/src/asset/save.png') {
+				changeButtonSave.setAttribute('src', '/src/asset/save-full.png');
+			} else {
+				changeButtonSave.setAttribute('src', '/src/asset/save.png');
+			}
+		});
+
+		// const like = document.getElementById('like');
+		// const image1 = document.getElementById('image1');
+		// const image2 = document.getElementById('image2');
+		// const likeF = document.getElementById('likeF');
+
+		// if (like && image1 && image2 && likeF) {
+		// 	like.style.display = image1.style.display === 'none' ? 'block' : 'none';
+		// 	likeF.style.display = image2.style.display === 'none' ? 'block' : 'none';
+		// }
 	}
+
+	/*	const photo = document.createElement('img');
+	photo.innerHTML = img;
+	this.shadowRoot?.appendChild(photo);
+
+	const imag = document.createElement('img');
+	imag.innerHTML = image;
+	this.shadowRoot?.appendChild(imag);*/
 }
 
 export default Card;

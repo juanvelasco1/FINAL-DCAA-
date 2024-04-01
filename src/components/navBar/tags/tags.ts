@@ -36,20 +36,35 @@ class Tags extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = ""
+			this.shadowRoot.innerHTML += ""
 
 			loadCss(this, stylesTag);
-
-			this.shadowRoot.innerHTML += `
-      			<section>
-      				<p> <strong>${this.tag}</strong></p>
-				</section>
-      		`;
+			this.shadowRoot.innerHTML = `
+      <style>
+			${stylesTag}
+			</style>
+      <section class='section-tags'>
+      <button id="tagButton" class="tagB" type="button">
+			 ${this.tag}
+			 </button>
+      `;
 		}
 
-		// const cssTag = this.ownerDocument.createElement('style');
-		// cssTag.innerHTML = stylesTag;
-		// this.shadowRoot?.appendChild(cssTag);
+		const cssTag = this.ownerDocument.createElement('style');
+		cssTag.innerHTML = stylesTag;
+		this.shadowRoot?.appendChild(cssTag);
+
+		const changeColor = this.shadowRoot?.getElementById('tagButton');
+		let isGray = true; // Estado inicial del botón (gris)
+
+		changeColor?.addEventListener('click', function () {
+			if (isGray) {
+				changeColor.style.backgroundColor = '#8fff3c'; // Cambiar a verde
+			} else {
+				changeColor.style.backgroundColor = '#bdbdbd'; // Cambiar a gris
+			}
+			isGray = !isGray; // Cambiar el estado del botón
+		});
 	}
 }
 

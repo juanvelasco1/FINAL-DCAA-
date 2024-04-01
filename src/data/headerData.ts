@@ -5,6 +5,7 @@ interface DataShape {
 	logo: string;
 	notification: string;
 	photo: string;
+	type: string;
 }
 
 export const headerData: DataShape[] = [
@@ -12,5 +13,6 @@ export const headerData: DataShape[] = [
 		logo: logo,
 		notification: notification,
 		photo: photo,
+		type: 'noti',
 	},
 ];
