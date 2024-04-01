@@ -8,12 +8,20 @@ import { commentsData } from './data/commentsData';
 
 import { headerData } from './data/headerData';
 
+import { notificationData } from './data/notificationData';
+
+import { createData } from './data/createData';
+
 //import Components
 import MyCard, { Attribute } from './components/card/card';
 
 import MyComments, { Attributes } from './components/card/Comments/comments';
 
 import MyHeader, { AttributeHeader } from './components/header/header';
+
+import MyNotifications, { AttributeNotifications } from './components/header/notifications/notifications';
+
+import MyCreate, { AttributeCreate } from './components/navBar/sections/create/create';
 
 import NavBar from './components/navBar/navBar';
 
@@ -22,6 +30,8 @@ class AppContainer extends HTMLElement {
 	homes: MyCard[] = [];
 	home: MyComments[] = [];
 	header: MyHeader[] = [];
+	notifications: MyNotifications[] = [];
+	create: MyCreate[] = [];
 
 	constructor() {
 		super();
@@ -33,6 +43,14 @@ class AppContainer extends HTMLElement {
 			headerHeader.setAttribute(AttributeHeader.photo, user.photo);
 			headerHeader.setAttribute(AttributeHeader.notification, user.notification);
 			this.header.push(headerHeader);
+		});
+
+		notificationData.forEach((user) => {
+			const headerNotification = this.ownerDocument.createElement('my-notifications') as MyNotifications;
+			headerNotification.setAttribute(AttributeNotifications.name, user.name);
+			headerNotification.setAttribute(AttributeNotifications.photo, user.photo);
+			headerNotification.setAttribute(AttributeNotifications.texts, user.texts);
+			this.notifications.push(headerNotification);
 		});
 
 		postData.forEach((post) => {
@@ -51,6 +69,19 @@ class AppContainer extends HTMLElement {
 			homeComment.setAttribute(Attributes.name, user.comment.name);
 			homeComment.setAttribute(Attributes.texts, user.comment.texts);
 			this.home.push(homeComment);
+		});
+
+		createData.forEach((user) => {
+			const navCreate = this.ownerDocument.createElement('my-create') as MyCreate;
+			navCreate.setAttribute(AttributeCreate.exit, user.exit);
+			navCreate.setAttribute(AttributeCreate.photo, user.photo);
+			navCreate.setAttribute(AttributeCreate.texts, user.texts);
+			navCreate.setAttribute(AttributeCreate.image, user.image);
+			navCreate.setAttribute(AttributeCreate.tag, user.tag);
+			navCreate.setAttribute(AttributeCreate.list, user.list);
+			navCreate.setAttribute(AttributeCreate.emoji, user.emoji);
+
+			this.create.push(navCreate);
 		});
 	}
 

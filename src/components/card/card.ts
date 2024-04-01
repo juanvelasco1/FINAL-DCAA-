@@ -60,10 +60,19 @@ class Card extends HTMLElement {
 			<h3>${this.name}</h3>
 
 			<img src=${this.image}>
-			<img src="../../asset/like.png">
+
+			<button class="heart" type="button">
+			<img class="like" src="../../asset/like.png">
+			<img class="likeF" src="../../asset/like-full.png">
+			</button>
+
 			<img src="../../asset/comment.png">
 			<p> <strong>${this.tag}</strong></p>
-			<img src="../../asset/save.png">
+
+			<button class="bookmark" type="button">
+			<img class="save" src="../../asset/save.png">
+			<img class="saveF" src="../../asset/save-full.png>
+			</button>
 			<p>${this.description}</p>
 			</section>
       `;
@@ -71,6 +80,23 @@ class Card extends HTMLElement {
 		const cssCard = this.ownerDocument.createElement('style');
 		cssCard.innerHTML = stylesCard;
 		this.shadowRoot?.appendChild(cssCard);
+
+		const changeButton = document.querySelector('like') as HTMLElement | null;
+		console.log('changeButton', changeButton);
+
+		if (changeButton) {
+			changeButton.addEventListener('click', function () {
+				const like = document.getElementById('like');
+				const image1 = document.getElementById('image1');
+				const image2 = document.getElementById('image2');
+				const likeF = document.getElementById('likeF');
+
+				if (like && image1 && image2 && likeF) {
+					like.style.display = image1.style.display === 'none' ? 'block' : 'none';
+					likeF.style.display = image2.style.display === 'none' ? 'block' : 'none';
+				}
+			});
+		}
 
 		/*	const photo = document.createElement('img');
 		photo.innerHTML = img;

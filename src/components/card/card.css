@@ -75,3 +75,33 @@
 		line-height: 140%;
 	}
 }
+
+.section-card {
+	.like {
+		cursor: pointer;
+	}
+
+	.like:hover {
+		opacity: 0.4;
+		transition: 0.3s;
+	}
+
+	.like:active {
+		transform: scale(0.9);
+	}
+
+	.likeF {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
+
+	.heart {
+		border: 0;
+		background: none;
+		padding-left: 10px;
+		padding-top: 13px;
+	}
+}
