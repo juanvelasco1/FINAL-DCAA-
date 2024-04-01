@@ -3,10 +3,12 @@ import stylesSections from './sections.css';
 
 export enum AttributeSection {
 	'img' = 'img',
+	'type' = 'type',
 }
 
 class Section extends HTMLElement {
 	img?: string;
+	type?: string;
 
 	constructor() {
 		super();
@@ -16,6 +18,7 @@ class Section extends HTMLElement {
 	static get observedAttributes() {
 		const attrs: Record<AttributeSection, null> = {
 			img: null,
+			type: null,
 		};
 
 		return Object.keys(attrs);
@@ -23,8 +26,13 @@ class Section extends HTMLElement {
 
 	attributeChangedCallback(propName: AttributeSection, oldValue: string | undefined, newValue: string | undefined) {
 		switch (propName) {
+			case AttributeSection.img:
+				this.img = newValue;
+				break;
+			case AttributeSection.type:
+				this.type = newValue;
+				break;
 			default:
-				this[propName] = newValue;
 				break;
 		}
 		this.render();
@@ -40,21 +48,47 @@ class Section extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = ""
-
 			loadCss(this, stylesSections);
+			this.shadowRoot.innerHTML = `
 
-			this.shadowRoot.innerHTML += `
-      			<section>
-      				<img src=${this.img}>
+			<style>
+			${stylesSections}
+			</style>
+
+
+			<link rel="stylesheet" href="../src/Components/card/card.css">
+
+      <section class='section-sections'>
+      <img src=${this.img}>
 
       			</section>
       		`;
 		}
+		const cssSections = this.ownerDocument.createElement('style');
+		cssSections.innerHTML = stylesSections;
+		this.shadowRoot?.appendChild(cssSections);
 
-		// const cssSections = this.ownerDocument.createElement('style');
-		// cssSections.innerHTML = stylesSections;
-		// this.shadowRoot?.appendChild(cssSections);
+		const imgButton = this.shadowRoot?.querySelector('section');
+		const myCreatedSection = this.ownerDocument
+			.querySelector('app-container')
+			?.shadowRoot?.querySelector('my-create')
+			?.shadowRoot?.getElementById('myCreate');
+
+		if (this.type === 'create') {
+			imgButton?.addEventListener('click', () => {
+				console.log('Hola');
+				if (myCreatedSection?.className === 'hidden-create') {
+					console.log(myCreatedSection);
+					myCreatedSection.className = 'section-create';
+				} else if (myCreatedSection?.className === 'section-create') {
+					console.log(myCreatedSection);
+					myCreatedSection.className = 'hidden-create';
+				}
+
+				const myCloseCreatedSection = this.ownerDocument
+					.querySelector('app-container')
+					?.shadowRoot?.querySelector('my-create')
+					?.shadowRoot?.getElementById('myCreate');
 
 		/*const imgHome = document.createElement('img');
 		imgHome.innerHTML = home;
@@ -67,8 +101,11 @@ class Section extends HTMLElement {
 		const imgCreate = document.createElement('img');
 		imgCreate.innerHTML = create;
 		this.shadowRoot?.appendChild(imgCreate);*/
-	}
+	});
 }
+}
+}
+
 
 customElements.define('my-section', Section);
 export default Section;
