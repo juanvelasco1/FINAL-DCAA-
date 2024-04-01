@@ -45,8 +45,9 @@ class Header extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = '';
 			loadCss(this, stylesHeader);
-			this.shadowRoot.innerHTML = `
+			this.shadowRoot.innerHTML += `
 			<style>
 			${stylesHeader}
 			</style>
@@ -89,7 +90,7 @@ class Header extends HTMLElement {
 				?.shadowRoot?.querySelector('my-notifications')
 				?.shadowRoot?.getElementById('myNotifications');
 
-		/*const imgLogo = document.createElement('img');
+			/*const imgLogo = document.createElement('img');
 		imgLogo.innerHTML = logo;
 		this.shadowRoot?.appendChild(imgLogo);
 
@@ -100,8 +101,8 @@ class Header extends HTMLElement {
 		const imgPhoto = document.createElement('img');
 		imgPhoto.innerHTML = photo;
 		this.shadowRoot?.appendChild(imgPhoto);*/
+		}
 	}
-}
 }
 export default Header;
 customElements.define('my-header', Header);

@@ -1,4 +1,4 @@
-import logo from '../asset/logo and icesi.png';
+import logo from './asset/dist/src/asset/logo and icesi.png';
 import notification from '../asset/notifications.png';
 import photo from '../asset/Andres-Salazar.png';
 interface DataShape {

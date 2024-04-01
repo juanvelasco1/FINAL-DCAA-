@@ -15,12 +15,12 @@
 	}
 
 	#horizontalSpace {
-		width: 65%;
+		width: 75%;
 	}
 
 	.logo {
 		/* width: 222px; */
-		height: 70%;
+		height: 10%;
 	}
 
 	.notification {
@@ -32,8 +32,7 @@
 		height: 60%;
 	}
 }
-
-
+/*
 @media (max-width: 400px) {
 	#header {
 		position: absolute;
@@ -42,12 +41,12 @@
 		left: 0px;
 		top: 0px;
 		margin: 0 auto;
-		/* principal Blue */
+
 		background: #2000fb;
 	}
 
 	.logo {
-		/* unired*/
+
 		position: absolute;
 		width: 222px;
 		height: 74.92px;
@@ -74,8 +73,7 @@
 
 .section-notifications {
 	border: 2px solid black;
-	/* position: absolute;
-  z-index: 2; */
+
 }
 
 .hidden-notofications {

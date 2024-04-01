@@ -7,21 +7,24 @@
 
 		margin-bottom: 5px;
 
-		background: #BDBDBD;
+		background: #bdbdbd;
 		border-radius: 45px;
 
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
-
+	#tagButton {
+		outline: none;
+		background: none;
+		border: none;
+	}
 	section p {
 		margin: 0;
 
 		width: 100%;
 		text-align: center;
-		font-family: 'Montserrat';
-		font-style: normal;
+
 		font-weight: 800;
 		font-size: 16px;
 		color: #000000;

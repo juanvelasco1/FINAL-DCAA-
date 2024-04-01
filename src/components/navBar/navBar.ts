@@ -12,7 +12,7 @@ import navBarStyles from './navBar.css';
 //import css
 import { loadCss } from '../../utils/styles';
 import stylesNavbar from './navBar.css';
-import style from './navBar.css'
+import style from './navBar.css';
 
 //CODE
 class NavBar extends HTMLElement {
@@ -43,7 +43,7 @@ class NavBar extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			loadCss(this, style)
+			loadCss(this, style);
 
 			const cssBanner = this.ownerDocument.createElement('style');
 			cssBanner.innerHTML = navBarStyles;
@@ -56,9 +56,9 @@ class NavBar extends HTMLElement {
 				sectionNav.appendChild(section);
 			});
 
-			const tagsTitle = this.ownerDocument.createElement("h2")
-			tagsTitle.innerText = "TAGS"
-			sectionNav.appendChild(tagsTitle)
+			const tagsTitle = this.ownerDocument.createElement('h2');
+			tagsTitle.innerText = 'TAGS ';
+			sectionNav.appendChild(tagsTitle);
 
 			this.navTags.forEach((section) => {
 				sectionNav.appendChild(section);

@@ -61,16 +61,16 @@ class Card extends HTMLElement {
 			<img src=${this.photo} class='photo'>
 			<h3>${this.name}</h3>
 
-			<img src=${this.image}  class='image'>
+			<img src=${this.image}  >
 			<button class="heart" type="button">
 			<img class="like" id="likeButton" src="/src/asset/like.png">
 			</button>
-
-			<img src="/src/asset/comment.png">
-			<p> <strong>${this.tag}</strong></p>
-
+      <div>
+			<img class=coment src="/src/asset/comment.png" >
+			<pclass=> <strong>${this.image}	</strong >
+			</div>
 			<button class="bookmark" type="button">
-			<img class="save" id='saveButton' src="/src/asset/save.png">
+			<img  id='saveButton' src="/src/asset/save.png">
 			</button>
 
 			<p>${this.description}</p>
