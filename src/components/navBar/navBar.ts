@@ -10,6 +10,8 @@ import Tags, { AttributeTag } from './tags/tags';
 //import css
 import { loadCss } from '../../utils/styles';
 import stylesNavbar from './navBar.css';
+import style from './navBar.css'
+
 //CODE
 class NavBar extends HTMLElement {
 	navSection: Section[] = [];
@@ -38,12 +40,18 @@ class NavBar extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
+			loadCss(this, style)
+
 			const sectionNav = this.ownerDocument.createElement('section');
-			sectionNav.className = 'section-nav';
+			sectionNav.className = 'navSection';
 
 			this.navSection.forEach((section) => {
 				sectionNav.appendChild(section);
 			});
+
+			const tagsTitle = this.ownerDocument.createElement("h2")
+			tagsTitle.innerText = "TAGS"
+			sectionNav.appendChild(tagsTitle)
 
 			this.navTags.forEach((section) => {
 				sectionNav.appendChild(section);

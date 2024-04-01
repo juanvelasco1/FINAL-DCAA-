@@ -1,34 +1,33 @@
-@media (max-width: 237px) {
-	container {
+@media (max-width: 1600px) {
+	section {
 		/* Rectangle 295 */
 
-		position: absolute;
-		width: 237px;
-		height: 2124px;
-		left: 0px;
-		top: 130px;
+		width: 80%;
+		height: 45px;
 
-		background: #f2f2f2;
-		border-radius: 0px 45px 45px 0px;
+		margin-bottom: 5px;
+
+		background: #BDBDBD;
+		border-radius: 45px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
-}
 
-@media (max-width: 150px) {
-	tagsTitle {
-		position: absolute;
-		width: 136px;
-		height: 49px;
-		left: 58px;
-		top: 1168px;
+	section p {
+		margin: 0;
+
+		width: 100%;
+		text-align: center;
 		font-family: 'Montserrat';
 		font-style: normal;
 		font-weight: 800;
-		font-size: 40px;
-		line-height: 40px;
+		font-size: 16px;
 		color: #000000;
 	}
 
-	tags {
+	/* tags {
 		width: 161px;
 		height: 60px;
 		font-family: 'Montserrat';
@@ -41,6 +40,8 @@
 		flex-grow: 0;
 
 		/* Auto layout */
+
+	/*
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -56,5 +57,5 @@
 
 		background: #bdbdbd;
 		border-radius: 22.3126px;
-	}
+	} */
 }

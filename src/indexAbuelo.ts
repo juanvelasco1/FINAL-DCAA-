@@ -18,6 +18,10 @@ import MyHeader, { AttributeHeader } from './components/header/header';
 import NavBar from './components/navBar/navBar';
 
 import * as styles from './styles.css';
+import { loadCss } from './utils/styles';
+
+//Importar estilos
+import style from './indexAbuelo.css'
 
 //CODE
 class AppContainer extends HTMLElement {
@@ -61,20 +65,26 @@ class AppContainer extends HTMLElement {
 	}
 
 	render() {
+		loadCss(this, style)
+
+		const mainPageContainer = this.ownerDocument.createElement("div")
+		mainPageContainer.setAttribute("id", "mainPageContainer")
+		this.shadowRoot?.appendChild(mainPageContainer)
+
 		this.header.forEach((home) => {
-			this.shadowRoot?.appendChild(home);
+			mainPageContainer.appendChild(home);
 		});
 
 		this.homes.forEach((home) => {
-			this.shadowRoot?.appendChild(home);
+			mainPageContainer.appendChild(home);
 		});
 
 		this.home.forEach((home) => {
-			this.shadowRoot?.appendChild(home);
+			mainPageContainer.appendChild(home);
 		});
 
 		const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
-		this.shadowRoot?.appendChild(navBar);
+		mainPageContainer.appendChild(navBar);
 	}
 }
 

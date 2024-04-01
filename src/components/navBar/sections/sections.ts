@@ -40,21 +40,21 @@ class Section extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = ""
+
 			loadCss(this, stylesSections);
-			this.shadowRoot.innerHTML = `
 
+			this.shadowRoot.innerHTML += `
+      			<section>
+      				<img src=${this.img}>
 
-			<link rel="stylesheet" href="../src/Components/card/card.css">
-
-      <section>
-      <img src=${this.img}>
-
-      </section>
-      `;
+      			</section>
+      		`;
 		}
-		const cssSections = this.ownerDocument.createElement('style');
-		cssSections.innerHTML = stylesSections;
-		this.shadowRoot?.appendChild(cssSections);
+
+		// const cssSections = this.ownerDocument.createElement('style');
+		// cssSections.innerHTML = stylesSections;
+		// this.shadowRoot?.appendChild(cssSections);
 
 		/*const imgHome = document.createElement('img');
 		imgHome.innerHTML = home;

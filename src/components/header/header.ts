@@ -42,12 +42,16 @@ class Header extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = ""
+
 			loadCss(this, stylesHeader);
-			this.shadowRoot.innerHTML = `
-				<section class='header'>
-					<img src="${this.logo}">
-					<img src="${this.notification}">
-					<img src="${this.photo}">
+
+			this.shadowRoot.innerHTML += `
+				<section id='header'>
+					<img src="${this.logo}" class='logo'>
+					<div id='horizontalSpace'></div>
+					<img src="${this.notification}" class='notification'>
+					<img src="${this.photo}" class='photo'>
 				</section>
 			`;
 		}

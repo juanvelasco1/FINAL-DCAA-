@@ -36,18 +36,20 @@ class Tags extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			loadCss(this, stylesTag);
-			this.shadowRoot.innerHTML = `
-      <section>
-      <p> <strong>${this.tag}</strong></p>
+			this.shadowRoot.innerHTML = ""
 
-      </section>
-      `;
+			loadCss(this, stylesTag);
+
+			this.shadowRoot.innerHTML += `
+      			<section>
+      				<p> <strong>${this.tag}</strong></p>
+				</section>
+      		`;
 		}
 
-		const cssTag = this.ownerDocument.createElement('style');
-		cssTag.innerHTML = stylesTag;
-		this.shadowRoot?.appendChild(cssTag);
+		// const cssTag = this.ownerDocument.createElement('style');
+		// cssTag.innerHTML = stylesTag;
+		// this.shadowRoot?.appendChild(cssTag);
 	}
 }
 
