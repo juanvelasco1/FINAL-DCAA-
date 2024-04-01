@@ -65,10 +65,10 @@ class Card extends HTMLElement {
 			<button class="heart" type="button">
 			<img class="like" id="likeButton" src="/src/asset/like.png">
 			</button>
-      <div>
-			<img class=coment src="/src/asset/comment.png" >
-			<pclass=> <strong>${this.image}	</strong >
-			</div>
+
+			<img class="coment" src="/src/asset/comment.png" >
+			<pclass=> <strong>${this.tag}	</strong>
+
 			<button class="bookmark" type="button">
 			<img  id='saveButton' src="/src/asset/save.png">
 			</button>

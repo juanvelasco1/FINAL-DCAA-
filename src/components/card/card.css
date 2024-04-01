@@ -68,21 +68,18 @@
 	}
 }
 /*/
-	#coment {
+	.coment {
 		border: solid red 5px;
 		position: relative;
 		top: 0%;
 		left: -480px;
 		width: 9%;
 		height: 4%;
-		outline: none;
-		background: none;
-		border: none;
 	}
 	.heart {
 		position: relative;
 		top: 0%;
-		left: -480px;
+		left: -440px;
 		width: 9%;
 		height: 4%;
 		outline: none;
@@ -93,7 +90,7 @@
 	.bookmark {
 		position: relative;
 		top: -145px;
-		left: 450px;
+		left: 420px;
 		width: 9%;
 		height: 4%;
 		outline: none;
