@@ -67,19 +67,24 @@ class Header extends HTMLElement {
 		cssHeader.innerHTML = stylesHeader;
 		this.shadowRoot?.appendChild(cssHeader);
 
-		/*const myNotifications = document.querySelector('my-notifications');
-		const imgNotification = this.shadowRoot?.getElementById('myNotifications');
+		const imgButton = this.shadowRoot?.querySelector('section');
+		const myCreatedSection = this.ownerDocument
+			.querySelector('app-container')
+			?.shadowRoot?.querySelector('my-notifications')
+			?.shadowRoot?.getElementById('myNotifications');
 
-		if (imgNotification && myNotifications) {
-			imgNotification.addEventListener('click', () => {
-				if (myNotifications.classList.contains('hidden-notifications')) {
-					myNotifications.classList.remove('hidden-notifications');
-				} else {
-					myNotifications.classList.add('hidden-notifications');
+		if (this.notification === '../asset/notifications.png') {
+			imgButton?.addEventListener('click', () => {
+				console.log('Hola');
+				if (myCreatedSection?.className === 'hidden-notifications') {
+					console.log(myCreatedSection);
+					myCreatedSection.className = 'section-notifications';
+				} else if (myCreatedSection?.className === 'section-notifications') {
+					console.log(myCreatedSection);
+					myCreatedSection.className = 'hidden-notifications';
 				}
-			});*/
-
-		const notiButton = this.shadowRoot?.querySelector('section');
+			});
+			/*const notiButton = this.shadowRoot?.querySelector('section');
 		const myCreatedNoti = this.ownerDocument
 			.querySelector('app-container')
 			?.shadowRoot?.querySelector('my-notifications')
@@ -96,12 +101,12 @@ class Header extends HTMLElement {
 					console.log(myCreatedNoti);
 					myCreatedNoti.className = 'hidden-notifications';
 				}
-			});
+
 
 			const myCloseCreatedSection = this.ownerDocument
 				.querySelector('app-container')
 				?.shadowRoot?.querySelector('my-notifications')
-				?.shadowRoot?.getElementById('myNotifications');
+				?.shadowRoot?.getElementById('myNotifications');*/
 
 			/*const imgLogo = document.createElement('img');
 		imgLogo.innerHTML = logo;

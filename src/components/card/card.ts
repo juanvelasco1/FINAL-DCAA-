@@ -58,7 +58,7 @@ class Card extends HTMLElement {
 			<link rel="stylesheet" href="../src/Components/card/card.css">
 
 			<section class='card'>
-			<img src=${this.photo} class='photo'>
+			<img class='photo' src=${this.photo} >
 			<h3>${this.name}</h3>
 
 			<img src=${this.image} class='image' >
