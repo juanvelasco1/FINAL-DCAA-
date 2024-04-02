@@ -42,6 +42,19 @@ class Notifications extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.setupEventListeners();
+	}
+
+	setupEventListeners() {
+		this.addEventListener('toggleNotifications', () => {
+			this.toggleVisibility();
+		});
+	}
+	toggleVisibility() {
+		const section = this.shadowRoot?.querySelector('.section-notifications');
+		if (section) {
+			section.classList.toggle('hidden-notifications');
+		}
 	}
 
 	/*<style>

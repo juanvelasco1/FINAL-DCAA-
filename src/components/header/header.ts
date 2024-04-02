@@ -41,6 +41,15 @@ class Header extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+		this.setupEventListeners();
+	}
+
+	setupEventListeners() {
+		const notificationElement = this.shadowRoot?.querySelector('.notification');
+		notificationElement?.addEventListener('click', () => {
+			const event = new CustomEvent('toggleNotifications');
+			this.dispatchEvent(event);
+		});
 	}
 
 	render() {
@@ -66,60 +75,6 @@ class Header extends HTMLElement {
 		const cssHeader = this.ownerDocument.createElement('style');
 		cssHeader.innerHTML = stylesHeader;
 		this.shadowRoot?.appendChild(cssHeader);
-
-		const imgButton = this.shadowRoot?.querySelector('section');
-		const myCreatedSection = this.ownerDocument
-			.querySelector('app-container')
-			?.shadowRoot?.querySelector('my-notifications')
-			?.shadowRoot?.getElementById('myNotifications');
-
-		if (this.notification === '../asset/notifications.png') {
-			imgButton?.addEventListener('click', () => {
-				console.log('Hola');
-				if (myCreatedSection?.className === 'hidden-notifications') {
-					console.log(myCreatedSection);
-					myCreatedSection.className = 'section-notifications';
-				} else if (myCreatedSection?.className === 'section-notifications') {
-					console.log(myCreatedSection);
-					myCreatedSection.className = 'hidden-notifications';
-				}
-			});
-			/*const notiButton = this.shadowRoot?.querySelector('section');
-		const myCreatedNoti = this.ownerDocument
-			.querySelector('app-container')
-			?.shadowRoot?.querySelector('my-notifications')
-			?.shadowRoot?.getElementById('myNotifications');
-
-		//	if (this.type === 'noti') {
-		if (this.notification === '../asset/notifications.png') {
-			notiButton?.addEventListener('click', () => {
-				console.log('Hola');
-				if (myCreatedNoti?.className === 'hidden-notifications') {
-					console.log(myCreatedNoti);
-					myCreatedNoti.className = 'section-notifications';
-				} else if (myCreatedNoti?.className === 'section-notifications') {
-					console.log(myCreatedNoti);
-					myCreatedNoti.className = 'hidden-notifications';
-				}
-
-
-			const myCloseCreatedSection = this.ownerDocument
-				.querySelector('app-container')
-				?.shadowRoot?.querySelector('my-notifications')
-				?.shadowRoot?.getElementById('myNotifications');*/
-
-			/*const imgLogo = document.createElement('img');
-		imgLogo.innerHTML = logo;
-		this.shadowRoot?.appendChild(imgLogo);
-
-		const imgNotification = document.createElement('img');
-		imgNotification.innerHTML = notification;
-		this.shadowRoot?.appendChild(imgNotification);
-
-		const imgPhoto = document.createElement('img');
-		imgPhoto.innerHTML = photo;
-		this.shadowRoot?.appendChild(imgPhoto);*/
-		}
 	}
 }
 export default Header;
