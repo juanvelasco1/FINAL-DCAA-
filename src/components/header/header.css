@@ -32,8 +32,8 @@
 		height: 60%;
 	}
 }
-/*
-@media (max-width: 400px) {
+
+/*@media (max-width: 400px) {
 	#header {
 		position: absolute;
 		width: 1920px;
@@ -78,4 +78,4 @@
 
 .hidden-notofications {
 	display: none;
-}
+}*/

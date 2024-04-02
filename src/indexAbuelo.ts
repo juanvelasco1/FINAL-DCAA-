@@ -29,7 +29,7 @@ import * as styles from './styles.css';
 import { loadCss } from './utils/styles';
 
 //Importar estilos
-import style from './indexAbuelo.css'
+import style from './indexAbuelo.css';
 
 //CODE
 class AppContainer extends HTMLElement {
@@ -96,11 +96,11 @@ class AppContainer extends HTMLElement {
 	}
 
 	render() {
-		loadCss(this, style)
+		loadCss(this, style);
 
-		const mainPageContainer = this.ownerDocument.createElement("div")
-		mainPageContainer.setAttribute("id", "mainPageContainer")
-		this.shadowRoot?.appendChild(mainPageContainer)
+		const mainPageContainer = this.ownerDocument.createElement('div');
+		mainPageContainer.setAttribute('id', 'mainPageContainer');
+		this.shadowRoot?.appendChild(mainPageContainer);
 
 		this.header.forEach((home) => {
 			mainPageContainer.appendChild(home);

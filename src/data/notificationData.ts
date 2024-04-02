@@ -1,4 +1,5 @@
-import photo from '../asset/Andres-Salazar.png';
+import photo2 from '../asset/Sebastian Quintero.png';
+import photo3 from '../asset/Lina Rengifo.png';
 interface DataShape {
 	photo: string;
 	name: string;
@@ -7,14 +8,14 @@ interface DataShape {
 
 export const notificationData: DataShape[] = [
 	{
-		photo: photo,
-		name: 'Lina Rengifo',
-		texts: 'Start follow you',
+		photo: photo2,
+		name: 'Sebastián Quintero',
+		texts: 'Liked your post',
 	},
 
 	{
-		photo: photo,
-		name: 'Sebastián Quintero',
-		texts: 'Liked your post',
+		photo: photo3,
+		name: 'Lina Rengifo',
+		texts: 'Start follow you',
 	},
 ];

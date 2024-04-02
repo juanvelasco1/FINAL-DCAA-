@@ -22,7 +22,7 @@
 					a = e.n(s)()(i());
 				a.push([
 					t.id,
-					"@media (max-width: 1600px) {\n\t.card {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\ttext-align: center;\n\t\twidth: 70%;\n\t\theight: 70%;\n\t\tmargin-top: 150px;\n\t\tbackground-color: rgb(243, 243, 243);\n\t\tborder-radius: 45px;\n\t\tmargin-left: 270px;\n\t\tbox-shadow: 10px 5px 5px rgb(177, 177, 177);\n\t}\n\n\t.photo {\n\t\tdisplay: flex;\n\t\twidth: 6%;\n\t\theight: 6%;\n\t\tmargin-right: 890px;\n\t\tmargin-top: 20px;\n\t}\n\n\th3 {\n\t\tdisplay: flex;\n\t\tcolor: #000000;\n\t\tmargin-right: 690px;\n\t\tposition: relative;\n\t\ttop: -60px;\n\t\tleft: 20px;\n\t}\n\t.image {\n\t\twidth: 99%;\n\t\theight: 400px;\n\t\tposition: relative;\n\t\ttop: -40px;\n\t\tleft: 0px;\n\t}\n\n\t#pclass {\n\t\tdisplay: flex;\n\n\t\talign-items: center;\n\t\tborder-radius: 1px blue;\n\t\tleft: 668px;\n\t\ttop: 882px;\n\t}\n\n\t/*description {\n\t\tposition: absolute;\n\t\twidth: 804px;\n\t\theight: 102px;\n\t\tleft: 491px;\n\t\ttop: 996px;\n\n\t\tfont-family: 'Montserrat';\n\t\tfont-style: normal;\n\t\tfont-weight: 500;\n\t\tfont-size: 24px;\n\t\tline-height: 140%;\n\t}\n}\n/*/\n\t.section-card {\n\t\t.like {\n\t\t\tcursor: pointer;\n\t\t}\n\n\t\t#bookma {\n\t\t\tcursor: pointer;\n\t\t\tposition: relative;\n\t\t\ttop: 420px;\n\t\t\tleft: 0px;\n\t\t}\n\n\t\t.save:hover {\n\t\t\topacity: 0.4;\n\t\t\ttransition: 0.3s;\n\t\t}\n\n\t\t.save:active {\n\t\t\ttransform: scale(0.9);\n\t\t}\n\n\t\t.saveF {\n\t\t\tposition: relative;\n\t\t\ttop: 330;\n\t\t\tleft: 0;\n\t\t\topacity: 0;\n\t\t\ttransition: opacity 0.3s ease-in-out;\n\t\t}\n\n\t\t.bookmark {\n\t\t\tborder: 0;\n\t\t\tbackground: none;\n\t\t\tpadding-left: 10px;\n\t\t\tpadding-top: 13px;\n\t\t}\n\t}\n}\n",
+					"@media (max-width: 1600px) {\n\t.card {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\ttext-align: center;\n\t\twidth: 70%;\n\t\theight: 70%;\n\t\tmargin-top: 150px;\n\t\tbackground-color: rgb(243, 243, 243);\n\t\tborder-radius: 45px;\n\t\tmargin-left: 270px;\n\t\tbox-shadow: 10px 5px 5px rgb(177, 177, 177);\n\t}\n\n\t.photo {\n\t\tdisplay: flex;\n\t\twidth: 6%;\n\t\theight: 6%;\n\t\tmargin-right: 890px;\n\t\tmargin-top: 20px;\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n\n\th3 {\n\t\tfont-family: 'Montserrat', sans-serif;\n\t\tfont-optical-sizing: auto;\n\t\tfont-weight: weight;\n\t\tfont-style: normal;\n\t\tdisplay: flex;\n\t\tcolor: #000000;\n\t\tmargin-right: 690px;\n\t\tposition: relative;\n\t\ttop: -60px;\n\t\tleft: 20px;\n\t}\n\t.image {\n\t\twidth: 99%;\n\t\theight: 400px;\n\t\tposition: relative;\n\t\ttop: -40px;\n\t\tleft: 0px;\n\t}\n\n\t#pclass {\n\t\tdisplay: flex;\n\n\t\talign-items: center;\n\t\tborder-radius: 1px blue;\n\t\tleft: 668px;\n\t\ttop: 882px;\n\t}\n\n\t/*description {\n\t\tposition: absolute;\n\t\twidth: 804px;\n\t\theight: 102px;\n\t\tleft: 491px;\n\t\ttop: 996px;\n\n\t\tfont-family: 'Montserrat';\n\t\tfont-style: normal;\n\t\tfont-weight: 500;\n\t\tfont-size: 24px;\n\t\tline-height: 140%;\n\t}\n}\n/*/\n\t.coment {\n\t\tborder: solid red 5px;\n\t\tposition: relative;\n\t\ttop: 0%;\n\t\tleft: -480px;\n\t\twidth: 9%;\n\t\theight: 4%;\n\t}\n\t.heart {\n\t\tposition: relative;\n\t\ttop: 0%;\n\t\tleft: -440px;\n\t\twidth: 9%;\n\t\theight: 4%;\n\t\toutline: none;\n\t\tbackground: none;\n\t\tborder: none;\n\t}\n\n\t.bookmark {\n\t\tposition: relative;\n\t\ttop: -145px;\n\t\tleft: 420px;\n\t\twidth: 9%;\n\t\theight: 4%;\n\t\toutline: none;\n\t\tbackground: none;\n\t\tborder: none;\n\t}\n\t/*\n\t.section-card {\n\t\t.like {\n\t\t\tcursor: pointer;\n\t\t}\n\n\t\t#bookma {\n\t\t\tcursor: pointer;\n\t\t\tposition: relative;\n\t\t\ttop: 420px;\n\t\t\tleft: 0px;\n\t\t}\n\n\t\t.save:hover {\n\t\t\topacity: 0.4;\n\t\t\ttransition: 0.3s;\n\t\t}\n\n\t\t.save:active {\n\t\t\ttransform: scale(0.9);\n\t\t}\n\n\t\t.saveF {\n\t\t\tposition: relative;\n\t\t\ttop: 330;\n\t\t\tleft: 0;\n\t\t\topacity: 0;\n\t\t\ttransition: opacity 0.3s ease-in-out;\n\t\t}\n\t}/*/\n}\n",
 					'',
 				]);
 				const r = a;
@@ -35,7 +35,7 @@
 					a = e.n(s)()(i());
 				a.push([
 					t.id,
-					'@media (max-width: 1600px) {\n\t#header {\n\t\tposition: absolute;\n\t\tdisplay: flex;\n\t\tflex-direction: row;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\twidth: 100%;\n\t\theight: 100px;\n\t\tleft: 0px;\n\t\ttop: 0px;\n\t\tmargin: 0 auto;\n\t\t/* principal Blue */\n\t\tbackground: #2000fb;\n\t}\n\n\t#horizontalSpace {\n\t\twidth: 75%;\n\t}\n\n\t.logo {\n\t\t/* width: 222px; */\n\t\theight: 10%;\n\t}\n\n\t.notification {\n\t\theight: 50%;\n\t\tmargin-right: 15px;\n\t}\n\n\t.photo {\n\t\theight: 60%;\n\t}\n}\n\n@media (max-width: 400px) {\n\t#header {\n\t\tposition: absolute;\n\t\twidth: 1920px;\n\t\theight: 130px;\n\t\tleft: 0px;\n\t\ttop: 0px;\n\t\tmargin: 0 auto;\n\t\t/* principal Blue */\n\t\tbackground: #2000fb;\n\t}\n\n\t.logo {\n\t\t/* unired*/\n\t\tposition: absolute;\n\t\twidth: 222px;\n\t\theight: 74.92px;\n\t\tleft: 261px;\n\t\ttop: 27px;\n\t}\n\n\t.notification {\n\t\tposition: absolute;\n\t\twidth: 50px;\n\t\theight: 50px;\n\t\tleft: 1677px;\n\t\ttop: 40px;\n\t}\n\n\t.photo {\n\t\tposition: absolute;\n\t\twidth: 96px;\n\t\theight: 96px;\n\t\tleft: 1771px;\n\t\ttop: 17px;\n\t}\n}\n\n.section-notifications {\n\tborder: 2px solid black;\n\t/* position: absolute;\n  z-index: 2; */\n}\n\n.hidden-notofications {\n\tdisplay: none;\n}\n',
+					'@media (max-width: 1600px) {\n\t#header {\n\t\tposition: absolute;\n\t\tdisplay: flex;\n\t\tflex-direction: row;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\twidth: 100%;\n\t\theight: 100px;\n\t\tleft: 0px;\n\t\ttop: 0px;\n\t\tmargin: 0 auto;\n\t\t/* principal Blue */\n\t\tbackground: #2000fb;\n\t}\n\n\t#horizontalSpace {\n\t\twidth: 75%;\n\t}\n\n\t.logo {\n\t\t/* width: 222px; */\n\t\theight: 10%;\n\t}\n\n\t.notification {\n\t\theight: 50%;\n\t\tmargin-right: 15px;\n\t}\n\n\t.photo {\n\t\theight: 60%;\n\t}\n}\n\n/*@media (max-width: 400px) {\n\t#header {\n\t\tposition: absolute;\n\t\twidth: 1920px;\n\t\theight: 130px;\n\t\tleft: 0px;\n\t\ttop: 0px;\n\t\tmargin: 0 auto;\n\n\t\tbackground: #2000fb;\n\t}\n\n\t.logo {\n\n\t\tposition: absolute;\n\t\twidth: 222px;\n\t\theight: 74.92px;\n\t\tleft: 261px;\n\t\ttop: 27px;\n\t}\n\n\t.notification {\n\t\tposition: absolute;\n\t\twidth: 50px;\n\t\theight: 50px;\n\t\tleft: 1677px;\n\t\ttop: 40px;\n\t}\n\n\t.photo {\n\t\tposition: absolute;\n\t\twidth: 96px;\n\t\theight: 96px;\n\t\tleft: 1771px;\n\t\ttop: 17px;\n\t}\n}\n\n.section-notifications {\n\tborder: 2px solid black;\n\n}\n\n.hidden-notofications {\n\tdisplay: none;\n}*/\n',
 					'',
 				]);
 				const r = a;
@@ -46,7 +46,11 @@
 					i = e.n(o),
 					s = e(314),
 					a = e.n(s)()(i());
-				a.push([t.id, '', '']);
+				a.push([
+					t.id,
+					'.section-notifications {\n\tborder: 2px solid black;\n\t/* position: absolute;\n  z-index: 2; */\n}\n\n.hidden-notifications {\n\tdisplay: none;\n}\n',
+					'',
+				]);
 				const r = a;
 			},
 			829: (t, n, e) => {
@@ -96,7 +100,7 @@
 					a = e.n(s)()(i());
 				a.push([
 					t.id,
-					"@media (max-width: 1600px) {\n\tsection {\n\t\t/* Rectangle 295 */\n\n\t\twidth: 80%;\n\t\theight: 45px;\n\n\t\tmargin-bottom: 5px;\n\n\t\tbackground: #bdbdbd;\n\t\tborder-radius: 45px;\n\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t}\n\t#tagButton {\n\t\toutline: none;\n\t\tbackground: none;\n\t\tborder: none;\n\t}\n\n\tsection p {\n\t\tmargin: 0;\n\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tfont-family: 'Montserrat';\n\t\tfont-style: normal;\n\t\tfont-weight: 800;\n\t\tfont-size: 16px;\n\t\tcolor: #000000;\n\t}\n\n\t/* tags {\n\t\twidth: 161px;\n\t\theight: 60px;\n\t\tfont-family: 'Montserrat';\n\t\tfont-style: normal;\n\t\tfont-weight: 600;\n\t\tfont-size: 23.8001px;\n\t\tline-height: 60px;\n\t\tflex: none;\n\t\torder: 0;\n\t\tflex-grow: 0;\n\n\t\t/* Auto layout */\n\n\t/*\n\t\tdisplay: flex;\n\t\tflex-direction: row;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\tpadding: 0px 20px;\n\t\tgap: 14.88px;\n\n\t\tposition: absolute;\n\t\twidth: 118px;\n\t\theight: 60px;\n\t\tleft: 27px;\n\t\ttop: 1412px;\n\n\t\tbackground: #bdbdbd;\n\t\tborder-radius: 22.3126px;\n\t} */\n}\n",
+					"@media (max-width: 1600px) {\n\tsection {\n\t\t/* Rectangle 295 */\n\n\t\twidth: 80%;\n\t\theight: 45px;\n\n\t\tmargin-bottom: 5px;\n\n\t\tbackground: #bdbdbd;\n\t\tborder-radius: 45px;\n\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t}\n\t#tagButton {\n\t\toutline: none;\n\t\tbackground: none;\n\t\tborder: none;\n\t}\n\tsection p {\n\t\tmargin: 0;\n\n\t\twidth: 100%;\n\t\ttext-align: center;\n\n\t\tfont-weight: 800;\n\t\tfont-size: 16px;\n\t\tcolor: #000000;\n\t}\n\n\t/* tags {\n\t\twidth: 161px;\n\t\theight: 60px;\n\t\tfont-family: 'Montserrat';\n\t\tfont-style: normal;\n\t\tfont-weight: 600;\n\t\tfont-size: 23.8001px;\n\t\tline-height: 60px;\n\t\tflex: none;\n\t\torder: 0;\n\t\tflex-grow: 0;\n\n\t\t/* Auto layout */\n\n\t/*\n\t\tdisplay: flex;\n\t\tflex-direction: row;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\tpadding: 0px 20px;\n\t\tgap: 14.88px;\n\n\t\tposition: absolute;\n\t\twidth: 118px;\n\t\theight: 60px;\n\t\tleft: 27px;\n\t\ttop: 1412px;\n\n\t\tbackground: #bdbdbd;\n\t\tborder-radius: 22.3126px;\n\t} */\n}\n",
 					'',
 				]);
 				const r = a;
@@ -139,11 +143,11 @@
 							var a = {};
 							if (o)
 								for (var r = 0; r < this.length; r++) {
-									var l = this[r][0];
-									null != l && (a[l] = !0);
+									var c = this[r][0];
+									null != c && (a[c] = !0);
 								}
-							for (var c = 0; c < t.length; c++) {
-								var h = [].concat(t[c]);
+							for (var l = 0; l < t.length; l++) {
+								var h = [].concat(t[l]);
 								(o && a[h[0]]) ||
 									(void 0 !== s &&
 										(void 0 === h[5] ||
@@ -233,7 +237,7 @@
 					var n, e, i;
 					this.shadowRoot &&
 						(t(this, o.A),
-						(this.shadowRoot.innerHTML = `\n\n\t\t\t<style>\n\t\t\t${o.A}\n\t\t\t</style>\n\n\t\t\t<link rel="stylesheet" href="../src/Components/card/card.css">\n\n\t\t\t<section class='card'>\n\t\t\t<img src=${this.photo} class='photo'>\n\t\t\t<h3>${this.name}</h3>\n\n\t\t\t<img src=${this.image}  class='image'>\n\t\t\t<button class="heart" type="button">\n\t\t\t<img class="like" id="likeButton" src="/src/asset/like.png">\n\t\t\t</button>\n\n\t\t\t<img src="/src/asset/comment.png">\n\t\t\t<pclass=> <strong>${this.tag}</strong>\n\n\t\t\t<button class="bookmark" type="button">\n\t\t\t<img  id='saveButton' src="/src/asset/save.png">\n\t\t\t</button>\n\n\t\t\t<p>${this.description}</p>\n\t\t\t</section>\n      `));
+						(this.shadowRoot.innerHTML = `\n\n\t\t\t<style>\n\t\t\t${o.A}\n\t\t\t</style>\n\n\t\t\t<link rel="stylesheet" href="../src/Components/card/card.css">\n\n\t\t\t<section class='card'>\n\t\t\t<img src=${this.photo} class='photo'>\n\t\t\t<h3>${this.name}</h3>\n\n\t\t\t<img src=${this.image} class='image' >\n\n\t\t\t<button class="heart" type="button">\n\t\t\t<img class="like" id="likeButton" src="/src/asset/like.png">\n\t\t\t</button>\n\n\t\t\t<img class="coment" src="/src/asset/comment.png">\n\t\t\t<p> <strong>${this.tag}</strong></p>\n\n\t\t\t<button class="bookmark" type="button">\n\t\t\t<img  class="save" id='saveButton' src="/src/asset/save.png">\n\t\t\t</button>\n\n\t\t\t<p>${this.description}</p>\n\t\t\t</section>\n      `));
 					const s = this.ownerDocument.createElement('style');
 					(s.innerHTML = o.A), null === (n = this.shadowRoot) || void 0 === n || n.appendChild(s);
 					const a = null === (e = this.shadowRoot) || void 0 === e ? void 0 : e.getElementById('likeButton');
@@ -281,11 +285,11 @@
 				}
 			}
 			customElements.define('my-comments', r);
-			var l,
-				c = e(58);
+			var c,
+				l = e(58);
 			!(function (t) {
 				t.tag = 'tag';
-			})(l || (l = {}));
+			})(c || (c = {}));
 			class h extends HTMLElement {
 				constructor() {
 					super(), this.attachShadow({ mode: 'open' });
@@ -303,10 +307,10 @@
 					var n, e;
 					this.shadowRoot &&
 						((this.shadowRoot.innerHTML += ''),
-						t(this, c.A),
-						(this.shadowRoot.innerHTML = `\n      <style>\n\t\t\t${c.A}\n\t\t\t</style>\n      <section class='section-tags'>\n      <button id="tagButton" class="tagB" type="button">\n\t\t\t ${this.tag}\n\t\t\t </button>\n      `));
+						t(this, l.A),
+						(this.shadowRoot.innerHTML = `\n      <style>\n\t\t\t${l.A}\n\t\t\t</style>\n      <section class='section-tags'>\n      <button id="tagButton" class="tagB" type="button">\n\t\t\t ${this.tag}\n\t\t\t </button>\n      `));
 					const o = this.ownerDocument.createElement('style');
-					(o.innerHTML = c.A), null === (n = this.shadowRoot) || void 0 === n || n.appendChild(o);
+					(o.innerHTML = l.A), null === (n = this.shadowRoot) || void 0 === n || n.appendChild(o);
 					const i = null === (e = this.shadowRoot) || void 0 === e ? void 0 : e.getElementById('tagButton');
 					let s = !0;
 					null == i ||
@@ -348,8 +352,8 @@
 						(this.shadowRoot.innerHTML = `\n\n\t\t\t<style>\n\t\t\t${p.A}\n\t\t\t</style>\n\n\n\t\t\t<link rel="stylesheet" href="../src/Components/card/card.css">\n\n      <section class='section-sections'>\n      <img src=${this.img}>\n\n      \t\t\t</section>\n      \t\t`));
 					const r = this.ownerDocument.createElement('style');
 					(r.innerHTML = p.A), null === (n = this.shadowRoot) || void 0 === n || n.appendChild(r);
-					const l = null === (e = this.shadowRoot) || void 0 === e ? void 0 : e.querySelector('section'),
-						c =
+					const c = null === (e = this.shadowRoot) || void 0 === e ? void 0 : e.querySelector('section'),
+						l =
 							null ===
 								(a =
 									null ===
@@ -366,14 +370,14 @@
 								? void 0
 								: a.getElementById('myCreate');
 					'create' === this.type &&
-						(null == l ||
-							l.addEventListener('click', () => {
+						(null == c ||
+							c.addEventListener('click', () => {
 								var t, n, e, o;
 								console.log('Hola'),
-									'hidden-create' === (null == c ? void 0 : c.className)
-										? (console.log(c), (c.className = 'section-create'))
-										: 'section-create' === (null == c ? void 0 : c.className) &&
-										  (console.log(c), (c.className = 'hidden-create')),
+									'hidden-create' === (null == l ? void 0 : l.className)
+										? (console.log(l), (l.className = 'section-create'))
+										: 'section-create' === (null == l ? void 0 : l.className) &&
+										  (console.log(l), (l.className = 'hidden-create')),
 									null ===
 										(o =
 											null ===
@@ -407,8 +411,8 @@
 					{ tag: 'Projects' },
 					{ tag: 'Other' },
 				];
-			var x = e(829);
-			class f extends HTMLElement {
+			var f = e(829);
+			class x extends HTMLElement {
 				constructor() {
 					super(),
 						(this.navSection = []),
@@ -420,7 +424,7 @@
 						}),
 						g.forEach((t) => {
 							const n = this.ownerDocument.createElement('my-tags');
-							n.setAttribute(l.tag, t.tag), this.navTags.push(n);
+							n.setAttribute(c.tag, t.tag), this.navTags.push(n);
 						});
 				}
 				connectedCallback() {
@@ -429,16 +433,16 @@
 				render() {
 					var n;
 					if (this.shadowRoot) {
-						t(this, x.A);
+						t(this, f.A);
 						const e = this.ownerDocument.createElement('style');
-						(e.innerHTML = x.A), null === (n = this.shadowRoot) || void 0 === n || n.appendChild(e);
+						(e.innerHTML = f.A), null === (n = this.shadowRoot) || void 0 === n || n.appendChild(e);
 						const o = this.ownerDocument.createElement('section');
 						(o.className = 'navSection'),
 							this.navSection.forEach((t) => {
 								o.appendChild(t);
 							});
 						const i = this.ownerDocument.createElement('h2');
-						(i.innerText = 'TAGS'),
+						(i.innerText = 'TAGS '),
 							o.appendChild(i),
 							this.navTags.forEach((t) => {
 								o.appendChild(t);
@@ -447,7 +451,7 @@
 					}
 				}
 			}
-			customElements.define('nav-bar', f);
+			customElements.define('nav-bar', x);
 			var b,
 				v = e(507);
 			!(function (t) {
@@ -467,14 +471,14 @@
 					this.render();
 				}
 				render() {
-					var n, e, o, i, s, a, r, l, c, h;
+					var n, e, o, i, s, a, r, c, l, h;
 					this.shadowRoot &&
 						((this.shadowRoot.innerHTML = ''),
 						t(this, v.A),
 						(this.shadowRoot.innerHTML += `\n\t\t\t<style>\n\t\t\t${v.A}\n\t\t\t</style>\n\n\t\t\t<link rel="stylesheet" href="../src/Components/header/header.css">\n\n\t\t\t<section id='header' class='section-header' >\n\t\t\t<img src=${this.logo} class='logo'>\n\t\t\t<div id='horizontalSpace'></div>\n\t\t\t<img src=${this.notification} class='notification'>\n      <img src=${this.photo} class='photo' >\n\t\t\t</section>\n      `));
 					const d = this.ownerDocument.createElement('style');
 					(d.innerHTML = v.A), null === (n = this.shadowRoot) || void 0 === n || n.appendChild(d);
-					const p = null === (e = this.shadowRoot) || void 0 === e ? void 0 : e.querySelector('header'),
+					const p = null === (e = this.shadowRoot) || void 0 === e ? void 0 : e.querySelector('section'),
 						u =
 							null ===
 								(a =
@@ -491,7 +495,7 @@
 										: s.shadowRoot) || void 0 === a
 								? void 0
 								: a.getElementById('myNotifications');
-					'noti' === this.type &&
+					'../asset/notifications.png' === this.notification &&
 						(null == p ||
 							p.addEventListener('click', () => {
 								console.log('Hola'),
@@ -503,16 +507,16 @@
 						null ===
 							(h =
 								null ===
-									(c =
+									(l =
 										null ===
-											(l =
+											(c =
 												null === (r = this.ownerDocument.querySelector('app-container')) || void 0 === r
 													? void 0
-													: r.shadowRoot) || void 0 === l
+													: r.shadowRoot) || void 0 === c
 											? void 0
-											: l.querySelector('my-notifications')) || void 0 === c
+											: c.querySelector('my-notifications')) || void 0 === l
 									? void 0
-									: c.shadowRoot) ||
+									: l.shadowRoot) ||
 							void 0 === h ||
 							h.getElementById('myNotifications'));
 				}
@@ -557,7 +561,7 @@
 			!(function (t) {
 				(t.photo = 'photo'), (t.name = 'name'), (t.texts = 'texts');
 			})(k || (k = {}));
-			class S extends HTMLElement {
+			class R extends HTMLElement {
 				constructor() {
 					super(), this.attachShadow({ mode: 'open' });
 				}
@@ -574,64 +578,64 @@
 					var n;
 					this.shadowRoot &&
 						(t(this, C.A),
-						(this.shadowRoot.innerHTML = `\n\t\t\t<style>\n\t\t\t${C.A}\n\t\t\t</style>\n\n\n\t\t\t<section class='section-notifications'>\n\n      <img src="${this.photo}">\n      <p><strong${this.name}></strong></p>\n      <p>${this.texts}</p>\n\n\t\t\t</section>\n      `));
+						(this.shadowRoot.innerHTML = `\n\t\t\t<style>\n\t\t\t${C.A}\n\t\t\t</style>\n\n\n\t\t\t<section class='section-notifications'class='hidden-notifications' id="myNotifications">\n\n      <img src="${this.photo}">\n      <p><strong${this.name}></strong></p>\n      <p>${this.texts}</p>\n\n\t\t\t</section>\n      `));
 					const e = this.ownerDocument.createElement('style');
 					(e.innerHTML = C.A), null === (n = this.shadowRoot) || void 0 === n || n.appendChild(e);
 				}
 			}
-			customElements.define('my-notifications', S);
-			const R = e.p + 'src/asset/Andres-Salazar.png',
-				M = e.p + 'src/asset/datathon.png',
-				L = [
-					{
-						user: { name: 'Andrés Salazar', imgProfile: R },
-						image: M,
-						description:
-							'On March 1, 2 and 8, Datathon will be held again, a learning day in data analytics that will be held at the Icesi University in alliance with Structum and SAP.',
-						tag: 'Events',
-					},
-					{
-						user: { name: 'Andrés Salazar', imgProfile: R },
-						image: M,
-						description:
-							'On March 1, 2 and 8, Datathon will be held again, a learning day in data analytics that will be held at the Icesi University in alliance with Structum and SAP.',
-						tag: 'Events',
-					},
-					{
-						user: { name: 'Andrés Salazar', imgProfile: R },
-						image: M,
-						description:
-							'On March 1, 2 and 8, Datathon will be held again, a learning day in data analytics that will be held at the Icesi University in alliance with Structum and SAP.',
-						tag: 'Events',
-					},
-					{
-						user: { name: 'Andrés Salazar', imgProfile: R },
-						image: M,
-						description:
-							'On March 1, 2 and 8, Datathon will be held again, a learning day in data analytics that will be held at the Icesi University in alliance with Structum and SAP.',
-						tag: 'Events',
-					},
-				],
-				T = [
-					{ comment: { id: 1, photo: R, name: 'Lina Rengifo', texts: 'Great, what a great event!' } },
-					{ comment: { id: 2, photo: R, name: 'Sebastian Quintero', texts: 'Ill be there!' } },
-				],
-				$ = [
-					{
-						logo: e.p + 'src/asset/logo and icesi.png',
-						notification: e.p + 'src/asset/notifications.png',
-						photo: R,
-						type: 'noti',
-					},
-				],
+			customElements.define('my-notifications', R);
+			const S = e.p + 'src/asset/Andres-Salazar.png',
+				L = e.p + 'src/asset/datathon.png',
+				T = e.p + 'src/asset/Sebastian Quintero.png',
+				M = e.p + 'src/asset/pokemon.png',
+				$ = e.p + 'src/asset/Lina Rengifo.png',
 				H = [
-					{ photo: R, name: 'Lina Rengifo', texts: 'Start follow you' },
-					{ photo: R, name: 'Sebastián Quintero', texts: 'Liked your post' },
+					{
+						user: { name: 'Andrés Salazar', imgProfile: S },
+						image: L,
+						description:
+							'On March 1, 2 and 8, Datathon will be held again, a learning day in data analytics that will be held at the Icesi University in alliance with Structum and SAP.',
+						tag: 'Events',
+					},
+					{
+						user: { name: 'Sebastian Quintero', imgProfile: T },
+						image: M,
+						description: 'Thanks to my career I am already part of the Pokemon team',
+						tag: 'Project',
+					},
+					{
+						user: { name: 'Lina Rengifo', imgProfile: $ },
+						image: e.p + 'src/asset/gira-icesi.png',
+						description: 'You are welcome to participate in this wonderful event.',
+						tag: 'Events',
+					},
+					{
+						user: { name: 'Andrés Salazar', imgProfile: S },
+						image: e.p + 'src/asset/medicina.png',
+						description: 'Today my masters students stood out at the great event for health professionals',
+						tag: 'Project',
+					},
+				],
+				j = [
+					{ comment: { id: 1, photo: $, name: 'Lina Rengifo', texts: 'Great, what a great event!' } },
+					{ comment: { id: 2, photo: T, name: 'Sebastian Quintero', texts: 'Ill be there!' } },
 				],
 				D = [
 					{
+						logo: e.p + 'src/asset/logo and icesi.png',
+						notification: e.p + 'src/asset/notifications.png',
+						photo: S,
+						type: 'noti',
+					},
+				],
+				B = [
+					{ photo: T, name: 'Sebastián Quintero', texts: 'Liked your post' },
+					{ photo: $, name: 'Lina Rengifo', texts: 'Start follow you' },
+				],
+				N = [
+					{
 						exits: { exit: e.p + 'src/asset/x.png', type: 'create' },
-						photo: R,
+						photo: S,
 						texts: 'What is happening?',
 						image: e.p + 'src/asset/Image.png',
 						tag: e.p + 'src/asset/Tag.png',
@@ -639,8 +643,8 @@
 						emoji: e.p + 'src/asset/Fat Emoji.png',
 					},
 				];
-			var j = e(647);
-			class B extends HTMLElement {
+			var P = e(647);
+			class z extends HTMLElement {
 				constructor() {
 					super(),
 						(this.homes = []),
@@ -649,21 +653,21 @@
 						(this.notifications = []),
 						(this.create = []),
 						this.attachShadow({ mode: 'open' }),
-						$.forEach((t) => {
+						D.forEach((t) => {
 							const n = this.ownerDocument.createElement('my-header');
 							n.setAttribute(b.logo, t.logo),
 								n.setAttribute(b.photo, t.photo),
 								n.setAttribute(b.notification, t.notification),
 								this.header.push(n);
 						}),
-						H.forEach((t) => {
+						B.forEach((t) => {
 							const n = this.ownerDocument.createElement('my-notifications');
 							n.setAttribute(k.name, t.name),
 								n.setAttribute(k.photo, t.photo),
 								n.setAttribute(k.texts, t.texts),
 								this.notifications.push(n);
 						}),
-						L.forEach((t) => {
+						H.forEach((t) => {
 							const e = this.ownerDocument.createElement('my-card');
 							e.setAttribute(n.name, t.user.name),
 								e.setAttribute(n.photo, t.user.imgProfile),
@@ -672,14 +676,14 @@
 								e.setAttribute(n.description, t.description),
 								this.homes.push(e);
 						}),
-						T.forEach((t) => {
+						j.forEach((t) => {
 							const n = this.ownerDocument.createElement('my-comments');
 							n.setAttribute(s.photo, t.comment.photo),
 								n.setAttribute(s.name, t.comment.name),
 								n.setAttribute(s.texts, t.comment.texts),
 								this.home.push(n);
 						}),
-						D.forEach((t) => {
+						N.forEach((t) => {
 							const n = this.ownerDocument.createElement('my-create');
 							n.setAttribute(w.exit, t.exits.exit),
 								n.setAttribute(w.photo, t.photo),
@@ -696,7 +700,7 @@
 				}
 				render() {
 					var n, e;
-					t(this, j.A);
+					t(this, P.A);
 					const o = this.ownerDocument.createElement('div');
 					o.setAttribute('id', 'mainPageContainer'),
 						null === (n = this.shadowRoot) || void 0 === n || n.appendChild(o),
@@ -721,6 +725,6 @@
 					null === (e = this.shadowRoot) || void 0 === e || e.appendChild(i);
 				}
 			}
-			customElements.define('app-container', B);
+			customElements.define('app-container', z);
 		})();
 })();
