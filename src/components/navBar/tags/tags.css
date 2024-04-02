@@ -19,6 +19,9 @@
 		background: none;
 		border: none;
 	}
+	.tagB {
+		border: #ff0000 1px solid;
+	}
 	section p {
 		margin: 0;
 
