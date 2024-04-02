@@ -1,41 +1,45 @@
 @media (max-width: 1600px) {
-	.photo {
-		position: absolute;
-		width: 92px;
-		height: 92px;
-		left: 499px;
-		top: 1184px;
+	.ph {
+		display: flex;
+		width: 6%;
+		height: 80px;
+		margin-right: 890px;
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
 	}
 
-	.name {
-		position: absolute;
-		width: 132px;
-		height: 44px;
-		left: 607px;
-		top: 1184px;
+	.section-comment {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		width: 70%;
+		height: 70px;
+		margin-top: -150px;
 
-		font-family: 'Montserrat';
+		border-radius: 45px;
+		margin-left: 270px;
+	}
+
+	h5 {
+		font-family: 'Montserrat', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: weight;
 		font-style: normal;
-		font-weight: 700;
-		font-size: 20px;
-		line-height: 44px;
+		display: flex;
 		color: #000000;
+		margin-right: 760px;
+		position: relative;
+		top: -75px;
+		left: 20px;
 	}
-
-	.texts {
-		position: absolute;
-		width: 415px;
-		height: 39px;
-		left: 607px;
-		top: 1228px;
-
-		font-family: 'Montserrat';
-		font-style: normal;
-		font-weight: 500;
-		font-size: 28px;
-		line-height: 140%;
+	p {
+		position: relative;
+		top: -110px;
+		left: -32%;
+		width: 19%;
+		height: 4%;
 	}
-}
-.section-comment {
-	background-color: blue;
 }
