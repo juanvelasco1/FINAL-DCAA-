@@ -17,6 +17,13 @@ interface DataShape {
 	image: string;
 	description: string;
 	tag: string;
+
+	comment: {
+		photo: string;
+		name: string;
+		texts: string;
+		id: number;
+	};
 }
 
 export const postData: DataShape[] = [
@@ -29,6 +36,13 @@ export const postData: DataShape[] = [
 		description:
 			'On March 1, 2 and 8, Datathon will be held again, a learning day in data analytics that will be held at the Icesi University in alliance with Structum and SAP.',
 		tag: 'Events',
+
+		comment: {
+			id: 1,
+			photo: img3,
+			name: 'Lina Rengifo',
+			texts: 'Great, what a great event!',
+		},
 	},
 	{
 		user: {
@@ -38,7 +52,14 @@ export const postData: DataShape[] = [
 		image: image2,
 		description: 'Thanks to my career I am already part of the Pokemon team',
 		tag: 'Project',
+		comment: {
+			id: 1,
+			photo: img3,
+			name: 'Lina Rengifo',
+			texts: 'Congrats!',
+		},
 	},
+
 	{
 		user: {
 			name: 'Lina Rengifo',
@@ -47,6 +68,12 @@ export const postData: DataShape[] = [
 		image: image3,
 		description: 'You are welcome to participate in this wonderful event.',
 		tag: 'Events',
+		comment: {
+			id: 2,
+			photo: img2,
+			name: 'Sebastian Quintero',
+			texts: 'Ill be there!',
+		},
 	},
 	{
 		user: {
@@ -56,5 +83,11 @@ export const postData: DataShape[] = [
 		image: image4,
 		description: 'Today my masters students stood out at the great event for health professionals',
 		tag: 'Project',
+		comment: {
+			id: 1,
+			photo: img3,
+			name: 'Lina Rengifo',
+			texts: 'Congrats!',
+		},
 	},
 ];

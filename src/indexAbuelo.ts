@@ -2,9 +2,9 @@
 import './components/indexPadre';
 
 //import Datas
-import { postData } from './data/postData';
+//import { postData } from './data/postData';
 
-import { commentsData } from './data/commentsData';
+//import { commentsData } from './data/commentsData';
 
 import { headerData } from './data/headerData';
 
@@ -13,9 +13,9 @@ import { notificationData } from './data/notificationData';
 import { createData } from './data/createData';
 
 //import Components
-import MyCard, { Attribute } from './components/card/card';
+//import MyCard, { Attribute } from './components/card/card';
 
-import MyComments, { Attributes } from './components/card/Comments/comments';
+//import MyComments, { Attributes } from './components/card/Comments/comments';
 
 import MyHeader, { AttributeHeader } from './components/header/header';
 
@@ -25,6 +25,8 @@ import MyCreate, { AttributeCreate } from './components/navBar/sections/create/c
 
 import NavBar from './components/navBar/navBar';
 
+import Post from './components/card/post';
+
 import * as styles from './styles.css';
 import { loadCss } from './utils/styles';
 
@@ -33,8 +35,8 @@ import style from './indexAbuelo.css';
 
 //CODE
 class AppContainer extends HTMLElement {
-	homes: MyCard[] = [];
-	home: MyComments[] = [];
+	//	homes: MyCard[] = [];
+	//	home: MyComments[] = [];
 	header: MyHeader[] = [];
 	notifications: MyNotifications[] = [];
 	create: MyCreate[] = [];
@@ -59,7 +61,7 @@ class AppContainer extends HTMLElement {
 			this.notifications.push(headerNotification);
 		});
 
-		postData.forEach((post) => {
+		/*postData.forEach((post) => {
 			const homeCard = this.ownerDocument.createElement('my-card') as MyCard;
 			homeCard.setAttribute(Attribute.name, post.user.name);
 			homeCard.setAttribute(Attribute.photo, post.user.imgProfile);
@@ -75,7 +77,7 @@ class AppContainer extends HTMLElement {
 			homeComment.setAttribute(Attributes.name, user.comment.name);
 			homeComment.setAttribute(Attributes.texts, user.comment.texts);
 			this.home.push(homeComment);
-		});
+		});*/
 
 		createData.forEach((user) => {
 			const navCreate = this.ownerDocument.createElement('my-create') as MyCreate;
@@ -106,13 +108,13 @@ class AppContainer extends HTMLElement {
 			mainPageContainer.appendChild(home);
 		});
 
-		this.homes.forEach((home) => {
+		/*this.homes.forEach((home) => {
 			mainPageContainer.appendChild(home);
 		});
 
 		this.home.forEach((home) => {
 			mainPageContainer.appendChild(home);
-		});
+		});*/
 
 		this.create.forEach((home) => {
 			console.log(home);
@@ -126,6 +128,9 @@ class AppContainer extends HTMLElement {
 
 		const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
 		this.shadowRoot?.appendChild(navBar);
+
+		const post = this.ownerDocument.createElement('my-post') as Post;
+		this.shadowRoot?.appendChild(post);
 	}
 }
 
