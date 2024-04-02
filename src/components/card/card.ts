@@ -68,13 +68,13 @@ class Card extends HTMLElement {
 			</button>
 
 			<img class="coment" src="/src/asset/comment.png">
-			<p> <strong>${this.tag}</strong></p>
+			<p class=tag > <strong>${this.tag}</strong></p>
 
 			<button class="bookmark" type="button">
 			<img  class="save" id='saveButton' src="/src/asset/save.png">
 			</button>
 
-			<p>${this.description}</p>
+			<p class='desc' >${this.description}</p >
 			</section>
       `;
 		}

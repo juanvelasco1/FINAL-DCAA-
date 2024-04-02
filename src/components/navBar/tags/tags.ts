@@ -36,7 +36,7 @@ class Tags extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML += ""
+			this.shadowRoot.innerHTML += '';
 
 			loadCss(this, stylesTag);
 			this.shadowRoot.innerHTML = `

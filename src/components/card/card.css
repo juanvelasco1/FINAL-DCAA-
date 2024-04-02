@@ -52,34 +52,33 @@
 		left: 668px;
 		top: 882px;
 	}
-
-	/*description {
-		position: absolute;
-		width: 804px;
-		height: 102px;
-		left: 491px;
-		top: 996px;
-
-		font-family: 'Montserrat';
-		font-style: normal;
-		font-weight: 500;
-		font-size: 24px;
-		line-height: 140%;
-	}
 }
-/*/
+*description {
+	position: absolute;
+	width: 804px;
+	height: 102px;
+	left: 491px;
+	top: 996px;
+
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 140%;
+}
+
+@media (max-width: 1600px) {
 	.coment {
-		border: solid red 5px;
 		position: relative;
-		top: 0%;
-		left: -480px;
+		top: -88px;
+		left: -35%;
 		width: 9%;
 		height: 4%;
 	}
 	.heart {
 		position: relative;
-		top: 0%;
-		left: -440px;
+		top: 0px;
+		left: -44%;
 		width: 9%;
 		height: 4%;
 		outline: none;
@@ -87,44 +86,70 @@
 		border: none;
 	}
 
+	.tag {
+		border: red 1px solid;
+		background-color: #18d000;
+		border-radius: 9%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+
+		position: relative;
+		top: -148px;
+		left: -23%;
+		width: 11%;
+		height: 30px;
+	}
+
+	.desc {
+		/*/border: red 1px solid;/*/
+		position: relative;
+		top: -200px;
+		left: -23%;
+		width: 50%;
+		height: 4%;
+		text-align: justify;
+		text-justify: inter-word;
+	}
 	.bookmark {
 		position: relative;
-		top: -145px;
-		left: 420px;
+		top: -200px;
+		left: 45%;
 		width: 9%;
 		height: 4%;
 		outline: none;
 		background: none;
 		border: none;
 	}
-	/*
-	.section-card {
-		.like {
-			cursor: pointer;
-		}
+}
 
-		#bookma {
-			cursor: pointer;
-			position: relative;
-			top: 420px;
-			left: 0px;
-		}
+.section-card {
+	.like {
+		cursor: pointer;
+	}
 
-		.save:hover {
-			opacity: 0.4;
-			transition: 0.3s;
-		}
+	#bookma {
+		cursor: pointer;
+		position: relative;
+		top: 420px;
+		left: 0px;
+	}
 
-		.save:active {
-			transform: scale(0.9);
-		}
+	.save:hover {
+		opacity: 0.4;
+		transition: 0.3s;
+	}
 
-		.saveF {
-			position: relative;
-			top: 330;
-			left: 0;
-			opacity: 0;
-			transition: opacity 0.3s ease-in-out;
-		}
-	}/*/
+	.save:active {
+		transform: scale(0.9);
+	}
+
+	.saveF {
+		position: relative;
+		top: 330;
+		left: 0;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
 }
