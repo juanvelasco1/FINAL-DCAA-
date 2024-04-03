@@ -104,6 +104,10 @@ class AppContainer extends HTMLElement {
 		mainPageContainer.setAttribute('id', 'mainPageContainer');
 		this.shadowRoot?.appendChild(mainPageContainer);
 
+		const notificationsContainer = this.ownerDocument.createElement('section');
+		notificationsContainer.className = 'section-notifications';
+		notificationsContainer.id = 'notifications-container';
+
 		this.header.forEach((home) => {
 			mainPageContainer.appendChild(home);
 		});
@@ -123,8 +127,10 @@ class AppContainer extends HTMLElement {
 
 		this.notifications.forEach((home) => {
 			console.log(home);
-			this.shadowRoot?.appendChild(home);
+			notificationsContainer.appendChild(home);
 		});
+
+		this.shadowRoot?.appendChild(notificationsContainer);
 
 		const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
 		this.shadowRoot?.appendChild(navBar);

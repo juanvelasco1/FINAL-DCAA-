@@ -1,10 +1,10 @@
 import img1 from '../asset/Andres-Salazar.png';
 import image1 from '../asset/datathon.png';
 
-import img2 from '../asset/Sebastian Quintero.png';
+import img2 from '../asset/Sebastian-Quintero.png';
 import image2 from '../asset/pokemon.png';
 
-import img3 from '../asset/Lina Rengifo.png';
+import img3 from '../asset/Lina-Rengifo.png';
 import image3 from '../asset/gira-icesi.png';
 
 import image4 from '../asset/medicina.png';

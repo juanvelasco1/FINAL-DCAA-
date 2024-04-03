@@ -39,19 +39,6 @@ class Header extends HTMLElement {
 		this.render();
 	}
 
-	connectedCallback() {
-		this.render();
-		this.setupEventListeners();
-	}
-
-	setupEventListeners() {
-		const notificationElement = this.shadowRoot?.querySelector('.notification');
-		notificationElement?.addEventListener('click', () => {
-			const event = new CustomEvent('toggleNotifications');
-			this.dispatchEvent(event);
-		});
-	}
-
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = '';
@@ -66,15 +53,32 @@ class Header extends HTMLElement {
 			<section id='header' class='section-header' >
 			<img src=${this.logo} class='logo'>
 			<div id='horizontalSpace'></div>
-			<img src=${this.notification} class='notification'>
+			<img src=${this.notification} class='notification' id="notification-button">
       <img src=${this.photo} class='photo' >
 			</section>
       `;
 		}
-
+		//const notifications.container
 		const cssHeader = this.ownerDocument.createElement('style');
 		cssHeader.innerHTML = stylesHeader;
 		this.shadowRoot?.appendChild(cssHeader);
+
+		const imgButton = this.shadowRoot?.getElementById('notification-button');
+		const myCreatedSection = this.ownerDocument.querySelector('app-container')?.shadowRoot?.getElementById('notifications-container');
+
+		imgButton?.addEventListener('click', () => {
+			console.log('Hola');
+			console.log(myCreatedSection);
+			if (myCreatedSection?.className === 'hidden-notifications') {
+				console.log(myCreatedSection);
+				myCreatedSection.classList.add('section-notifications');
+				myCreatedSection.classList.remove('hidden-notifications');
+			} else if (myCreatedSection?.className === 'section-notifications') {
+				console.log(myCreatedSection);
+				myCreatedSection.classList.remove('section-notifications');
+				myCreatedSection.classList.add('hidden-notifications');
+			}
+		});
 	}
 }
 export default Header;

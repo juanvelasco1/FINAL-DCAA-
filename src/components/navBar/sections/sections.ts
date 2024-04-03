@@ -74,23 +74,34 @@ class Section extends HTMLElement {
 			?.shadowRoot?.querySelector('my-create')
 			?.shadowRoot?.getElementById('myCreate');
 
+		const closeButton = this.ownerDocument
+			.querySelector('app-container')
+			?.shadowRoot?.querySelector('my-create')
+			?.shadowRoot?.getElementById('close-button');
+
+		imgButton?.addEventListener('click', () => {
+			console.log('Hola');
+			if (myCreatedSection?.className === 'hidden-create') {
+				console.log(myCreatedSection);
+				myCreatedSection.classList.add('section-create');
+				myCreatedSection.classList.remove('hidden-create');
+			} else if (myCreatedSection?.className === 'section-create') {
+				console.log(myCreatedSection);
+				myCreatedSection.classList.remove('section-create');
+				myCreatedSection.classList.add('hidden-create');
+			}
+		});
+
 		if (this.type === 'create') {
-			imgButton?.addEventListener('click', () => {
+			closeButton?.addEventListener('click', () => {
 				console.log('Hola');
-				if (myCreatedSection?.className === 'hidden-create') {
-					console.log(myCreatedSection);
-					myCreatedSection.className = 'section-create';
-				} else if (myCreatedSection?.className === 'section-create') {
-					console.log(myCreatedSection);
-					myCreatedSection.className = 'hidden-create';
+				if (myCreatedSection) {
+					myCreatedSection.classList.remove('section-create');
+					myCreatedSection.classList.add('hidden-create');
 				}
+			});
 
-				const myCloseCreatedSection = this.ownerDocument
-					.querySelector('app-container')
-					?.shadowRoot?.querySelector('my-create')
-					?.shadowRoot?.getElementById('myCreate');
-
-		/*const imgHome = document.createElement('img');
+			/*const imgHome = document.createElement('img');
 		imgHome.innerHTML = home;
 		this.shadowRoot?.appendChild(imgHome);
 
@@ -101,11 +112,9 @@ class Section extends HTMLElement {
 		const imgCreate = document.createElement('img');
 		imgCreate.innerHTML = create;
 		this.shadowRoot?.appendChild(imgCreate);*/
-	});
+		}
+	}
 }
-}
-}
-
 
 customElements.define('my-section', Section);
 export default Section;

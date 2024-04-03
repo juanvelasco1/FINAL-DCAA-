@@ -1,5 +1,5 @@
-import photo2 from '../asset/Sebastian Quintero.png';
-import photo3 from '../asset/Lina Rengifo.png';
+import photo2 from '../asset/Sebastian-Quintero.png';
+import photo3 from '../asset/Lina-Rengifo.png';
 interface DataShape {
 	photo: string;
 	name: string;

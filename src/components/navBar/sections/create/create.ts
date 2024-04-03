@@ -61,7 +61,7 @@ class Create extends HTMLElement {
 			</style>
 
       <section class='hidden-create' id="myCreate">
-      <img src="${this.exit}">
+      <img id="close-button" src="${this.exit}">
       <img src="${this.photo}">
       <p>${this.texts}</p>
 

@@ -70,7 +70,7 @@ class Notifications extends HTMLElement {
 			</style>
 
 
-			<section class='section-notifications'class='hidden-notifications' id="myNotifications">
+			<section class='notification'>
 
       <img src="${this.photo}">
       <p><strong>${this.name}</strong></p>
