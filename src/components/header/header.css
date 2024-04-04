@@ -19,12 +19,16 @@
 	}
 
 	.logo {
-		/* width: 222px; */
-		height: 10%;
+		/* width: 222px;
+		height: 10%;*/
+
+		border: 5px solid rgb(255, 0, 0);
+		min-width: 15%;
+		min-height: 45%;
 	}
 
 	.notification {
-		height: 50%;
+		/*height: 50%;*/
 		margin-right: 15px;
 	}
 
