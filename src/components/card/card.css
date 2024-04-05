@@ -17,11 +17,9 @@
 	.photo {
 		display: flex;
 		width: 6%;
-		height: 6%;
-		margin-right: 890px;
+		/* height: 6%; */
+		margin-right: 89%;
 		margin-top: 20px;
-		display: flex;
-		flex-direction: column;
 	}
 
 	h3 {
@@ -31,10 +29,11 @@
 		font-style: normal;
 		display: flex;
 		color: #000000;
-		margin-right: 690px;
+		margin-right: 60%;
 		position: relative;
-		top: -60px;
-		left: 20px;
+		top: -55px;
+
+		/* border: #18d000 1px solid; */
 	}
 	.image {
 		width: 99%;
@@ -52,22 +51,21 @@
 		left: 668px;
 		top: 882px;
 	}
-}
-*description {
-	position: absolute;
-	width: 804px;
-	height: 102px;
-	left: 491px;
-	top: 996px;
 
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 24px;
-	line-height: 140%;
-}
+	*description {
+		position: absolute;
+		width: 804px;
+		height: 102px;
+		left: 491px;
+		top: 996px;
 
-@media (max-width: 1600px) {
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 140%;
+	}
+
 	.coment {
 		position: relative;
 		top: -88px;
@@ -75,9 +73,9 @@
 		width: 9%;
 		height: 4%;
 	}
-	.heart {
+	.like {
 		position: relative;
-		top: 0px;
+
 		left: -44%;
 		width: 9%;
 		height: 4%;
@@ -121,34 +119,197 @@
 		background: none;
 		border: none;
 	}
+
+	.section-card {
+		.like {
+			cursor: pointer;
+		}
+
+		#bookma {
+			cursor: pointer;
+			position: relative;
+			top: 420px;
+			left: 0px;
+		}
+
+		.save:hover {
+			opacity: 0.4;
+			transition: 0.3s;
+		}
+
+		.save:active {
+			transform: scale(0.9);
+		}
+
+		.saveF {
+			position: relative;
+			top: 330;
+			left: 0;
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out;
+		}
+	}
 }
 
-.section-card {
-	.like {
-		cursor: pointer;
+@media (max-width: 420px) {
+	.card {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		width: 70%;
+		height: 70%;
+		margin-top: 150px;
+		background-color: rgb(243, 243, 243);
+		border-radius: 45px;
+		margin-left: 270px;
+		box-shadow: 10px 5px 5px rgb(177, 177, 177);
 	}
 
-	#bookma {
-		cursor: pointer;
+	.photo {
+		display: flex;
+		width: 6%;
+		/* height: 6%; */
+		/* margin-right: 890px;
+		margin-top: 20px; */
+		display: flex;
+		flex-direction: column;
+	}
+
+	h3 {
+		font-family: 'Montserrat', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: weight;
+		font-style: normal;
+		display: flex;
+		color: #000000;
+		margin-right: 690px;
 		position: relative;
-		top: 420px;
+		top: -60px;
+		left: 20px;
+	}
+	.image {
+		width: 99%;
+		height: 400px;
+		position: relative;
+		top: -40px;
 		left: 0px;
 	}
 
-	.save:hover {
-		opacity: 0.4;
-		transition: 0.3s;
+	#pclass {
+		display: flex;
+
+		align-items: center;
+		border-radius: 1px blue;
+		left: 668px;
+		top: 882px;
 	}
 
-	.save:active {
-		transform: scale(0.9);
+	*description {
+		position: absolute;
+		width: 804px;
+		height: 102px;
+		left: 491px;
+		top: 996px;
+
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 140%;
 	}
 
-	.saveF {
+	.coment {
 		position: relative;
-		top: 330;
-		left: 0;
-		opacity: 0;
-		transition: opacity 0.3s ease-in-out;
+		top: -88px;
+		left: -35%;
+		width: 9%;
+		height: 4%;
+	}
+	.heart {
+		position: relative;
+		top: 0px;
+		left: -44%;
+		width: 9%;
+		height: 4%;
+		outline: none;
+		background: none;
+		border: none;
+	}
+
+	.tag {
+		background-color: #18d000;
+		display: flex;
+		border-radius: 30px;
+		justify-content: center;
+		align-items: center;
+
+		position: relative;
+		top: -148px;
+		left: -23%;
+		width: 11%;
+		height: 30px;
+
+		font-family: 'Montserrat', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: weight;
+		font-style: normal;
+	}
+
+	.desc {
+		/*/border: red 1px solid;/*/
+		position: relative;
+		top: -200px;
+		left: -23%;
+		width: 50%;
+		height: 4%;
+		text-align: justify;
+		text-justify: inter-word;
+
+		font-family: 'Montserrat', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: weight;
+		font-style: normal;
+	}
+	.bookmark {
+		position: relative;
+		top: -200px;
+		left: 45%;
+		width: 9%;
+		height: 4%;
+		outline: none;
+		background: none;
+		border: none;
+	}
+
+	.section-card {
+		.like {
+			cursor: pointer;
+		}
+
+		#bookma {
+			cursor: pointer;
+			position: relative;
+			top: 420px;
+			left: 0px;
+		}
+
+		.save:hover {
+			opacity: 0.4;
+			transition: 0.3s;
+		}
+
+		.save:active {
+			transform: scale(0.9);
+		}
+
+		.saveF {
+			position: relative;
+			top: 330;
+			left: 0;
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out;
+		}
 	}
 }

@@ -1,9 +1,23 @@
-.section-create {
-	border: 2px solid black;
-	/* position: absolute;
+@media (max-width: 1600px) {
+	.section-create {
+		border: 2px solid black;
+		/* position: absolute;
   z-index: 2; */
+	}
+
+	.hidden-create {
+		display: none;
+	}
 }
 
-.hidden-create {
-	display: none;
+@media (max-width: 420px) {
+	.section-create {
+		border: 2px solid black;
+		/* position: absolute;
+  z-index: 2; */
+	}
+
+	.hidden-create {
+		display: none;
+	}
 }
