@@ -1,8 +1,38 @@
 @media (max-width: 1600px) {
-	.section-create {
+	.hidden-create {
+		display: flex;
+
+		justify-content: center;
+		align-items: center;
+		justify-content: right;
+		width: 70%;
+		height: 70%;
+		margin-top: 150px;
+		background-color: rgb(206, 206, 206);
+		border-radius: 45px;
+
+		box-shadow: 10px 5px 5px rgb(177, 177, 177);
+
+		left: 30%;
+		position: relative;
+		top: 190%;
+		width: 570px;
+		height: 382px;
+	}
+
+	.photo {
+		display: flex;
+		width: 6%;
 		border: 2px solid black;
-		/* position: absolute;
-  z-index: 2; */
+		/* height: 6%; */
+		margin-right: 89%;
+		margin-top: 20px;
+	}
+}
+/* .section-create {
+		border: 2px solid black;
+
+		z-index: 2;
 	}
 
 	.hidden-create {
@@ -13,11 +43,8 @@
 @media (max-width: 420px) {
 	.section-create {
 		border: 2px solid black;
-		/* position: absolute;
-  z-index: 2; */
 	}
 
 	.hidden-create {
 		display: none;
-	}
-}
+	} */
