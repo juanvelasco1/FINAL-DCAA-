@@ -88,17 +88,21 @@
 
 	.tag {
 		background-color: #18d000;
-		border-radius: 20%;
-		flex-direction: column;
+		display: flex;
+		border-radius: 30px;
 		justify-content: center;
 		align-items: center;
-		text-align: center;
 
 		position: relative;
 		top: -148px;
 		left: -23%;
 		width: 11%;
 		height: 30px;
+
+		font-family: 'Montserrat', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: weight;
+		font-style: normal;
 	}
 
 	.desc {
@@ -110,6 +114,11 @@
 		height: 4%;
 		text-align: justify;
 		text-justify: inter-word;
+
+		font-family: 'Montserrat', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: weight;
+		font-style: normal;
 	}
 	.bookmark {
 		position: relative;

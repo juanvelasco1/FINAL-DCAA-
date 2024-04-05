@@ -32,24 +32,10 @@
 	}
 }
 
-@media (max-width: 400px) {
-	.NavBar {
-		position: absolute;
-		width: 1920px;
-		height: 130px;
-		left: 0px;
-		top: 0px;
-
-		/* principal Blue */
-		background: #2000fb;
-	}
-
+@media (max-width: 440px) {
 	.navSection {
 		position: absolute;
-		left: 12.5%;
-		right: 20.83%;
-		top: 12.5%;
-		bottom: 20.83%;
+		margin-bottom: 3rem;
 		border: 4.75px solid #ffffff;
 	}
 
