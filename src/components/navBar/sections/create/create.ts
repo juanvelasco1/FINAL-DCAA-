@@ -65,10 +65,10 @@ class Create extends HTMLElement {
       <img class='photo' src="${this.photo}">
       <p class='texts' >${this.texts}</p>
 
-      <img class='ww' src="${this.image}">
-      <img class='ww' src="${this.tag}">
-      <img class='ww' src="${this.list}">
-      <img class='ww' src="${this.emoji}">
+      <img class='image' src="${this.image}">
+      <img class='tag' src="${this.tag}">
+      <img class='list' src="${this.list}">
+      <img class='emoji' src="${this.emoji}">
 
 
       </section>
