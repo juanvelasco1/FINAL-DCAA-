@@ -18,6 +18,10 @@
 		border: 2px solid rgb(72, 255, 0);
 	}
 
+	.name {
+		border: 2px solid rgb(55, 0, 255);
+	}
+
 	.notification {
 		border: 2px solid rgb(255, 0, 0);
 		display: flex;
