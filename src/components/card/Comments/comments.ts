@@ -49,8 +49,10 @@ class Comment extends HTMLElement {
 			</style>
 
       <section class='section-comment'>
+			<div class="user">
       <img class='ph' src="${this.photo}">
-      <h5>${this.name}</h5>
+      <h5 class="text">${this.name}</h5>
+			</div>
       <p>${this.texts}</p>
       </section>
       `;

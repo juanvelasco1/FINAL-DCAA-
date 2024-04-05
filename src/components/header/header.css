@@ -15,9 +15,21 @@
 		z-index: 50;
 	}
 
-	#notifications-container {
+	/* #notifications-container {
 		position: absolute;
+	} */
+
+	/* .hidden-notification {
+		background-color: red;
+	} */
+
+	.section-notifications {
+		background-color: red;
 	}
+
+	/* #notification-button {
+		background-color: red;
+	} */
 
 	#horizontalSpace {
 		width: 75%;
@@ -35,6 +47,8 @@
 	.notification {
 		/*height: 50%;*/
 		margin-right: 15px;
+
+		background-color: blue;
 	}
 
 	.photo {
