@@ -12,6 +12,7 @@
 		margin: 0 auto;
 		/* principal Blue */
 		background: #2000fb;
+		z-index: 100;
 	}
 
 	#horizontalSpace {
