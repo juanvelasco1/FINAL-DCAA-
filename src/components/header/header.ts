@@ -64,17 +64,21 @@ class Header extends HTMLElement {
 		this.shadowRoot?.appendChild(cssHeader);
 
 		const imgButton = this.shadowRoot?.getElementById('notification-button');
-		const myCreatedSection = this.ownerDocument.querySelector('app-container')?.shadowRoot?.getElementById('notifications-container');
+		//?.shadowRoot?//.getElementById('notifications-container');
 
 		imgButton?.addEventListener('click', () => {
-			console.log('Hola');
+			const myCreatedSection = this.ownerDocument
+				.querySelector('app-container')
+				?.shadowRoot?.getElementById('notifications-container');
+			// console.log('Hola');
 			console.log(myCreatedSection);
+			// console.log(myCreatedSection);
 			if (myCreatedSection?.className === 'hidden-notifications') {
-				console.log(myCreatedSection);
+				console.log('Mostrar');
 				myCreatedSection.classList.add('section-notifications');
 				myCreatedSection.classList.remove('hidden-notifications');
 			} else if (myCreatedSection?.className === 'section-notifications') {
-				console.log(myCreatedSection);
+				console.log('Ocultar');
 				myCreatedSection.classList.remove('section-notifications');
 				myCreatedSection.classList.add('hidden-notifications');
 			}

@@ -95,5 +95,10 @@
 		left: -32%;
 		width: 19%;
 		height: 4%;
+
+		font-family: 'Montserrat', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: weight;
+		font-style: normal;
 	}
 }

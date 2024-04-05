@@ -105,7 +105,7 @@ class AppContainer extends HTMLElement {
 		this.shadowRoot?.appendChild(mainPageContainer);
 
 		const notificationsContainer = this.ownerDocument.createElement('section');
-		notificationsContainer.className = 'section-notifications';
+		notificationsContainer.className = 'hidden-notifications';
 		notificationsContainer.id = 'notifications-container';
 
 		this.header.forEach((home) => {

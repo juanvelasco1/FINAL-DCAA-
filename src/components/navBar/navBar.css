@@ -41,6 +41,7 @@
 	}
 }
 
+<<<<<<< HEAD
 @media (max-width: 420px) {
 	.navSection {
 		position: absolute;
@@ -52,6 +53,13 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+=======
+@media (max-width: 440px) {
+	.navSection {
+		position: absolute;
+		margin-bottom: 3rem;
+		border: 4.75px solid #ffffff;
+>>>>>>> 106ec02d427fc57c37215004775e7a13aaee0981
 	}
 	/* navTags {
 		font-family: 'Montserrat', sans-serif;
