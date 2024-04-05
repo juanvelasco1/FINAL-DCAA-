@@ -71,11 +71,13 @@ class Notifications extends HTMLElement {
 
 
 			<section class='notification'>
-
+			<div>
+			<div class="user">
       <img src="${this.photo}"class="photo">
-      <p><strong>${this.name}</strong></p>
-      <p>${this.texts}</p class="text">
+      <p><strong>${this.name}</strong></p></div>
 
+      <p class="text">${this.texts}</p >
+			</div>
 			</section>
       `;
 		}

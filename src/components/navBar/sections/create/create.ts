@@ -61,6 +61,7 @@ class Create extends HTMLElement {
 			</style>
 
 			<section class='hidden-create' id="myCreate">
+			<div class="create">
       <img id="close-button" class='close' src="${this.exit}">
       <img class='photo' src="${this.photo}">
       <p class='texts' >${this.texts}</p>
@@ -70,7 +71,7 @@ class Create extends HTMLElement {
       <img class='list' src="${this.list}">
       <img class='emoji' src="${this.emoji}">
 
-
+			</div>
       </section>
       `;
 		}

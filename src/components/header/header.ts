@@ -53,6 +53,8 @@ class Header extends HTMLElement {
 			<section id='header' class='section-header' >
 			<img src=${this.logo} class='logo'>
 			<div id='horizontalSpace'></div>
+
+
 			<img src=${this.notification} class='notification' id="notification-button">
       <img src=${this.photo} class='photo' >
 			</section>

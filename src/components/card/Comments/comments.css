@@ -60,12 +60,13 @@
 	}
 
 	.section-comment {
+		border: red 1px solid;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		width: 70%;
+		width: 90%;
 		height: 70px;
 		margin-top: -150px;
 
@@ -74,6 +75,7 @@
 	}
 
 	h5 {
+		border: red 1px solid;
 		font-family: 'Montserrat', sans-serif;
 		font-optical-sizing: auto;
 		font-weight: weight;
@@ -82,10 +84,11 @@
 		color: #000000;
 		margin-right: 760px;
 		position: relative;
-		top: -75px;
-		left: 20px;
+		top: -35px;
+		left: 130px;
 	}
 	p {
+		border: red 1px solid;
 		font-family: 'Montserrat', sans-serif;
 		font-optical-sizing: auto;
 		font-weight: weight;
@@ -93,8 +96,8 @@
 		position: relative;
 		top: -110px;
 		left: -32%;
-		width: 19%;
-		height: 4%;
+		width: 89%;
+		height: 44%;
 
 		font-family: 'Montserrat', sans-serif;
 		font-optical-sizing: auto;
