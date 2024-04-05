@@ -46,7 +46,7 @@
 	.navSection {
 		z-index: 100;
 		position: fixed;
-		top: 638px;
+		top: 938px;
 		background-color: #f2f2f2;
 		height: 15%;
 		width: 164%;
@@ -54,7 +54,7 @@
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		border: 2px solid rgb(255, 0, 0);
+		/* border: 2px solid rgb(255, 0, 0); */
 	}
 	/* @media (max-width: 440px) {
 		.navSection {
