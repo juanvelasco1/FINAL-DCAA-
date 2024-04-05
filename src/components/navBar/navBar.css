@@ -1,6 +1,6 @@
 @media (max-width: 1600px) {
 	.navSection {
-		position: absolute;
+		position: fixed;
 		top: 100px;
 		background-color: #f2f2f2;
 		height: 86%;

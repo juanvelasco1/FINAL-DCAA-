@@ -1,6 +1,6 @@
 @media (max-width: 1600px) {
 	#header {
-		position: absolute;
+		position: fixed;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -22,7 +22,7 @@
 		/* width: 222px;
 		height: 10%;*/
 
-		border: 5px solid rgb(255, 0, 0);
+		/* border: 5px solid rgb(255, 0, 0); */
 		min-width: 15%;
 		min-height: 45%;
 	}
