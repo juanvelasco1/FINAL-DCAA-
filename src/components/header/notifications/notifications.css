@@ -1,8 +1,33 @@
-.section-notifications {
-	border: 2px solid black;
-	/* position: absolute;
-  z-index: 2; */
+@media (max-width: 1600px) {
+	.section-notifications {
+		border: 2px solid rgb(255, 0, 0);
+		/* position: absolute;
+		z-index: 2; */
+	}
+	.hidden-notifications {
+		display: none;
+	}
+	p {
+		font-family: 'Montserrat', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: weight;
+		font-style: normal;
+	}
 }
-.hidden-notifications {
-	display: none;
+
+@media (max-width: 420px) {
+	.section-notifications {
+		border: 2px solid rgb(255, 0, 0);
+		/* position: absolute;
+  z-index: 2; */
+	}
+	.hidden-notifications {
+		display: none;
+	}
+	p {
+		font-family: 'Montserrat', sans-serif;
+		font-optical-sizing: auto;
+		font-weight: weight;
+		font-style: normal;
+	}
 }
