@@ -62,13 +62,13 @@ class Create extends HTMLElement {
 
       <section class='hidden-create' id="myCreate">
       <img id="close-button" src="${this.exit}">
-      <img src="${this.photo}">
-      <p>${this.texts}</p>
+      <img class='photo' src="${this.photo}">
+      <p class='texts' >${this.texts}</p>
 
-      <img src="${this.image}">
-      <img src="${this.tag}">
-      <img src="${this.list}">
-      <img src="${this.emoji}">
+      <img class='image' src="${this.image}">
+      <img class='image' src="${this.tag}">
+      <img class='image' src="${this.list}">
+      <img class='image' src="${this.emoji}">
 
       </section>
       `;

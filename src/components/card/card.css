@@ -68,14 +68,15 @@
 
 	.coment {
 		position: relative;
-		top: -88px;
+		top: -92px;
 		left: -35%;
 		width: 9%;
 		height: 4%;
 	}
 	.heart {
 		position: relative;
-
+		top: -10px;
+		display: flex;
 		left: -44%;
 		width: 9%;
 		height: 4%;
@@ -91,7 +92,7 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-
+		display: flex;
 		position: relative;
 		top: -148px;
 		left: -23%;
