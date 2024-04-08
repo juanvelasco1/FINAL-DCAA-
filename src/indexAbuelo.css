@@ -4,12 +4,12 @@
 	width: 1920px;
 	height: 2254px;
 } */
-
 #mainPageContainer {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
-	min-height: 100vh;
+	/* position: absolute; */
+
+	/* min-height: 100vh; */
 }
 
 @media (max-width: 400px) {
@@ -17,11 +17,17 @@
 		flex-direction: column;
 	}
 }
-.section-notifications {
+/* .section-notifications {
 	border: 2px solid black;
+	width: 584px;
+	padding-bottom: 3rem;
 	/* position: absolute;
-  z-index: 2; */
-}
+  z-index: 2;} */
+
 .hidden-notifications {
 	display: none;
+}
+
+#notifications-container {
+	margin-top: 55rem;
 }

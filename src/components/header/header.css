@@ -12,8 +12,24 @@
 		margin: 0 auto;
 		/* principal Blue */
 		background: #2000fb;
-		z-index: 100;
+		z-index: 50;
 	}
+
+	/* #notifications-container {
+		position: absolute;
+	} */
+
+	/* .hidden-notification {
+		background-color: red;
+	} */
+
+	.section-notifications {
+		background-color: red;
+	}
+
+	/* #notification-button {
+		background-color: red;
+	} */
 
 	#horizontalSpace {
 		width: 75%;
@@ -31,6 +47,8 @@
 	.notification {
 		/*height: 50%;*/
 		margin-right: 15px;
+
+		background-color: blue;
 	}
 
 	.photo {
@@ -40,13 +58,17 @@
 
 @media (max-width: 420px) {
 	#header {
+<<<<<<< HEAD
 		position: absolute;
 
+=======
+		position: fixed;
+>>>>>>> juan2
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		width: 100%;
+		width: 99%;
 		height: 100px;
 		left: 0px;
 		top: 0px;

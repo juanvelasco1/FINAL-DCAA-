@@ -1,5 +1,6 @@
 @media (max-width: 1600px) {
 	.navSection {
+		/* border: 2px solid rgb(255, 9, 9); */
 		position: fixed;
 		top: 100px;
 		background-color: #f2f2f2;
@@ -43,15 +44,17 @@
 
 @media (max-width: 420px) {
 	.navSection {
-		position: absolute;
-		top: 100px;
+		z-index: 100;
+		position: fixed;
+		top: 938px;
 		background-color: #f2f2f2;
-		height: 86%;
-		width: 8%;
+		height: 15%;
+		width: 164%;
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		justify-content: center;
 		align-items: center;
+		/* border: 2px solid rgb(255, 0, 0); */
 	}
 	/* @media (max-width: 440px) {
 		.navSection {
@@ -78,6 +81,8 @@
 		height: 9px;
 		left: 1771px;
 		top: 17px;
+		justify-content: center;
+		align-items: center;
 	}
 
 	h2 {
@@ -87,6 +92,8 @@
 		font-optical-sizing: auto;
 		font-weight: weight;
 		font-style: normal;
+		justify-content: center;
+		align-items: center;
 	}
 
 	my-tags {
