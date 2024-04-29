@@ -27,11 +27,15 @@ import NavBar from './components/navBar/navBar';
 
 import Post from './components/card/post';
 
+import Login from './components/login/login'
+
 import * as styles from './styles.css';
 import { loadCss } from './utils/styles';
 
 //Importar estilos
 import style from './indexAbuelo.css';
+
+import {addObserver, appState} from "./store/store";
 
 //CODE
 class AppContainer extends HTMLElement {
@@ -44,6 +48,7 @@ class AppContainer extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		addObserver(this); // Página de renderización dinámica
 
 		headerData.forEach((user) => {
 			const headerHeader = this.ownerDocument.createElement('my-header') as MyHeader;
@@ -98,45 +103,58 @@ class AppContainer extends HTMLElement {
 	}
 
 	render() {
-		loadCss(this, style);
+		console.log(appState)
+		switch (appState.screen){
+			case 'home':{
+				const mainPageContainer = this.ownerDocument.createElement('div');
+				mainPageContainer.setAttribute('id', 'mainPageContainer');
+				this.shadowRoot?.appendChild(mainPageContainer);
 
-		const mainPageContainer = this.ownerDocument.createElement('div');
-		mainPageContainer.setAttribute('id', 'mainPageContainer');
-		this.shadowRoot?.appendChild(mainPageContainer);
+				const notificationsContainer = this.ownerDocument.createElement('section');
+				notificationsContainer.className = 'hidden-notifications';
+				notificationsContainer.id = 'notifications-container';
 
-		const notificationsContainer = this.ownerDocument.createElement('section');
-		notificationsContainer.className = 'hidden-notifications';
-		notificationsContainer.id = 'notifications-container';
+				this.header.forEach((home) => {
+					mainPageContainer.appendChild(home);
+				});
 
-		this.header.forEach((home) => {
-			mainPageContainer.appendChild(home);
-		});
+				/*this.homes.forEach((home) => {
+                    mainPageContainer.appendChild(home);
+                });
 
-		/*this.homes.forEach((home) => {
-			mainPageContainer.appendChild(home);
-		});
+                this.home.forEach((home) => {
+                    mainPageContainer.appendChild(home);
+                });*/
 
-		this.home.forEach((home) => {
-			mainPageContainer.appendChild(home);
-		});*/
+				this.create.forEach((home) => {
+					console.log(home);
+					this.shadowRoot?.appendChild(home);
+				});
 
-		this.create.forEach((home) => {
-			console.log(home);
-			this.shadowRoot?.appendChild(home);
-		});
+				this.notifications.forEach((home) => {
+					console.log(home);
+					notificationsContainer.appendChild(home);
+				});
 
-		this.notifications.forEach((home) => {
-			console.log(home);
-			notificationsContainer.appendChild(home);
-		});
+				this.shadowRoot?.appendChild(notificationsContainer);
 
-		this.shadowRoot?.appendChild(notificationsContainer);
+				const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
+				this.shadowRoot?.appendChild(navBar);
 
-		const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
-		this.shadowRoot?.appendChild(navBar);
+				const post = this.ownerDocument.createElement('my-post') as Post;
+				this.shadowRoot?.appendChild(post);
 
-		const post = this.ownerDocument.createElement('my-post') as Post;
-		this.shadowRoot?.appendChild(post);
+				break;
+			}
+			case 'd':
+				const login = this.ownerDocument.createElement('login-page') as Login;
+				this.shadowRoot?.appendChild(login)
+				break;
+			default:
+				break;
+
+		}
+
 	}
 }
 
