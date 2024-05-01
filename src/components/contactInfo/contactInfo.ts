@@ -1,14 +1,20 @@
 import { loadCss } from '../../utils/styles';
-import stylesComment from './contactInfo.css';
+import stylesContact from './contactInfo.css';
 
 export enum AttributeContact {
 	'name' = 'name',
 	'mail' = 'mail',
+	'photo' = 'photo',
+	'iconLinkedin' = 'iconLinkedin',
+	'iconMail' = 'iconMail',
 }
 
 class ContactInfo extends HTMLElement {
 	name?: string;
 	mail?: string;
+	iconLinkedin?: string;
+	iconMail?: string;
+	photo?: string;
 
 	constructor() {
 		super();
@@ -19,6 +25,9 @@ class ContactInfo extends HTMLElement {
 		const attrs: Record<AttributeContact, null> = {
 			name: null,
 			mail: null,
+			iconLinkedin: null,
+			iconMail: null,
+			photo: null,
 		};
 
 		return Object.keys(attrs);
@@ -39,22 +48,24 @@ class ContactInfo extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			loadCss(this, stylesComment);
+			loadCss(this, stylesContact);
 			this.shadowRoot.innerHTML = `
 			<style>
-			${stylesComment}
+			${stylesContact}
 			</style>
 
       <section>
       <h3>Contact Information</h3>
+      <img src=${this.iconMail}>
       <p>${this.mail}</p>
+      <img src=${this.iconLinkedin}>
       <p>${this.name}</p>
       </section>
       `;
 		}
-		const cssComment = this.ownerDocument.createElement('style');
-		cssComment.innerHTML = stylesComment;
-		this.shadowRoot?.appendChild(cssComment);
+		const cssContact = this.ownerDocument.createElement('style');
+		cssContact.innerHTML = stylesContact;
+		this.shadowRoot?.appendChild(cssContact);
 
 		/*const imgPhoto = document.createElement('img');
 		imgPhoto.innerHTML = photo1;

@@ -32,7 +32,7 @@ import style from './indexAbuelo.css';
 import { addObserver, appState } from '../store/store';
 
 //CODE
-class Home extends HTMLElement {
+class Saved extends HTMLElement {
 	//	homes: MyCard[] = [];
 	//	home: MyComments[] = [];
 	header: MyHeader[] = [];
@@ -145,4 +145,4 @@ class Home extends HTMLElement {
 	}
 }
 
-customElements.define('app-home', Home);
+customElements.define('app-saved', Saved);
