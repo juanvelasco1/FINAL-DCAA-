@@ -58,7 +58,16 @@
 
 @media (max-width: 420px) {
 	#header {
+<<<<<<< HEAD
 		position: fixed;
+=======
+<<<<<<< HEAD
+		position: absolute;
+
+=======
+		position: fixed;
+>>>>>>> juan2
+>>>>>>> main
 		display: flex;
 		flex-direction: row;
 		justify-content: center;

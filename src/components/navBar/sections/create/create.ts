@@ -60,16 +60,39 @@ class Create extends HTMLElement {
 			${stylesCreate}
 			</style>
 
+<<<<<<< HEAD
 			<section class='hidden-create' id="myCreate">
 			<div class="create">
       <img id="close-button" class='close' src="${this.exit}">
+=======
+<<<<<<< HEAD
+      <section class='hidden-create' id="myCreate">
+      <img id="close-button" src="${this.exit}">
+=======
+			<section class='hidden-create' id="myCreate">
+			<div class="create">
+      <img id="close-button" class='close' src="${this.exit}">
+>>>>>>> juan2
+>>>>>>> main
       <img class='photo' src="${this.photo}">
       <p class='texts' >${this.texts}</p>
 
       <img class='image' src="${this.image}">
+<<<<<<< HEAD
       <img class='tag' src="${this.tag}">
       <img class='list' src="${this.list}">
       <img class='emoji' src="${this.emoji}">
+=======
+<<<<<<< HEAD
+      <img class='image' src="${this.tag}">
+      <img class='image' src="${this.list}">
+      <img class='image' src="${this.emoji}">
+=======
+      <img class='tag' src="${this.tag}">
+      <img class='list' src="${this.list}">
+      <img class='emoji' src="${this.emoji}">
+>>>>>>> juan2
+>>>>>>> main
 
 			</div>
       </section>
