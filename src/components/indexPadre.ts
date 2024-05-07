@@ -9,3 +9,4 @@ export { default as Notifications } from './header/notifications/notifications';
 export { default as Post } from './card/post';
 export { default as Login } from './login/login';
 export { default as ContactInfo } from './contactInfo/contactInfo';
+

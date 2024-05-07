@@ -1,6 +1,7 @@
 import photo from '../asset/Andres-Salazar.png';
 import iconMail from '../asset/mail.png';
 import iconLinkedin from '../asset/linkedin.png';
+import { addDataToCollection } from '../utils/firebase';
 interface DataShape {
 	name: string;
 	photo: string;
@@ -17,5 +18,8 @@ export const userData: DataShape[] = [
 		mail: 'andres.salazar.u.icesi.edu.co',
 		password: '12345678',
 		iconMail: iconMail,
-		iconLinkedin: iconLinkedin	},
+		iconLinkedin: iconLinkedin,
+	},
 ];
+
+addDataToCollection(userData);

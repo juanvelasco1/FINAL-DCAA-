@@ -3,33 +3,33 @@ import './components/indexPadre';
 
 //import Datas
 
-import { headerData } from '../data/headerData';
+import { headerData } from '../../data/headerData';
 
-import { notificationData } from '../data/notificationData';
+import { notificationData } from '../../data/notificationData';
 
-import { createData } from '../data/createData';
+import { createData } from '../../data/createData';
 
 //import Components
 
-import MyHeader, { AttributeHeader } from '../components/header/header';
+import MyHeader, { AttributeHeader } from '../../components/header/header';
 
-import MyNotifications, { AttributeNotifications } from '../components/header/notifications/notifications';
+import MyNotifications, { AttributeNotifications } from '../../components/header/notifications/notifications';
 
-import MyCreate, { AttributeCreate } from '../components/navBar/sections/create/create';
+import MyCreate, { AttributeCreate } from '../../components/navBar/sections/create/create';
 
-import NavBar from '../components/navBar/navBar';
+import NavBar from '../../components/navBar/navBar';
 
-import Post from '../components/card/post';
+import Post from '../../components/card/post';
 
-import Login from '../components/login/login';
+import Login from '../../components/login/login';
 
 import * as styles from './home.css';
-import { loadCss } from '../utils/styles';
+import { loadCss } from '../../utils/styles';
 
 //Importar estilos
 import style from './indexAbuelo.css';
 
-import { addObserver, appState } from '../store/store';
+import { addObserver, appState } from '../../store/index';
 
 //CODE
 class Home extends HTMLElement {

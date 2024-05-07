@@ -9,7 +9,7 @@ import image3 from '../asset/gira-icesi.png';
 
 import image4 from '../asset/medicina.png';
 
-interface DataShape {
+export interface DataShape {
 	user: {
 		name: string;
 		imgProfile: string;

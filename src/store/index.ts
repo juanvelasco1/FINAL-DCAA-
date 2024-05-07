@@ -1,4 +1,7 @@
-import {reducer} from "./reducer";
+// import {reducer} from "./reducer";
+import Storage from '../utils/storage';
+import { PersistanceKeys } from '../utils/storage';
+// import { Actions, AppState, Observer } from '../types/store';
 
 export let appState = {
     screen: 'd'
@@ -11,7 +14,7 @@ export const addObserver = (ref: any) => {
 }
 export const dispatch = function (action: any) {
     const clone = JSON.parse(JSON.stringify(appState));
-    appState = reducer(action, clone);
+    // appState = reducer(action, clone);
     observers.forEach((observer: any) => observer.render());
 }
 

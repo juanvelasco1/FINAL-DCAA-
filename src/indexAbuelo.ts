@@ -27,7 +27,7 @@ import NavBar from './components/navBar/navBar';
 
 import Post from './components/card/post';
 
-import Login from './components/login/login'
+import Login from './components/login/login';
 
 import * as styles from './styles.css';
 import { loadCss } from './utils/styles';
@@ -35,7 +35,7 @@ import { loadCss } from './utils/styles';
 //Importar estilos
 import style from './indexAbuelo.css';
 
-import {addObserver, appState} from "./store/store";
+import { addObserver, appState } from './store/index';
 
 //CODE
 class AppContainer extends HTMLElement {
@@ -103,9 +103,9 @@ class AppContainer extends HTMLElement {
 	}
 
 	render() {
-		console.log(appState)
-		switch (appState.screen){
-			case 'home':{
+		console.log(appState);
+		switch (appState.screen) {
+			case 'home': {
 				const mainPageContainer = this.ownerDocument.createElement('div');
 				mainPageContainer.setAttribute('id', 'mainPageContainer');
 				this.shadowRoot?.appendChild(mainPageContainer);
@@ -148,13 +148,11 @@ class AppContainer extends HTMLElement {
 			}
 			case 'd':
 				const login = this.ownerDocument.createElement('login-page') as Login;
-				this.shadowRoot?.appendChild(login)
+				this.shadowRoot?.appendChild(login);
 				break;
 			default:
 				break;
-
 		}
-
 	}
 }
 
