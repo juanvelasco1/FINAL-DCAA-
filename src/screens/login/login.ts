@@ -1,4 +1,4 @@
-import { dispatch } from "../../store/store";
+import { dispatch } from "../../store/index";
 import { redirect } from "../../store/actions";
 import { Screens } from "../../data/navigation";
 import input from "../../components/login/input";
@@ -101,5 +101,5 @@ class Login extends HTMLElement {
         this.shadowRoot?.appendChild(mainContainer)
     }
 }
-
+export default Login;
 customElements.define("app-login", Login);

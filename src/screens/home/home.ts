@@ -144,5 +144,5 @@ class Home extends HTMLElement {
 		}
 	}
 }
-
+export default Home;
 customElements.define('app-home', Home);

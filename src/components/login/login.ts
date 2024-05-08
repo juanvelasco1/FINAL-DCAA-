@@ -1,7 +1,7 @@
 //Importar estilos
 import style from './indexAbuelo.css';
 
-import {addObserver, appState, dispatch} from "../../store/store";
+import {addObserver, appState, dispatch} from "../../store/index";
 import {loadCss} from "../../utils/styles";
 import stylesCard from "../card/card.css";
 import {redirect} from "../../store/actions";

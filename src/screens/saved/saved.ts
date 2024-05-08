@@ -145,4 +145,5 @@ class Saved extends HTMLElement {
 	}
 }
 
+export default Saved;
 customElements.define('app-saved', Saved);

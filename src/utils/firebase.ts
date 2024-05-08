@@ -1,12 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
-import {Profile} from'../types/profile'
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore, collection, addDoc, getDocs, doc, setDoc, getDoc } from 'firebase/firestore';
+import { Profile } from '../types/profile';
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
 	apiKey: 'AIzaSyDkU8T7hNAzWtJVXl7AdGWZSxdpPh9eU6A',
 	authDomain: 'dca-7d103.firebaseapp.com',
@@ -20,8 +17,29 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+export const auth = getAuth(app);
 
+//Funciones para agregar y obtener productos
+export const addUsers = async (formData: Omit<Product, 'users'>) => {
+	try {
+		const docRef = await addDoc(collection(db, 'products'), formData);
+		console.log('Document written with ID: ', docRef.id);
+	} catch (e) {
+		console.error('Error adding document: ', e);
+	}
+};
 
+export const getPosts = async () => {
+	const querySnapshot = await getDocs(collection(db, 'posts'));
+	const arrayProducts: Array<Product> = [];
+
+	querySnapshot.forEach((doc) => {
+		const data = doc.data() as any;
+		arrayProducts.push({ id: doc.id, ...data });
+	});
+
+	return arrayProducts;
+};
 
 // export const addDataToCollection = async (data: any) => {
 // 	try {

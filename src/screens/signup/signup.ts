@@ -1,4 +1,4 @@
-import { dispatch } from "../../store/store";
+import { dispatch } from "../../store/index";
 import { redirect } from "../../store/actions";
 import { Screens } from "../../data/navigation";
 import {loadCss} from "../../utils/styles";
@@ -112,4 +112,5 @@ class Signup extends HTMLElement {
     }
 }
 
+export default Signup;
 customElements.define("app-signup", Signup);

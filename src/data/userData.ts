@@ -1,7 +1,7 @@
 import photo from '../asset/Andres-Salazar.png';
 import iconMail from '../asset/mail.png';
 import iconLinkedin from '../asset/linkedin.png';
-import { addDataToCollection } from '../utils/firebase';
+// import { addDataToCollection } from '../utils/firebase';
 interface DataShape {
 	name: string;
 	photo: string;
@@ -22,4 +22,4 @@ export const userData: DataShape[] = [
 	},
 ];
 
-addDataToCollection(userData);
+// addDataToCollection(userData);

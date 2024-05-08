@@ -19,3 +19,30 @@
 // 			return currentState;
 // 	}
 // };
+
+export const reducer = (curentAction: any, currentState: any) => {
+  const {action, payload} = curentAction;
+
+  switch (action){
+      case 'redirect':
+          return {
+              ...currentState,
+              screen: payload
+          }
+      default:
+          return currentState;
+
+  case 'NAVIGATE':
+    currentState.screen = payload;
+    break;
+
+  case 'GETPOSTS':
+    currentState.posts = payload;
+    break;
+
+  case 'SETUSER':
+    currentState.user = payload;
+    break;
+}
+return currentState;
+};

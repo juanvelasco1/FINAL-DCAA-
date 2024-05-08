@@ -1,6 +1,6 @@
-// import { Profile } from './profile';
+import { Profile } from './profile';
 
-// export type Observer = { render: () => void } & HTMLElement;
+export type Observer = { render: () => void } & HTMLElement;
 
 // export type AppState = {
 // 	screenProfile: Profile[];
