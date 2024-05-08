@@ -19,7 +19,9 @@ class AppContainer extends HTMLElement {
 
 	render() {
 		console.log(appState);
-		if (this.shadowRoot) this.shadowRoot.innerHTML = '';
+
+		if (this.shadowRoot){ this.shadowRoot.innerHTML = '';
+		loadCss(this, style)}
 		switch (appState.screen) {
 			case 'home': {
 				const mainPageContainer = this.ownerDocument.createElement('div');
@@ -33,6 +35,28 @@ class AppContainer extends HTMLElement {
 					mainPageContainer.appendChild(home);
 				});
 
+				/*this.create.forEach((home) => {
+					console.log(home);
+					mainPageContainer.appendChild(home);
+				});*/
+
+				/*this.notifications.forEach((home) => {
+					console.log(home);
+					notificationsContainer.appendChild(home);
+				});*/
+
+				// mainPageContainer.appendChild(notificationsContainer);
+
+				/*const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
+				mainPageContainer.appendChild(navBar);*/
+
+				/* const postContainer = this.ownerDocument.createElement('div');
+				postContainer.className = "post-container"; */
+
+				/*const post = this.ownerDocument.createElement('my-post') as Post;
+				post.className = "post-container";
+				postContainer.appendChild(post)
+				mainPageContainer.appendChild(postContainer);*/
 				this.shadowRoot?.appendChild(mainPageContainer);
 
 				break;
