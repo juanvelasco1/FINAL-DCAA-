@@ -1,4 +1,5 @@
-// import {reducer} from "./reducer";
+import {reducer} from "./reducer";
+import {Observer} from "../types/store";
 import Storage from '../utils/storage';
 import { PersistanceKeys } from '../utils/storage';
 // import { Actions, AppState, Observer } from '../types/store';
