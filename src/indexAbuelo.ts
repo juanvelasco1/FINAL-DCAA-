@@ -27,15 +27,17 @@ import './components/indexPadre';
 
 // import Post from './components/card/post';
 
-// import Login from './components/login/login';
+import Login from './components/login/login'
 
-// import * as styles from './styles.css';
-// import { loadCss } from './utils/styles';
+import * as styles from './styles.css';
+import { loadCss } from './utils/styles';
+import './screens/login/login'
+import './screens/signup/signup'
 
 // //Importar estilos
 // import style from './indexAbuelo.css';
 
-// import { addObserver, appState } from './store/index';
+import {addObserver, appState} from "./store/store";
 
 // //CODE
 // class AppContainer extends HTMLElement {
@@ -102,13 +104,53 @@ import './components/indexPadre';
 // 		this.render();
 // 	}
 
-// 	render() {
-// 		console.log(appState);
-// 		switch (appState.screen) {
-// 			case 'home': {
-// 				const mainPageContainer = this.ownerDocument.createElement('div');
-// 				mainPageContainer.setAttribute('id', 'mainPageContainer');
-// 				this.shadowRoot?.appendChild(mainPageContainer);
+render() {
+	console.log(appState)
+	loadCss(this, style);
+	if (this.shadowRoot) this.shadowRoot.innerHTML = '';
+	switch (appState.screen){
+		case 'home':{
+			const mainPageContainer = this.ownerDocument.createElement('div');
+			mainPageContainer.setAttribute('id', 'mainPageContainer');
+
+
+			const notificationsContainer = this.ownerDocument.createElement('section');
+			notificationsContainer.className = 'hidden-notifications';
+			notificationsContainer.id = 'notifications-container';
+
+			this.header.forEach((home) => {
+				mainPageContainer.appendChild(home);
+			});
+
+			this.shadowRoot?.appendChild(mainPageContainer);
+
+
+				break;
+			}
+			case 'login':
+				const login = this.ownerDocument.createElement('app-login');
+				this.shadowRoot?.appendChild(login);
+				break;
+			case 'signup':
+				const signup = this.ownerDocument.createElement('app-signup');
+				this.shadowRoot?.appendChild(signup);
+				break;
+			default:
+				break;
+
+		}
+
+	}
+
+
+customElements.define('app-container', AppContainer);
+	// render() {
+	// 	console.log(appState)
+	// 	switch (appState.screen){
+	// 		case 'home':{
+	// 			const mainPageContainer = this.ownerDocument.createElement('div');
+	// 			mainPageContainer.setAttribute('id', 'mainPageContainer');
+	// 			this.shadowRoot?.appendChild(mainPageContainer);
 
 // 				const notificationsContainer = this.ownerDocument.createElement('section');
 // 				notificationsContainer.className = 'hidden-notifications';
@@ -118,13 +160,13 @@ import './components/indexPadre';
 // 					mainPageContainer.appendChild(home);
 // 				});
 
-// 				/*this.homes.forEach((home) => {
-//                     mainPageContainer.appendChild(home);
-//                 });
+				/*this.homes.forEach((home) => {
+                    mainPageContainer.appendChild(home);
+                });
 
-//                 this.home.forEach((home) => {
-//                     mainPageContainer.appendChild(home);
-//                 });*/
+                this.home.forEach((home) => {
+                    mainPageContainer.appendChild(home);
+                });*/
 
 // 				this.create.forEach((home) => {
 // 					console.log(home);
@@ -148,11 +190,13 @@ import './components/indexPadre';
 // 			}
 // 			case 'd':
 // 				const login = this.ownerDocument.createElement('login-page') as Login;
-// 				this.shadowRoot?.appendChild(login);
+// 				this.shadowRoot?.appendChild(login)
 // 				break;
 // 			default:
 // 				break;
+
 // 		}
+
 // 	}
 // }
 

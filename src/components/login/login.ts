@@ -1,10 +1,12 @@
 //Importar estilos
 import style from './indexAbuelo.css';
 
-import { addObserver, appState, dispatch } from '../../store/index';
-import { loadCss } from '../../utils/styles';
-import stylesCard from '../card/card.css';
-import { redirect } from '../../store/actions';
+import {addObserver, appState, dispatch} from "../../store/store";
+import {loadCss} from "../../utils/styles";
+import stylesCard from "../card/card.css";
+import {redirect} from "../../store/actions";
+import MyInput, { InputProps } from './input';
+
 
 //CODE
 class Login extends HTMLElement {
@@ -21,18 +23,20 @@ class Login extends HTMLElement {
 		this.render();
 	}
 
-	render() {
-		if (this.shadowRoot) {
-			loadCss(this, stylesCard);
-			this.shadowRoot.innerHTML = `
+    render() {
+        if (this.shadowRoot) {
+            loadCss(this, stylesCard);
+						const myInput = this.ownerDocument.createElement('custom-input') as MyInput;
+            this.shadowRoot.innerHTML = `
 
 			<section class=''>
+			<input type="text"/>
 			<button class="bookmark" type="button" id="login-button">
 			    Login
 			</button>
 			</section>
       `;
-		}
+        }
 
 		const loginButton = this.shadowRoot?.getElementById('login-button');
 

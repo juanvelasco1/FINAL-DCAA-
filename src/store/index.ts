@@ -5,7 +5,7 @@ import { PersistanceKeys } from '../utils/storage';
 // import { Actions, AppState, Observer } from '../types/store';
 
 export let appState = {
-    screen: 'd'
+    screen: 'login',
 } ;
 
 let observers: any = [];

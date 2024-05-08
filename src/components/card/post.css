@@ -1,3 +1,8 @@
 * {
 	z-index: 100;
 }
+.section-nav{
+	@apply w-[80%] items-center justify-center;
+	margin-left: calc(12.5% + 10px);
+
+}

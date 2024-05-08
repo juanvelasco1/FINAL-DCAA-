@@ -7,7 +7,10 @@ module.exports = {
 		rules: [
 			{
 				test: /\.css$/i,
-				use: ['css-loader'],
+				use: [
+					{loader: "css-loader"},
+					{loader: "postcss-loader"},
+				],
 			},
 			{
 				test: /\.tsx?$/,
@@ -15,7 +18,7 @@ module.exports = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.(png|jpe?g|gif)$/i,
+				test: /\.(png|jpeg|gif|jpg)$/i,
 				use: [
 					{
 						loader: 'file-loader',
