@@ -74,16 +74,7 @@ class Notifications extends HTMLElement {
 			<div class='notification'>
 			<div class="user">
       <img src="${this.photo}"class="photo">
-<<<<<<< HEAD
       <p><strong>${this.name}</strong></p></div>
-=======
-<<<<<<< HEAD
-      <p class="name" ><strong>${this.name}</strong></p>
-      <p class="text" >${this.texts}</p >
-=======
-      <p><strong>${this.name}</strong></p></div>
->>>>>>> juan2
->>>>>>> main
 
       <p class="text">${this.texts}</p >
 			</div>

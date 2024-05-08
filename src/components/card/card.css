@@ -1,32 +1,24 @@
-@media (max-width: 1600px) {
+
+
 	.card {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		width: 70%;
-		height: 70%;
-		margin-top: 150px;
-		background-color: rgb(243, 243, 243);
-		border-radius: 45px;
-		margin-left: 270px;
-		box-shadow: 10px 5px 5px rgb(177, 177, 177);
-		z-index: 50;
+		@apply flex flex-col justify-center text-center items-center w-full mb-20 bg-[#F3F3F3] rounded-3xl z-50;
+		box-shadow: 5px 2px 2px rgb(177, 177, 177);
+	}
+
+	.card-header {
+		@apply flex space-x-1 w-full px-4 py-2;
+		box-shadow: 0 0 3px 0 rgb(177, 177, 177);
 	}
 
 	.photo {
-		display: flex;
 		width: 6%;
 		/* height: 6%; */
-		margin-right: 89%;
-		margin-top: 20px;
 	}
 
 	h3 {
 		font-family: 'Montserrat', sans-serif;
 		font-optical-sizing: auto;
-		font-weight: weight;
+		font-weight: 80;
 		font-style: normal;
 		display: flex;
 		color: #000000;
@@ -48,7 +40,7 @@
 		display: flex;
 
 		align-items: center;
-		border-radius: 1px blue;
+		border: 1px blue;
 		left: 668px;
 		top: 882px;
 	}
@@ -101,7 +93,7 @@
 		height: 30px;
 		font-family: 'Montserrat', sans-serif;
 		font-optical-sizing: auto;
-		font-weight: weight;
+		font-weight: 80;
 		font-style: normal;
 	}
 
@@ -109,7 +101,7 @@
 		/*/border: red 1px solid;/*/
 		font-family: 'Montserrat', sans-serif;
 		font-optical-sizing: auto;
-		font-weight: weight;
+		font-weight: 80;
 		font-style: normal;
 		position: relative;
 		top: -200px;
@@ -153,13 +145,13 @@
 
 		.saveF {
 			position: relative;
-			top: 330;
+			top: 330px;
 			left: 0;
 			opacity: 0;
 			transition: opacity 0.3s ease-in-out;
 		}
 	}
-}
+
 
 @media (max-width: 420px) {
 	.card {
@@ -191,7 +183,7 @@
 	h3 {
 		font-family: 'Montserrat', sans-serif;
 		font-optical-sizing: auto;
-		font-weight: weight;
+		font-weight: 80;
 		font-style: normal;
 		display: flex;
 		color: #000000;
@@ -214,7 +206,7 @@
 		display: flex;
 
 		align-items: center;
-		border-radius: 1px blue;
+		border: 1px blue;
 		left: 668px;
 		top: 882px;
 	}
@@ -266,7 +258,7 @@
 
 		font-family: 'Montserrat', sans-serif;
 		font-optical-sizing: auto;
-		font-weight: weight;
+		font-weight: 80;
 		font-style: normal;
 	}
 	.save {
@@ -289,7 +281,7 @@
 
 		font-family: 'Montserrat', sans-serif;
 		font-optical-sizing: auto;
-		font-weight: weight;
+		font-weight: 80;
 		font-style: normal;
 	}
 }

@@ -7,16 +7,12 @@
 #mainPageContainer {
 	display: flex;
 	flex-direction: column;
-	/* position: absolute; */
-
-	/* min-height: 100vh; */
+	box-sizing: content-box;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
 }
 
-@media (max-width: 400px) {
-	container {
-		flex-direction: column;
-	}
-}
 /* .section-notifications {
 	border: 2px solid black;
 	width: 584px;
@@ -30,4 +26,8 @@
 
 #notifications-container {
 	margin-top: 55rem;
+}
+
+.post-container {
+
 }

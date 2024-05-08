@@ -27,15 +27,15 @@ import NavBar from './components/navBar/navBar';
 
 import Post from './components/card/post';
 
-import Login from './components/login/login'
+import './screens/login/login'
+import './screens/signup/signup'
 
-import * as styles from './styles.css';
-import { loadCss } from './utils/styles';
 
 //Importar estilos
 import style from './indexAbuelo.css';
 
 import {addObserver, appState} from "./store/store";
+import {loadCss} from "./utils/styles";
 
 //CODE
 class AppContainer extends HTMLElement {
@@ -104,11 +104,13 @@ class AppContainer extends HTMLElement {
 
 	render() {
 		console.log(appState)
+		loadCss(this, style);
+		if (this.shadowRoot) this.shadowRoot.innerHTML = '';
 		switch (appState.screen){
 			case 'home':{
 				const mainPageContainer = this.ownerDocument.createElement('div');
 				mainPageContainer.setAttribute('id', 'mainPageContainer');
-				this.shadowRoot?.appendChild(mainPageContainer);
+
 
 				const notificationsContainer = this.ownerDocument.createElement('section');
 				notificationsContainer.className = 'hidden-notifications';
@@ -118,37 +120,39 @@ class AppContainer extends HTMLElement {
 					mainPageContainer.appendChild(home);
 				});
 
-				/*this.homes.forEach((home) => {
-                    mainPageContainer.appendChild(home);
-                });
-
-                this.home.forEach((home) => {
-                    mainPageContainer.appendChild(home);
-                });*/
-
-				this.create.forEach((home) => {
+				/*this.create.forEach((home) => {
 					console.log(home);
-					this.shadowRoot?.appendChild(home);
-				});
+					mainPageContainer.appendChild(home);
+				});*/
 
-				this.notifications.forEach((home) => {
+				/*this.notifications.forEach((home) => {
 					console.log(home);
 					notificationsContainer.appendChild(home);
-				});
+				});*/
 
-				this.shadowRoot?.appendChild(notificationsContainer);
+				// mainPageContainer.appendChild(notificationsContainer);
 
-				const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
-				this.shadowRoot?.appendChild(navBar);
+				/*const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
+				mainPageContainer.appendChild(navBar);*/
 
-				const post = this.ownerDocument.createElement('my-post') as Post;
-				this.shadowRoot?.appendChild(post);
+				/* const postContainer = this.ownerDocument.createElement('div');
+				postContainer.className = "post-container"; */
+
+				/*const post = this.ownerDocument.createElement('my-post') as Post;
+				postContainer.appendChild(post)
+				mainPageContainer.appendChild(postContainer);*/
+				this.shadowRoot?.appendChild(mainPageContainer);
+
 
 				break;
 			}
-			case 'd':
-				const login = this.ownerDocument.createElement('login-page') as Login;
-				this.shadowRoot?.appendChild(login)
+			case 'login':
+				const login = this.ownerDocument.createElement('app-login');
+				this.shadowRoot?.appendChild(login);
+				break;
+			case 'signup':
+				const signup = this.ownerDocument.createElement('app-signup');
+				this.shadowRoot?.appendChild(signup);
 				break;
 			default:
 				break;

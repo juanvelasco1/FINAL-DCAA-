@@ -1,35 +1,16 @@
 @media (max-width: 1600px) {
 	.hidden-create {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> main
 		position: absolute;
 		display: none;
 	}
 	.create {
-<<<<<<< HEAD
-=======
->>>>>>> juan2
->>>>>>> main
 		display: flex;
 
 		justify-content: center;
 		align-items: center;
 		justify-content: right;
-<<<<<<< HEAD
 		/* width: 70%;
 		height: 70%; */
-=======
-<<<<<<< HEAD
-		width: 70%;
-		height: 70%;
-=======
-		/* width: 70%;
-		height: 70%; */
->>>>>>> juan2
->>>>>>> main
 		margin-top: 150px;
 		background-color: rgb(206, 206, 206);
 		border-radius: 45px;
@@ -41,24 +22,6 @@
 		top: 190%;
 		width: 570px;
 		height: 382px;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-	}
-
-	.photo {
-		display: flex;
-		width: 6%;
-		border: 2px solid black;
-		/* height: 6%; */
-		margin-right: 89%;
-		margin-top: 20px;
-	}
-}
-/* .section-create {
-		border: 2px solid black;
-=======
->>>>>>> main
 
 		z-index: 50;
 	}
@@ -149,12 +112,6 @@
 }
 /* .section-create {
 		border: 2px solid black;
-<<<<<<< HEAD
-
-		z-index: 2;
-=======
->>>>>>> juan2
->>>>>>> main
 
 		z-index: 2;
 	}
@@ -172,11 +129,6 @@
 	.hidden-create {
 		display: none;
 	} */
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> main
 
 @media (max-width: 420px) {
 	.hidden-create {
@@ -297,7 +249,3 @@
 		.hidden-create {
 			display: none;
 		} */
-<<<<<<< HEAD
-=======
->>>>>>> juan2
->>>>>>> main

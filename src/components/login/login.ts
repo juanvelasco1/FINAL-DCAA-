@@ -6,6 +6,7 @@ import {addObserver, appState, dispatch} from "../../store/store";
 import {loadCss} from "../../utils/styles";
 import stylesCard from "../card/card.css";
 import {redirect} from "../../store/actions";
+import MyInput, { InputProps } from './input';
 
 
 
@@ -28,14 +29,17 @@ class Login extends HTMLElement {
     render() {
         if (this.shadowRoot) {
             loadCss(this, stylesCard);
+            const myInput = this.ownerDocument.createElement('custom-input') as MyInput;
             this.shadowRoot.innerHTML = `
 
 			<section class=''>
+			<input type="text"/>
 			<button class="bookmark" type="button" id="login-button">
 			    Login
 			</button>
 			</section>
       `;
+
         }
 
         const loginButton = this.shadowRoot?.getElementById('login-button');
