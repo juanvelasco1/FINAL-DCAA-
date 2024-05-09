@@ -1,8 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { getFirestore, collection, addDoc, getDocs, doc, setDoc, getDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, getDocs, doc, setDoc, getDoc, DocumentData } from 'firebase/firestore';
 import { Profile } from '../types/profile';
+import { postsTypes } from '../types/post';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyDkU8T7hNAzWtJVXl7AdGWZSxdpPh9eU6A',
@@ -31,14 +32,13 @@ export const addUsers = async (formData: Omit<Product, 'users'>) => {
 
 export const getPosts = async () => {
 	const querySnapshot = await getDocs(collection(db, 'posts'));
-	const arrayProducts: Array<Product> = [];
+	const arrayPost: Array<postsTypes | DocumentData> = [];
 
-	querySnapshot.forEach((doc) => {
-		const data = doc.data() as any;
-		arrayProducts.push({ id: doc.id, ...data });
+	querySnapshot.forEach((post) => {
+		arrayPost.push(post);
 	});
 
-	return arrayProducts;
+	return arrayPost;
 };
 
 // export const addDataToCollection = async (data: any) => {
