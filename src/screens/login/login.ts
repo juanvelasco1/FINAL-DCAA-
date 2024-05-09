@@ -4,6 +4,8 @@ import { Screens } from "../../data/navigation";
 import input from "../../components/login/input";
 import {loadCss} from "../../utils/styles";
 import style from "./login.css";
+import { addObserver, appState } from '../../store/index';
+// import './components/indexPadre';
 
 const credentials = { email: "", password: "" };
 
@@ -11,6 +13,7 @@ class Login extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
+        addObserver(this);
     }
 
     connectedCallback() {

@@ -1,4 +1,4 @@
-export const Screens = {
+export type Screens = {
 	HOME: 'home',
 	LOGIN: 'login',
 	SIGNUP: 'signup',

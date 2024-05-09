@@ -4,6 +4,8 @@ import { Screens } from "../../data/navigation";
 import {loadCss} from "../../utils/styles";
 import style from "./signup.css";
 import input from "../../components/login/input";
+import { addObserver, appState } from '../../store/index';
+import './components/indexPadre';
 
 const credentials = { email: "", password: "", confirmPassword: "" };
 
@@ -11,6 +13,7 @@ class Signup extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
+        addObserver(this);
     }
 
     connectedCallback() {

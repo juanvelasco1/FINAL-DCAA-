@@ -1,5 +1,5 @@
 //padre
-import './components/indexPadre';
+// import './components/indexPadre';
 
 //import Datas
 
@@ -29,7 +29,9 @@ import { loadCss } from '../../utils/styles';
 //Importar estilos
 import style from './indexAbuelo.css';
 
-import { addObserver, appState } from '../../store/index';
+import { addObserver, appState, dispatch } from '../../store/index';
+import { getPosts } from '../../utils/firebase';
+import { getPostsAction } from '../../store/actions';
 
 //CODE
 class Home extends HTMLElement {
@@ -92,11 +94,17 @@ class Home extends HTMLElement {
 		});
 	}
 
-	connectedCallback() {
+	async connectedCallback() {
+		if (appState.posts.length === 0) {
+			const action = await getPostsAction();
+			dispatch(action);
+		}
 		this.render();
 	}
 
 	render() {
+		appState.posts.forEach((post) => {});
+
 		console.log(appState);
 		switch (appState.screen) {
 			case 'home': {

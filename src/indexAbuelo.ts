@@ -7,6 +7,9 @@ import { addObserver, appState } from './store/index';
 import { loadCss } from './utils/styles';
 
 import style from './indexAbuelo.css';
+import Login from './screens/login/login'
+import Home from './screens/home/home'
+import './screens/export'
 
 class AppContainer extends HTMLElement {
 	header: HTMLElement[] = [];
@@ -48,7 +51,7 @@ class AppContainer extends HTMLElement {
 				this.shadowRoot?.appendChild(profile);
 				break;
 
-				case 'saved':
+			case 'saved':
 				const saved = this.ownerDocument.createElement('app-saved');
 				this.shadowRoot?.appendChild(saved);
 				break;

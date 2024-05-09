@@ -25,9 +25,10 @@ import Login from '../../components/login/login';
 
 import * as styles from './home.css';
 import { loadCss } from '../../utils/styles';
+import './components/indexPadre';
 
 //Importar estilos
-import style from './indexAbuelo.css';
+// import style from './indexAbuelo.css';
 
 import { addObserver, appState } from '../../store/index';
 

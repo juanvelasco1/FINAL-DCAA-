@@ -20,10 +20,12 @@ export const redirect = (payload: any) => {
 		payload: payload,
 	};
 };
-
-// export const getUsers = () => {
-//   return
-// };
+export const navigate = (screen: Screens) => {
+    return {
+        type: "NAVIGATE",
+        payload: screen,
+    };
+};
 
 export const getPostsAction = async () => {
 	//Ir al utils de firebase y ejecutar la función getPosts
@@ -33,13 +35,25 @@ export const getPostsAction = async () => {
 		payload: posts,
 	};
 };
+// export const getUsers = () => {
+//   return
+// };
 
-export const navigate = (screen:Screens) => {
-	return {
-		action: 'NAVIGATE',
-		payload: screen,
-	};
-};
+// export const getPostsAction = async () => {
+// 	//Ir al utils de firebase y ejecutar la función getPosts
+// 	const posts = await getPosts();
+// 	return {
+// 		action: 'GETPOSTS',
+// 		payload: posts,
+// 	};
+// };
+
+// export const navigate = (screen:Screens) => {
+// 	return {
+// 		action: 'NAVIGATE',
+// 		payload: screen,
+// 	};
+// };
 
 // export const setUserCredentials = (user: string) => {
 // 	return {

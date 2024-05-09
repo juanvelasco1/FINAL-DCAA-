@@ -4,18 +4,19 @@ export type Observer = { render: () => void } & HTMLElement;
 
 
 
-// export type AppState = {
-// 	screenProfile: Profile[];
+export type AppState = {
+	screen: string;
 
 // 	// something: {};
-// };
+ };
 
-export enum Actions {
-'HOME'= 'home',
-	'LOGIN'= 'login',
-	'SIGNUP'= 'signup',
-	'PROFILE'= 'profile',
-	'SAVED'= 'saved',
+export enum ScreenActions {
+'NAVIGATE' = 'navigate'
+// 'HOME'= 'home',
+// 	'LOGIN'= 'login',
+// 	'SIGNUP'= 'signup',
+// 	'PROFILE'= 'profile',
+// 	'SAVED'= 'saved',
 }
 
 // export enum shoppingItemsActions {
@@ -29,4 +30,4 @@ export enum Actions {
 // 	// Pick<AppState, 'something'>;
 // }
 
-// export type Actions = GetProductsAction;
+export type Actions = ScreenActions;

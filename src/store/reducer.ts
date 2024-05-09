@@ -36,13 +36,13 @@ export const reducer = (curentAction: any, currentState: any) => {
     currentState.screen = payload;
     break;
 
-  case 'GETPOSTS':
-    currentState.posts = payload;
-    break;
+  // case 'GETPOSTS':
+  //   currentState.posts = payload;
+  //   break;
 
-  case 'SETUSER':
-    currentState.user = payload;
-    break;
+  // case 'SETUSER':
+  //   currentState.user = payload;
+  //   break;
 }
 return currentState;
 };
