@@ -8,10 +8,8 @@ import { Actions, AppState, Observer } from '../types/store';
 // import { Actions, AppState, Observer } from '../types/store';
 
 const emptyState = {
-	screen: 'login',
-	posts:[],
-	users:[]
-
+	screen: 'home',
+	posts: [],
 	// user: [],
 };
 
@@ -21,13 +19,15 @@ let observers: Observer[] = [];
 
 const notifyObservers = () => observers.forEach((o) => o.render());
 
-export const dispatch = (action: any) => {
+export const dispatch = (action: any, reload: boolean) => {
 	const clone = JSON.parse(JSON.stringify(appState));
 	const newState = reducer(action, clone);
 	// appState = reducer(action, clone);
 	// observers.forEach((observer: any) => observer.render());
 	appState = newState;
-	notifyObservers();
+	if (reload) {
+		notifyObservers();
+	}
 };
 
 export const addObserver = (ref: any) => {

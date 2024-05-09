@@ -16,6 +16,8 @@ import MyHeader, { AttributeHeader } from '../../components/header/header';
 import MyNotifications, { AttributeNotifications } from '../../components/header/notifications/notifications';
 
 import MyCreate, { AttributeCreate } from '../../components/navBar/sections/create/create';
+import MyCard, { Attribute } from '../../components/card/card';
+import MyComment, { Attributes } from '../../components/card/Comments/comments';
 
 import NavBar from '../../components/navBar/navBar';
 
@@ -44,7 +46,7 @@ class Home extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
-		addObserver(this); // Página de renderización dinámica
+		//addObserver(this); // Página de renderización dinámica
 
 		headerData.forEach((user) => {
 			const headerHeader = this.ownerDocument.createElement('my-header') as MyHeader;
@@ -95,14 +97,16 @@ class Home extends HTMLElement {
 	}
 
 	async connectedCallback() {
-		if (appState.posts.length === 0) {
-			const action = await getPostsAction();
-			dispatch(action);
-		}
+		// if (appState.posts.length === 0) {
+
+		// }
 		this.render();
 	}
 
-	render() {
+	async render() {
+		const action = await getPostsAction();
+		dispatch(action, false);
+
 		appState.posts.forEach((post) => {});
 
 		console.log(appState);

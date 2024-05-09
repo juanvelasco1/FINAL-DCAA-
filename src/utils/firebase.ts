@@ -27,14 +27,14 @@ const db = getFirestore(app);
 export const auth = getAuth(app);
 
 //Funciones para agregar y obtener productos
-// export const addUsers = async (formData: Omit<Product, 'users'>) => {
-// 	try {
-// 		const docRef = await addDoc(collection(db, 'products'), formData);
-// 		console.log('Document written with ID: ', docRef.id);
-// 	} catch (e) {
-// 		console.error('Error adding document: ', e);
-// 	}
-// };
+export const addUsers = async (formData: Omit<usersTypes, 'users'>) => {
+	try {
+		const docRef = await addDoc(collection(db, 'products'), formData);
+		console.log('Document written with ID: ', docRef.id);
+	} catch (e) {
+		console.error('Error adding document: ', e);
+	}
+};
 export const addUser = async (formData: Profile) => {
 	try {
 		const docRef = await addDoc(collection(db, 'users'), formData);
@@ -51,9 +51,11 @@ export const getPosts = async () => {
 	const arrayPost: Array<postsTypes | DocumentData> = [];
 
 	querySnapshot.forEach((post) => {
-		arrayPost.push(post);
+		arrayPost.push(post.data());
 	});
-
+	console.log('Post de la Firebase');
+	console.log(querySnapshot);
+	console.log(arrayPost);
 	return arrayPost;
 };
 
@@ -70,7 +72,7 @@ export const getCreate = async () => {
 
 export const getProfile = async () => {
 	const querySnapshot = await getDocs(collection(db, 'profile'));
-	const arrayProfile: Array<Profile| DocumentData> = [];
+	const arrayProfile: Array<Profile | DocumentData> = [];
 
 	querySnapshot.forEach((profile) => {
 		arrayProfile.push(profile);
@@ -81,7 +83,7 @@ export const getProfile = async () => {
 
 export const getSections = async () => {
 	const querySnapshot = await getDocs(collection(db, 'sections'));
-	const arraySections: Array<sectionsTypes| DocumentData> = [];
+	const arraySections: Array<sectionsTypes | DocumentData> = [];
 
 	querySnapshot.forEach((sections) => {
 		arraySections.push(sections);
@@ -92,7 +94,7 @@ export const getSections = async () => {
 
 export const getHeader = async () => {
 	const querySnapshot = await getDocs(collection(db, 'header'));
-	const arrayHeader: Array<headerTypes| DocumentData> = [];
+	const arrayHeader: Array<headerTypes | DocumentData> = [];
 
 	querySnapshot.forEach((header) => {
 		arrayHeader.push(header);
@@ -103,7 +105,7 @@ export const getHeader = async () => {
 
 export const getNotifications = async () => {
 	const querySnapshot = await getDocs(collection(db, 'notifications'));
-	const arrayNotifications: Array<notificationsTypes| DocumentData> = [];
+	const arrayNotifications: Array<notificationsTypes | DocumentData> = [];
 
 	querySnapshot.forEach((notifications) => {
 		arrayNotifications.push(notifications);
@@ -114,7 +116,7 @@ export const getNotifications = async () => {
 
 export const getUsers = async () => {
 	const querySnapshot = await getDocs(collection(db, 'users'));
-	const arrayUsers: Array<usersTypes| DocumentData> = [];
+	const arrayUsers: Array<usersTypes | DocumentData> = [];
 
 	querySnapshot.forEach((user) => {
 		arrayUsers.push(user);
@@ -125,7 +127,7 @@ export const getUsers = async () => {
 
 export const getTTags = async () => {
 	const querySnapshot = await getDocs(collection(db, 'tags'));
-	const arrayTags: Array<tagsTypes| DocumentData> = [];
+	const arrayTags: Array<tagsTypes | DocumentData> = [];
 
 	querySnapshot.forEach((tag) => {
 		arrayTags.push(tag);

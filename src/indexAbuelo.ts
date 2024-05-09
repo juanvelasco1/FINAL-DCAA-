@@ -2,14 +2,21 @@
 import './components/indexPadre';
 import { Screens } from './types/navigation';
 import { Profile } from './types/profile';
+import { postsTypes } from './types/post';
+import { createTypes } from './types/create';
+import { usersTypes } from './types/users';
+import { headerTypes } from './types/header';
+import { notificationsTypes } from './types/notifications';
+import { sectionsTypes } from './types/sections';
+import { tagsTypes } from './types/tags';
+
 
 import { addObserver, appState } from './store/index';
 import { loadCss } from './utils/styles';
 
 import style from './indexAbuelo.css';
-import Login from './screens/login/login'
-import Home from './screens/home/home'
-import './screens/export'
+
+import './screens/export';
 
 class AppContainer extends HTMLElement {
 	header: HTMLElement[] = [];
