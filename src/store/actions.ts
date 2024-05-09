@@ -12,6 +12,7 @@
 
 import{Screens} from '../types/navigation'
 import { getPosts } from '../utils/firebase';
+import { Actions } from "../types/store";
 
 export const redirect = (payload: any) => {
 	return {
@@ -40,9 +41,9 @@ export const navigate = (screen:Screens) => {
 	};
 };
 
-export const setUserCredentials = (user: string) => {
-	return {
-		action: 'SETUSER',
-		payload: user,
-	};
-};
+// export const setUserCredentials = (user: string) => {
+// 	return {
+// 		action: 'SETUSER',
+// 		payload: user,
+// 	};
+// };
