@@ -1,5 +1,5 @@
-//padre
-import './components/indexPadre';
+ //padre
+// import './components/indexPadre';
 
 //import Datas
 
@@ -17,7 +17,7 @@ import styleProfile from './profile.css';
 
 import { addObserver, appState } from '../../store/index';
 import ContactInfo from '../../components/contactInfo/contactInfo';
-import './components/indexPadre';
+// import './components/indexPadre';
 
 
 //CODE

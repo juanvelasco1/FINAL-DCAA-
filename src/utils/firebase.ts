@@ -5,6 +5,11 @@ import { getFirestore, collection, addDoc, getDocs, doc, setDoc, getDoc, Documen
 import { Profile } from '../types/profile';
 import { postsTypes } from '../types/post';
 import { createTypes } from '../types/create';
+import { sectionsTypes } from '../types/sections';
+import { headerTypes } from '../types/header';
+import { notificationsTypes } from '../types/notifications';
+import { usersTypes } from '../types/users';
+import { tagsTypes } from '../types/tags';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyDkU8T7hNAzWtJVXl7AdGWZSxdpPh9eU6A',
@@ -54,14 +59,90 @@ export const getPosts = async () => {
 
 export const getCreate = async () => {
 	const querySnapshot = await getDocs(collection(db, 'create'));
-	const arrayPost: Array<createTypes | DocumentData> = [];
+	const arrayCreate: Array<createTypes | DocumentData> = [];
 
-	querySnapshot.forEach((post) => {
-		arrayPost.push(post);
+	querySnapshot.forEach((create) => {
+		arrayCreate.push(create);
 	});
 
-	return arrayPost;
+	return arrayCreate;
 };
+
+export const getProfile = async () => {
+	const querySnapshot = await getDocs(collection(db, 'profile'));
+	const arrayProfile: Array<Profile| DocumentData> = [];
+
+	querySnapshot.forEach((profile) => {
+		arrayProfile.push(profile);
+	});
+
+	return arrayProfile;
+};
+
+export const getSections = async () => {
+	const querySnapshot = await getDocs(collection(db, 'sections'));
+	const arraySections: Array<sectionsTypes| DocumentData> = [];
+
+	querySnapshot.forEach((sections) => {
+		arraySections.push(sections);
+	});
+
+	return arraySections;
+};
+
+export const getHeader = async () => {
+	const querySnapshot = await getDocs(collection(db, 'header'));
+	const arrayHeader: Array<headerTypes| DocumentData> = [];
+
+	querySnapshot.forEach((header) => {
+		arrayHeader.push(header);
+	});
+
+	return arrayHeader;
+};
+
+export const getNotifications = async () => {
+	const querySnapshot = await getDocs(collection(db, 'notifications'));
+	const arrayNotifications: Array<notificationsTypes| DocumentData> = [];
+
+	querySnapshot.forEach((notifications) => {
+		arrayNotifications.push(notifications);
+	});
+
+	return arrayNotifications;
+};
+
+export const getUsers = async () => {
+	const querySnapshot = await getDocs(collection(db, 'users'));
+	const arrayUsers: Array<usersTypes| DocumentData> = [];
+
+	querySnapshot.forEach((user) => {
+		arrayUsers.push(user);
+	});
+
+	return arrayUsers;
+};
+
+export const getTTags = async () => {
+	const querySnapshot = await getDocs(collection(db, 'tags'));
+	const arrayTags: Array<tagsTypes| DocumentData> = [];
+
+	querySnapshot.forEach((tag) => {
+		arrayTags.push(tag);
+	});
+
+	return arrayTags;
+};
+// export const getSaved = async () => {
+// 	const querySnapshot = await getDocs(collection(db, 'saved'));
+// 	const arraySaved: Array<Saved| DocumentData> = [];
+
+// 	querySnapshot.forEach((saved) => {
+// 		arraySaved.push(saved);
+// 	});
+
+// 	return arraySaved;
+// };
 
 // export const addDataToCollection = async (data: any) => {
 // 	try {
