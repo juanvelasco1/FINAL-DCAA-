@@ -1,4 +1,4 @@
-export interface sectionsTypes {
+export interface usersTypes {
 	name: string;
 	photo: string;
 	mail: string;
