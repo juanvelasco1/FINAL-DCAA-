@@ -7,3 +7,11 @@ export { default as Header } from './header/header';
 export { default as Create } from './navBar/sections/create/create';
 export { default as Notifications } from './header/notifications/notifications';
 export { default as Post } from './card/post';
+export { default as Login } from './login/login';
+export { default as ContactInfo } from './contactInfo/contactInfo';
+
+import  Login  from '../screens/login/login';
+import  Home  from '../screens/home/home';
+import Profile  from '../screens/profile/profile';
+import Signup  from '../screens/signup/signup';
+import Saved  from '../screens/saved/saved';
