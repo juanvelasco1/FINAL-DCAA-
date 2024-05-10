@@ -1,3 +1,5 @@
+import { dispatch } from '../../../store';
+import { redirect } from '../../../store/actions';
 import { loadCss } from '../../../utils/styles';
 import stylesSections from './sections.css';
 
@@ -59,7 +61,7 @@ class Section extends HTMLElement {
 			<link rel="stylesheet" href="../src/Components/card/card.css">
 
       <section class='section-sections'>
-      <img src=${this.img}>
+      <img  id=${this.type + '-img'} src=${this.img}>
 
       			</section>
       		`;
@@ -68,19 +70,36 @@ class Section extends HTMLElement {
 		cssSections.innerHTML = stylesSections;
 		this.shadowRoot?.appendChild(cssSections);
 
-		const imgButton = this.shadowRoot?.querySelector('section');
+		const createImg = this.shadowRoot?.querySelector('#create-img');
+
+		const SavedImg = this.shadowRoot?.querySelector('#saved-img');
+
+		SavedImg?.addEventListener('click', () => {
+			dispatch(redirect('saved'), true)
+		})
+
+		const HomeImg = this.shadowRoot?.querySelector('#home-img');
+
+		HomeImg?.addEventListener('click', () => {
+			dispatch(redirect('home'), true)
+		})
+
+
 		const myCreatedSection = this.ownerDocument
 			.querySelector('app-container')
+			?.shadowRoot?.querySelector('app-home')
 			?.shadowRoot?.querySelector('my-create')
 			?.shadowRoot?.getElementById('myCreate');
 
 		const closeButton = this.ownerDocument
 			.querySelector('app-container')
+			?.shadowRoot?.querySelector('app-home')
 			?.shadowRoot?.querySelector('my-create')
 			?.shadowRoot?.getElementById('close-button');
 
-		imgButton?.addEventListener('click', () => {
-			console.log('Hola');
+			createImg?.addEventListener('click', () => {
+			console.log('HolaInContainer');
+			console.log('CreateSection: ', myCreatedSection)
 			if (myCreatedSection?.className === 'hidden-create') {
 				console.log(myCreatedSection);
 				myCreatedSection.classList.add('section-create');

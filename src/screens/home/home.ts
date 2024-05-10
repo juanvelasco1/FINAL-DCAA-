@@ -25,7 +25,7 @@ import Post from '../../components/card/post';
 
 import Login from '../../components/login/login';
 
-import * as styles from './home.css';
+import stylesHome from './home.css';
 import { loadCss } from '../../utils/styles';
 
 //Importar estilos
@@ -97,24 +97,21 @@ class Home extends HTMLElement {
 	}
 
 	async connectedCallback() {
-		// if (appState.posts.length === 0) {
-
-		// }
+		const action = await getPostsAction();
+		dispatch(action, false);
 		this.render();
 	}
 
-	async render() {
-		const action = await getPostsAction();
-		dispatch(action, false);
+	render() {
 
-		appState.posts.forEach((post) => {});
+		const css = this.ownerDocument.createElement("style");
+        css.innerHTML = stylesHome;
+        this.shadowRoot?.appendChild(css);
 
-		console.log(appState);
-		switch (appState.screen) {
-			case 'home': {
-				const mainPageContainer = this.ownerDocument.createElement('div');
+		const mainPageContainer = this.ownerDocument.createElement('div');
+		mainPageContainer.className = 'container-home'
+
 				mainPageContainer.setAttribute('id', 'mainPageContainer');
-				this.shadowRoot?.appendChild(mainPageContainer);
 
 				const notificationsContainer = this.ownerDocument.createElement('section');
 				notificationsContainer.className = 'hidden-notifications';
@@ -124,36 +121,26 @@ class Home extends HTMLElement {
 					mainPageContainer.appendChild(home);
 				});
 
-				/*this.homes.forEach((home) => {
-                    mainPageContainer.appendChild(home);
-                });
-
-                this.home.forEach((home) => {
-                    mainPageContainer.appendChild(home);
-                });*/
-
 				this.create.forEach((home) => {
 					console.log(home);
-					this.shadowRoot?.appendChild(home);
+					mainPageContainer.appendChild(home);
 				});
 
 				this.notifications.forEach((home) => {
 					console.log(home);
+					home.className = 'ntf-cont';
 					notificationsContainer.appendChild(home);
 				});
 
-				this.shadowRoot?.appendChild(notificationsContainer);
+				mainPageContainer.appendChild(notificationsContainer);
 
 				const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
-				this.shadowRoot?.appendChild(navBar);
+				mainPageContainer.appendChild(navBar);
 
 				const post = this.ownerDocument.createElement('my-post') as Post;
-				this.shadowRoot?.appendChild(post);
-
-				break;
-			}
-			case 'd':
-		}
+				post.className = 'post-container';
+				mainPageContainer.appendChild(post);
+				this.shadowRoot?.appendChild(mainPageContainer);
 	}
 }
 export default Home;

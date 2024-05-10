@@ -25,25 +25,7 @@
 	display: none;
 }
 
-#notifications-container {
-	margin-top: 110px;
-	margin-right: 50px;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	z-index: 99000;
-	background-color: rgba(0, 0, 0, 0.5);
 
-}
-
-.ntf-cont{
-	display: flex;
-	justify-content: end;
-	padding-right: 20px;
-
-}
 
 .post-container {
 	@apply flex flex-col w-[90%] md:w-[87%] p-1 items-center mt-20 justify-center;
