@@ -8,8 +8,10 @@ import { Actions, AppState, Observer } from '../types/store';
 // import { Actions, AppState, Observer } from '../types/store';
 
 const emptyState = {
-	screen: 'home',
+	screen: 'profile',
 	posts: [],
+	notification:[],
+	user:[],
 	// user: [],
 };
 

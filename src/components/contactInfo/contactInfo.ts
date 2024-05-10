@@ -1,5 +1,8 @@
 import { loadCss } from '../../utils/styles';
 import stylesContact from './contactInfo.css';
+import { dispatch } from '../../store';
+import { redirect } from '../../store/actions';
+import { appState } from '../../store';
 
 export enum AttributeContact {
 	'name' = 'name',

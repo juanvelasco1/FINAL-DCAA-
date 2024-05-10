@@ -11,7 +11,7 @@
 // };
 
 import{Screens} from '../types/navigation'
-import { getPosts } from '../utils/firebase';
+import { getPosts, getProfile } from '../utils/firebase';
 import { Actions } from "../types/store";
 
 export const redirect = (payload: any) => {
@@ -33,6 +33,15 @@ export const getPostsAction = async () => {
 	return {
 		action: 'GETPOSTS',
 		payload: posts,
+	};
+};
+
+export const getProfileAction = async () => {
+	//Ir al utils de firebase y ejecutar la función getPosts
+	const profile = await getProfile();
+	return {
+		action: 'GETPROFILE',
+		payload: profile,
 	};
 };
 // export const getUsers = () => {

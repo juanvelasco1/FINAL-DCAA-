@@ -5,8 +5,9 @@
 	height: 2254px;
 } */
 
-.container-home{
-	margin-left: 18%;
+.container-home {
+	margin-left: 30%;
+	margin-top: 15%;
 }
 #mainPageContainer {
 	display: flex;
@@ -42,12 +43,10 @@
 	left: 0;
 	z-index: 99000;
 	background-color: rgba(0, 0, 0, 0.5);
-
 }
 
-.ntf-cont{
+.ntf-cont {
 	display: flex;
 	justify-content: end;
 	padding-right: 20px;
-
 }

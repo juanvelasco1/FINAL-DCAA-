@@ -1,3 +1,5 @@
+import { dispatch } from '../../store';
+import { redirect } from '../../store/actions';
 import { loadCss } from '../../utils/styles';
 import stylesHeader from './header.css';
 
@@ -60,6 +62,12 @@ class Header extends HTMLElement {
 			</section>
       `;
 		}
+
+		const ProfileImg = this.shadowRoot?.querySelector('#profile-img');
+
+		ProfileImg?.addEventListener('click', () => {
+			dispatch(redirect('profile'), true)
+		})
 		//const notifications.container
 		const cssHeader = this.ownerDocument.createElement('style');
 		cssHeader.innerHTML = stylesHeader;

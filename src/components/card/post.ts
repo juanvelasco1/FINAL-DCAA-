@@ -53,10 +53,9 @@ class Post extends HTMLElement {
 			sectionPost.className = 'section-nav';
 
 			this.cardsWithComments.forEach(({ card, comment }) => {
-				card.className = "my-card";
+				card.className = 'my-card';
 				sectionPost.appendChild(card);
-				sectionPost.appendChild(comment)
-
+				sectionPost.appendChild(comment);
 			});
 
 			this.shadowRoot.appendChild(sectionPost);

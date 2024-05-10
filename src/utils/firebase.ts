@@ -77,6 +77,7 @@ export const getProfile = async () => {
 	querySnapshot.forEach((profile) => {
 		arrayProfile.push(profile);
 	});
+	console.log('Post de profile');
 
 	return arrayProfile;
 };
