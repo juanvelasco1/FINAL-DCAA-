@@ -10,9 +10,9 @@
 // 	};
 // };
 
-import{Screens} from '../types/navigation'
+import { Screens } from '../types/navigation';
 import { getPosts } from '../utils/firebase';
-import { Actions } from "../types/store";
+import { Actions } from '../types/store';
 
 export const redirect = (payload: any) => {
 	return {
@@ -21,10 +21,10 @@ export const redirect = (payload: any) => {
 	};
 };
 export const navigate = (screen: Screens) => {
-    return {
-        type: "NAVIGATE",
-        payload: screen,
-    };
+	return {
+		type: 'NAVIGATE',
+		payload: screen,
+	};
 };
 
 export const getPostsAction = async () => {
@@ -35,6 +35,23 @@ export const getPostsAction = async () => {
 		payload: posts,
 	};
 };
+
+// export const getProfileAction = async () => {
+// 	//Ir al utils de firebase y ejecutar la función getPosts
+// 	const profile = await getProfile();
+// 	return {
+// 		action: 'GETPROFILE',
+// 		payload: profile,
+// 	};
+// };
+
+export const storageUserData = (userData: any) => {
+	return {
+		action: 'STORAGE_USER_DATA',
+		payload: userData,
+	};
+};
+
 // export const getUsers = () => {
 //   return
 // };

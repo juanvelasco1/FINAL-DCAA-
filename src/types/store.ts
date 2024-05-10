@@ -2,21 +2,27 @@ import { Profile } from './profile';
 
 export type Observer = { render: () => void } & HTMLElement;
 
-
-
-export type AppState = {
+export interface AppStateType {
 	screen: string;
-
-// 	// something: {};
- };
+	posts: Array<any>;
+	notification: Array<any>;
+	user: Array<any>;
+	logedUserData: {
+		email: string;
+		password: string;
+		confirmPassword: string;
+		name: string;
+	};
+	// 	// something: {};
+}
 
 export enum ScreenActions {
-'NAVIGATE' = 'navigate'
-// 'HOME'= 'home',
-// 	'LOGIN'= 'login',
-// 	'SIGNUP'= 'signup',
-// 	'PROFILE'= 'profile',
-// 	'SAVED'= 'saved',
+	'NAVIGATE' = 'navigate',
+	// 'HOME'= 'home',
+	// 	'LOGIN'= 'login',
+	// 	'SIGNUP'= 'signup',
+	// 	'PROFILE'= 'profile',
+	// 	'SAVED'= 'saved',
 }
 
 // export enum shoppingItemsActions {

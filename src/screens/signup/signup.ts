@@ -7,7 +7,7 @@ import input from '../../components/login/input';
 import { addObserver, appState } from '../../store/index';
 // import './components/indexPadre';
 
-const credentials = { email: '', password: '', confirmPassword: '' };
+const credentials = { email: '', password: '', confirmPassword: '', name: '' };
 
 class Signup extends HTMLElement {
 	constructor() {
@@ -62,6 +62,13 @@ class Signup extends HTMLElement {
 		email.type = 'email';
 		email.addEventListener('change', (e: any) => (credentials.email = e.target.value));
 		inputContainer.appendChild(email);
+
+		const name = this.ownerDocument.createElement('input');
+		name.className = 'input';
+		name.placeholder = 'Name';
+		name.type = 'text';
+		name.addEventListener('change', (e: any) => (credentials.name = e.target.value));
+		inputContainer.appendChild(name);
 
 		const password = this.ownerDocument.createElement('input');
 		password.className = 'input';

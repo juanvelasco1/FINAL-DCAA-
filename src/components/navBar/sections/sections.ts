@@ -75,15 +75,14 @@ class Section extends HTMLElement {
 		const SavedImg = this.shadowRoot?.querySelector('#saved-img');
 
 		SavedImg?.addEventListener('click', () => {
-			dispatch(redirect('saved'), true)
-		})
+			dispatch(redirect('saved'), true);
+		});
 
 		const HomeImg = this.shadowRoot?.querySelector('#home-img');
 
 		HomeImg?.addEventListener('click', () => {
-			dispatch(redirect('home'), true)
-		})
-
+			dispatch(redirect('home'), true);
+		});
 
 		const myCreatedSection = this.ownerDocument
 			.querySelector('app-container')
@@ -97,15 +96,11 @@ class Section extends HTMLElement {
 			?.shadowRoot?.querySelector('my-create')
 			?.shadowRoot?.getElementById('close-button');
 
-			createImg?.addEventListener('click', () => {
-			console.log('HolaInContainer');
-			console.log('CreateSection: ', myCreatedSection)
+		createImg?.addEventListener('click', () => {
 			if (myCreatedSection?.className === 'hidden-create') {
-				console.log(myCreatedSection);
 				myCreatedSection.classList.add('section-create');
 				myCreatedSection.classList.remove('hidden-create');
 			} else if (myCreatedSection?.className === 'section-create') {
-				console.log(myCreatedSection);
 				myCreatedSection.classList.remove('section-create');
 				myCreatedSection.classList.add('hidden-create');
 			}
@@ -113,7 +108,6 @@ class Section extends HTMLElement {
 
 		if (this.type === 'create') {
 			closeButton?.addEventListener('click', () => {
-				console.log('Hola');
 				if (myCreatedSection) {
 					myCreatedSection.classList.remove('section-create');
 					myCreatedSection.classList.add('hidden-create');

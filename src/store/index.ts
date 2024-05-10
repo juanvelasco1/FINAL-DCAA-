@@ -1,16 +1,24 @@
 import { reducer } from './reducer';
 import { Screens } from '../types/navigation';
-import { Actions, AppState, Observer } from '../types/store';
+import { Actions, AppStateType, Observer } from '../types/store';
 
 // import {Observer} from "../types/store";
 // import Storage from '../utils/storage';
 // import { PersistanceKeys } from '../utils/storage';
 // import { Actions, AppState, Observer } from '../types/store';
 
-const emptyState = {
-	screen: 'login',
+const emptyState: AppStateType = {
+	screen: 'signup',
 	posts: [],
+	notification: [],
+	user: [],
 	// user: [],
+	logedUserData: {
+		email: '',
+		password: '',
+		confirmPassword: '',
+		name: '',
+	},
 };
 
 export let appState = emptyState;
@@ -28,10 +36,6 @@ export const dispatch = (action: any, reload: boolean) => {
 	if (reload) {
 		notifyObservers();
 	}
-};
-
-export const addObserver = (ref: any) => {
-	observers = [...observers, ref];
 };
 
 export const addObserver = (ref: any) => {

@@ -97,50 +97,65 @@ class Home extends HTMLElement {
 	}
 
 	async connectedCallback() {
-		const action = await getPostsAction();
-		dispatch(action, false);
+		// if (appState.posts.length === 0) {
+
+		// }
 		this.render();
 	}
 
-	render() {
+	async render() {
+		const action = await getPostsAction();
+		dispatch(action, false);
+		this.render2();
+	}
 
-		const css = this.ownerDocument.createElement("style");
-        css.innerHTML = stylesHome;
-        this.shadowRoot?.appendChild(css);
+	render2() {
+		const css = this.ownerDocument.createElement('style');
+		css.innerHTML = stylesHome;
+		this.shadowRoot?.appendChild(css);
 
 		const mainPageContainer = this.ownerDocument.createElement('div');
-		mainPageContainer.className = 'container-home'
+		mainPageContainer.className = 'container-home';
 
-				mainPageContainer.setAttribute('id', 'mainPageContainer');
+		mainPageContainer.setAttribute('id', 'mainPageContainer');
+		this.shadowRoot?.appendChild(mainPageContainer);
 
-				const notificationsContainer = this.ownerDocument.createElement('section');
-				notificationsContainer.className = 'hidden-notifications';
-				notificationsContainer.id = 'notifications-container';
+		const notificationsContainer = this.ownerDocument.createElement('section');
+		notificationsContainer.className = 'hidden-notifications';
+		notificationsContainer.id = 'notifications-container';
 
-				this.header.forEach((home) => {
-					mainPageContainer.appendChild(home);
-				});
+		this.header.forEach((home) => {
+			mainPageContainer.appendChild(home);
+		});
 
-				this.create.forEach((home) => {
-					console.log(home);
-					mainPageContainer.appendChild(home);
-				});
+		/*this.homes.forEach((home) => {
+                    mainPageContainer.appendChild(home);
+                });
 
-				this.notifications.forEach((home) => {
-					console.log(home);
-					home.className = 'ntf-cont';
-					notificationsContainer.appendChild(home);
-				});
+                this.home.forEach((home) => {
+                    mainPageContainer.appendChild(home);
+                });*/
 
-				mainPageContainer.appendChild(notificationsContainer);
+		this.create.forEach((home) => {
+			// console.log(home);
+			mainPageContainer.appendChild(home);
+		});
 
-				const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
-				mainPageContainer.appendChild(navBar);
+		this.notifications.forEach((home) => {
+			// console.log(home);
+			home.className = 'ntf-cont';
+			notificationsContainer.appendChild(home);
+		});
 
-				const post = this.ownerDocument.createElement('my-post') as Post;
-				post.className = 'post-container';
-				mainPageContainer.appendChild(post);
-				this.shadowRoot?.appendChild(mainPageContainer);
+		mainPageContainer.appendChild(notificationsContainer);
+
+		const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
+		mainPageContainer.appendChild(navBar);
+
+		const post = this.ownerDocument.createElement('my-post') as Post;
+		post.className = 'post-container';
+		mainPageContainer.appendChild(post);
+		this.shadowRoot?.appendChild(mainPageContainer);
 	}
 }
 export default Home;

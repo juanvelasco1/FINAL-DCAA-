@@ -66,6 +66,11 @@ h3 {
 	border: none;
 }
 
+.heart {
+	background: none;
+	border: none;
+}
+
 .like {
 	cursor: pointer;
 	@apply max-md:w-6;

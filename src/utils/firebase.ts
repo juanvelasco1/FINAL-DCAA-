@@ -30,20 +30,17 @@ export const auth = getAuth(app);
 export const addUsers = async (formData: Omit<usersTypes, 'users'>) => {
 	try {
 		const docRef = await addDoc(collection(db, 'users'), formData);
-		console.log('Usuario agregado con ID: ', docRef.id);
+
 		return docRef.id;
 	} catch (error) {
-		console.error('Error al agregar usuario: ', error);
 		throw new Error('Error al agregar usuario');
 	}
 };
 export const addUser = async (formData: Profile) => {
 	try {
 		const docRef = await addDoc(collection(db, 'users'), formData);
-		console.log('Usuario agregado con ID: ', docRef.id);
 		return docRef.id;
 	} catch (error) {
-		console.error('Error al agregar usuario: ', error);
 		throw new Error('Error al agregar usuario');
 	}
 };
@@ -55,9 +52,6 @@ export const getPosts = async () => {
 	querySnapshot.forEach((post) => {
 		arrayPost.push(post.data());
 	});
-	console.log('Post de la Firebase');
-	console.log(querySnapshot);
-	console.log(arrayPost);
 	return arrayPost;
 };
 
@@ -72,16 +66,18 @@ export const getCreate = async () => {
 	return arrayCreate;
 };
 
-export const getProfile = async () => {
-	const querySnapshot = await getDocs(collection(db, 'profile'));
-	const arrayProfile: Array<Profile | DocumentData> = [];
+//Esta funcion de getProfile esta mala porque hay que traer un usuario, no todos
 
-	querySnapshot.forEach((profile) => {
-		arrayProfile.push(profile);
-	});
+// export const getProfile = async () => {
+// 	const querySnapshot = await getDocs(collection(db, 'profile'));
+// 	const arrayProfile: Array<Profile | DocumentData> = [];
 
-	return arrayProfile;
-};
+// 	querySnapshot.forEach((profile) => {
+// 		arrayProfile.push(profile);
+// 	});
+
+// 	return arrayProfile;
+// };
 
 export const getSections = async () => {
 	const querySnapshot = await getDocs(collection(db, 'sections'));

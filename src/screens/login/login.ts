@@ -1,5 +1,5 @@
 import { dispatch } from '../../store/index';
-import { redirect } from '../../store/actions';
+import { redirect, storageUserData } from '../../store/actions';
 import { Screens } from '../../types/navigation';
 import input from '../../components/login/input';
 import { loadCss } from '../../utils/styles';
@@ -34,6 +34,8 @@ class Login extends HTMLElement {
 	validateUser = (res: string | any[], email: any, password: any) => {
 		for (var i = 0; i < res.length; i++) {
 			if (res[i].email === email && res[i].password === password) {
+				console.log('Dispatch user data');
+				dispatch(storageUserData(res[i]), false);
 				return true; // Usuario válido
 			}
 		}
@@ -89,7 +91,9 @@ class Login extends HTMLElement {
 		container.appendChild(signupContainer);
 
 		const aSignupBtn = signupText.querySelector('#signup-button');
-		aSignupBtn?.addEventListener('click', () => dispatch(redirect('signup'), true));
+		aSignupBtn?.addEventListener('click', () => {
+			dispatch(redirect('signup'), true);
+		});
 
 		mainContainer.appendChild(overlayContainer);
 		mainContainer.appendChild(container);
