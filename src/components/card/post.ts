@@ -1,6 +1,6 @@
 //import Datas
 
-import { postData } from '../../data/postData';
+// import { postData } from '../../data/postData';
 
 import { commentsData } from '../../data/commentsData';
 
@@ -10,6 +10,7 @@ import MyCard, { Attribute } from '../card/card';
 import MyComments, { Attributes } from './Comments/comments';
 
 import postStyles from './post.css';
+import { appState } from '../../store';
 
 //CODE
 class Post extends HTMLElement {
@@ -21,7 +22,7 @@ class Post extends HTMLElement {
 		super();
 		this.attachShadow({ mode: 'open' });
 
-		postData.forEach((post) => {
+		appState.posts.forEach((post: any) => {
 			const card = this.ownerDocument.createElement('my-card') as MyCard;
 			card.setAttribute(Attribute.name, post.user.name);
 			card.setAttribute(Attribute.photo, post.user.imgProfile);

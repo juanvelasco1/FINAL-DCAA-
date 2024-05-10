@@ -56,7 +56,7 @@ class Header extends HTMLElement {
 
 
 			<img src=${this.notification} class='notification' id="notification-button">
-      <img src=${this.photo} class='photo' >
+      <img id='profile-img' src=${this.photo} class='photo' >
 			</section>
       `;
 		}
@@ -71,6 +71,7 @@ class Header extends HTMLElement {
 		imgButton?.addEventListener('click', () => {
 			const myCreatedSection = this.ownerDocument
 				.querySelector('app-container')
+				?.shadowRoot?.querySelector('app-home')
 				?.shadowRoot?.getElementById('notifications-container');
 			// console.log('Hola');
 			console.log(myCreatedSection);
