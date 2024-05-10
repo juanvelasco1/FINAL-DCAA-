@@ -8,7 +8,7 @@ import { Actions, AppState, Observer } from '../types/store';
 // import { Actions, AppState, Observer } from '../types/store';
 
 const emptyState = {
-	screen: 'home',
+	screen: 'login',
 	posts: [],
 	// user: [],
 };
@@ -28,6 +28,10 @@ export const dispatch = (action: any, reload: boolean) => {
 	if (reload) {
 		notifyObservers();
 	}
+};
+
+export const addObserver = (ref: any) => {
+	observers = [...observers, ref];
 };
 
 export const addObserver = (ref: any) => {

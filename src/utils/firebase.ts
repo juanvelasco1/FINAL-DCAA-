@@ -29,10 +29,12 @@ export const auth = getAuth(app);
 //Funciones para agregar y obtener productos
 export const addUsers = async (formData: Omit<usersTypes, 'users'>) => {
 	try {
-		const docRef = await addDoc(collection(db, 'products'), formData);
-		console.log('Document written with ID: ', docRef.id);
-	} catch (e) {
-		console.error('Error adding document: ', e);
+		const docRef = await addDoc(collection(db, 'users'), formData);
+		console.log('Usuario agregado con ID: ', docRef.id);
+		return docRef.id;
+	} catch (error) {
+		console.error('Error al agregar usuario: ', error);
+		throw new Error('Error al agregar usuario');
 	}
 };
 export const addUser = async (formData: Profile) => {
