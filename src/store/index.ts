@@ -2,10 +2,8 @@ import { reducer } from './reducer';
 import { Screens } from '../types/navigation';
 import { Actions, AppStateType, Observer } from '../types/store';
 
-
-
 const emptyState: AppStateType = {
-	screen: 'login',
+	screen: 'home',
 	posts: [],
 	notification: [],
 	user: [],
