@@ -1,6 +1,3 @@
-//padre
-// import './components/indexPadre';
-
 //import Datas
 
 import { headerData } from '../../data/headerData';
@@ -64,24 +61,6 @@ class Saved extends HTMLElement {
 			this.notifications.push(headerNotification);
 		});
 
-		/*postData.forEach((post) => {
-			const homeCard = this.ownerDocument.createElement('my-card') as MyCard;
-			homeCard.setAttribute(Attribute.name, post.user.name);
-			homeCard.setAttribute(Attribute.photo, post.user.imgProfile);
-			homeCard.setAttribute(Attribute.image, post.image);
-			homeCard.setAttribute(Attribute.tag, post.tag);
-			homeCard.setAttribute(Attribute.description, post.description);
-			this.homes.push(homeCard);
-		});
-
-		commentsData.forEach((user) => {
-			const homeComment = this.ownerDocument.createElement('my-comments') as MyComments;
-			homeComment.setAttribute(Attributes.photo, user.comment.photo);
-			homeComment.setAttribute(Attributes.name, user.comment.name);
-			homeComment.setAttribute(Attributes.texts, user.comment.texts);
-			this.home.push(homeComment);
-		});*/
-
 		createData.forEach((user) => {
 			const navCreate = this.ownerDocument.createElement('my-create') as MyCreate;
 			navCreate.setAttribute(AttributeCreate.exit, user.exits.exit);
@@ -103,44 +82,43 @@ class Saved extends HTMLElement {
 	}
 
 	render() {
-
-		const css = this.ownerDocument.createElement("style");
-        css.innerHTML = stylesHome;
-        this.shadowRoot?.appendChild(css);
+		const css = this.ownerDocument.createElement('style');
+		css.innerHTML = stylesHome;
+		this.shadowRoot?.appendChild(css);
 
 		const mainPageContainer = this.ownerDocument.createElement('div');
-		mainPageContainer.className = 'container-saved'
+		mainPageContainer.className = 'container-saved';
 
-				mainPageContainer.setAttribute('id', 'mainPageContainer');
+		mainPageContainer.setAttribute('id', 'mainPageContainer');
 
-				const notificationsContainer = this.ownerDocument.createElement('section');
-				notificationsContainer.className = 'hidden-notifications';
-				notificationsContainer.id = 'notifications-container';
+		const notificationsContainer = this.ownerDocument.createElement('section');
+		notificationsContainer.className = 'hidden-notifications';
+		notificationsContainer.id = 'notifications-container';
 
-				this.header.forEach((home) => {
-					mainPageContainer.appendChild(home);
-				});
+		this.header.forEach((home) => {
+			mainPageContainer.appendChild(home);
+		});
 
-				this.create.forEach((home) => {
-					console.log(home);
-					mainPageContainer.appendChild(home);
-				});
+		this.create.forEach((home) => {
+			console.log(home);
+			mainPageContainer.appendChild(home);
+		});
 
-				this.notifications.forEach((home) => {
-					console.log(home);
-					home.className = 'ntf-cont';
-					notificationsContainer.appendChild(home);
-				});
+		this.notifications.forEach((home) => {
+			console.log(home);
+			home.className = 'ntf-cont';
+			notificationsContainer.appendChild(home);
+		});
 
-				mainPageContainer.appendChild(notificationsContainer);
+		mainPageContainer.appendChild(notificationsContainer);
 
-				const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
-				mainPageContainer.appendChild(navBar);
+		const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
+		mainPageContainer.appendChild(navBar);
 
-				const post = this.ownerDocument.createElement('my-post') as Post;
-				post.className = 'post-container';
-				mainPageContainer.appendChild(post);
-				this.shadowRoot?.appendChild(mainPageContainer);
+		const post = this.ownerDocument.createElement('my-post') as Post;
+		post.className = 'post-container';
+		mainPageContainer.appendChild(post);
+		this.shadowRoot?.appendChild(mainPageContainer);
 	}
 }
 export default Saved;

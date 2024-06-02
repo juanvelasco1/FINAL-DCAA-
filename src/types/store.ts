@@ -25,15 +25,6 @@ export enum ScreenActions {
 	// 	'SAVED'= 'saved',
 }
 
-// export enum shoppingItemsActions {
-// 	'GETSHOPPINGITEMS' = 'GETSHOPPINGITEMS',
-// 	'SAVESHOPPINGITEMS' = 'SAVESHOPPINGITEMS',
-// }
 
-// export interface GetProductsAction {
-// 	action: productsActions.GETPRODUCTS;
-// 	payload: Product[];
-// 	// Pick<AppState, 'something'>;
-// }
 
 export type Actions = ScreenActions;

@@ -9,9 +9,6 @@ import MyInput, { InputProps } from './input';
 
 //CODE
 class Login extends HTMLElement {
-	//	homes: MyCard[] = [];
-	//	home: MyComments[] = [];
-
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });

@@ -1,8 +1,3 @@
-//padre
-// import './components/indexPadre';
-
-//import Datas
-
 import { headerData } from '../../data/headerData';
 
 import { notificationData } from '../../data/notificationData';
@@ -64,24 +59,6 @@ class Home extends HTMLElement {
 			this.notifications.push(headerNotification);
 		});
 
-		/*postData.forEach((post) => {
-			const homeCard = this.ownerDocument.createElement('my-card') as MyCard;
-			homeCard.setAttribute(Attribute.name, post.user.name);
-			homeCard.setAttribute(Attribute.photo, post.user.imgProfile);
-			homeCard.setAttribute(Attribute.image, post.image);
-			homeCard.setAttribute(Attribute.tag, post.tag);
-			homeCard.setAttribute(Attribute.description, post.description);
-			this.homes.push(homeCard);
-		});
-
-		commentsData.forEach((user) => {
-			const homeComment = this.ownerDocument.createElement('my-comments') as MyComments;
-			homeComment.setAttribute(Attributes.photo, user.comment.photo);
-			homeComment.setAttribute(Attributes.name, user.comment.name);
-			homeComment.setAttribute(Attributes.texts, user.comment.texts);
-			this.home.push(homeComment);
-		});*/
-
 		createData.forEach((user) => {
 			const navCreate = this.ownerDocument.createElement('my-create') as MyCreate;
 			navCreate.setAttribute(AttributeCreate.exit, user.exits.exit);
@@ -97,9 +74,6 @@ class Home extends HTMLElement {
 	}
 
 	async connectedCallback() {
-		// if (appState.posts.length === 0) {
-
-		// }
 		this.render();
 	}
 
@@ -127,14 +101,6 @@ class Home extends HTMLElement {
 		this.header.forEach((home) => {
 			mainPageContainer.appendChild(home);
 		});
-
-		/*this.homes.forEach((home) => {
-                    mainPageContainer.appendChild(home);
-                });
-
-                this.home.forEach((home) => {
-                    mainPageContainer.appendChild(home);
-                });*/
 
 		this.create.forEach((home) => {
 			// console.log(home);

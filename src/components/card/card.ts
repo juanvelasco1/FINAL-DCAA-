@@ -110,25 +110,7 @@ class Card extends HTMLElement {
 				changeButtonSave.setAttribute('src', '/src/asset/save.png');
 			}
 		});
-
-		// const like = document.getElementById('like');
-		// const image1 = document.getElementById('image1');
-		// const image2 = document.getElementById('image2');
-		// const likeF = document.getElementById('likeF');
-
-		// if (like && image1 && image2 && likeF) {
-		// 	like.style.display = image1.style.display === 'none' ? 'block' : 'none';
-		// 	likeF.style.display = image2.style.display === 'none' ? 'block' : 'none';
-		// }
 	}
-
-	/*	const photo = document.createElement('img');
-    photo.innerHTML = img;
-    this.shadowRoot?.appendChild(photo);
-
-    const imag = document.createElement('img');
-    imag.innerHTML = image;
-    this.shadowRoot?.appendChild(imag);*/
 }
 
 export default Card;

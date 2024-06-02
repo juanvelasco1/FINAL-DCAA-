@@ -66,18 +66,7 @@ export const getCreate = async () => {
 	return arrayCreate;
 };
 
-//Esta funcion de getProfile esta mala porque hay que traer un usuario, no todos
 
-// export const getProfile = async () => {
-// 	const querySnapshot = await getDocs(collection(db, 'profile'));
-// 	const arrayProfile: Array<Profile | DocumentData> = [];
-
-// 	querySnapshot.forEach((profile) => {
-// 		arrayProfile.push(profile);
-// 	});
-
-// 	return arrayProfile;
-// };
 
 export const getSections = async () => {
 	const querySnapshot = await getDocs(collection(db, 'sections'));
@@ -133,23 +122,3 @@ export const getTTags = async () => {
 
 	return arrayTags;
 };
-// export const getSaved = async () => {
-// 	const querySnapshot = await getDocs(collection(db, 'saved'));
-// 	const arraySaved: Array<Saved| DocumentData> = [];
-
-// 	querySnapshot.forEach((saved) => {
-// 		arraySaved.push(saved);
-// 	});
-
-// 	return arraySaved;
-// };
-
-// export const addDataToCollection = async (data: any) => {
-// 	try {
-// 		 const docRef = await addDoc(collection(db, 'users'), data);
-//     console.log(docRef)
-// 		console.log('Document written with ID:', docRef.id);
-// 	} catch (error) {
-// 		console.error(error);
-// 	}
-// };

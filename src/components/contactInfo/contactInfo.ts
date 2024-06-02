@@ -69,10 +69,6 @@ class ContactInfo extends HTMLElement {
 		const cssContact = this.ownerDocument.createElement('style');
 		cssContact.innerHTML = stylesContact;
 		this.shadowRoot?.appendChild(cssContact);
-
-		/*const imgPhoto = document.createElement('img');
-		imgPhoto.innerHTML = photo1;
-		this.shadowRoot?.appendChild(imgPhoto);*/
 	}
 }
 

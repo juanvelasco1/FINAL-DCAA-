@@ -2,13 +2,10 @@ import { reducer } from './reducer';
 import { Screens } from '../types/navigation';
 import { Actions, AppStateType, Observer } from '../types/store';
 
-// import {Observer} from "../types/store";
-// import Storage from '../utils/storage';
-// import { PersistanceKeys } from '../utils/storage';
-// import { Actions, AppState, Observer } from '../types/store';
+
 
 const emptyState: AppStateType = {
-	screen: 'signup',
+	screen: 'login',
 	posts: [],
 	notification: [],
 	user: [],

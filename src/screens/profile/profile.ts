@@ -1,6 +1,3 @@
-//padre
-// import './components/indexPadre';
-
 //import Datas
 
 import { userData } from '../../data/userData';
@@ -33,8 +30,6 @@ export enum AttributeProfile {
 	'photo' = 'photo',
 }
 class Profile extends HTMLElement {
-	//	homes: MyCard[] = [];
-	//	home: MyComments[] = [];
 	header: MyHeader[] = [];
 	// contactInfo: MyContact[] = [];
 	notifications: MyNotifications[] = [];
@@ -44,7 +39,6 @@ class Profile extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
-		// addObserver(this); // Página de renderización dinámica
 
 		headerData.forEach((user) => {
 			const headerHeader = this.ownerDocument.createElement('my-header') as MyHeader;
@@ -61,13 +55,6 @@ class Profile extends HTMLElement {
 			headerNotification.setAttribute(AttributeNotifications.texts, user.texts);
 			this.notifications.push(headerNotification);
 		});
-		// 	notificationData.forEach((user:any) => {
-		// 		const headerNotification = this.ownerDocument.createElement('my-notifications') as MyNotifications;
-		// 		headerNotification.setAttribute(AttributeNotifications.name, user.name);
-		// 		headerNotification.setAttribute(AttributeNotifications.photo, user.photo);
-		// 		headerNotification.setAttribute(AttributeNotifications.texts, user.texts);
-		// 		this.notifications.push(headerNotification);
-		// });
 
 		appState.user.forEach((user: any) => {
 			const contactInfos = this.ownerDocument.createElement('my-contact') as MyContact;
@@ -98,11 +85,12 @@ class Profile extends HTMLElement {
 
       <section  >
       <img id='back-img'src="/src/asset/back.png">
-      <img src=''>
+      <img id='user-img' src="/src/asset/user.png">
 			<h2>${appState.logedUserData.name}</h2>
 			</section>
+			<div class="container">
       <my-contact></my-contact>
-			<button>Log Out</button>
+			<button>Log Out</button></div>
       `;
 		}
 		const css = this.ownerDocument.createElement('style');
@@ -137,8 +125,6 @@ class Profile extends HTMLElement {
 		const cssContact = this.ownerDocument.createElement('style');
 		cssContact.innerHTML = styleProfile;
 
-		// const contactInfo = this.ownerDocument.createElement('my-contact') as ContactInfo;
-		// this.shadowRoot?.appendChild(contactInfo);
 	}
 }
 export default Profile;
