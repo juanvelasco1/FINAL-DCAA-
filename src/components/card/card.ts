@@ -69,7 +69,7 @@ class Card extends HTMLElement {
                             <img class="like" id="likeButton" src="/src/asset/like.png" alt="Like">
                         </button>
 
-                        <img class="comment" src="/src/asset/comment.png" alt="Comment">
+
                         <div class="tag">
                             <p><strong>${this.tag}</strong></p>
                         </div>
@@ -115,3 +115,5 @@ class Card extends HTMLElement {
 
 export default Card;
 customElements.define('my-card', Card);
+
+// <img class="comment" src="/src/asset/comment.png" alt="Comment">
