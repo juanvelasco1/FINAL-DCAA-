@@ -15,8 +15,6 @@
 		z-index: 10000;
 	}
 
-	
-
 	/* #notifications-container {
 		position: absolute;
 	} */
@@ -82,17 +80,21 @@
 		/* width: 222px;
 		height: 10%;*/
 
-		min-width: 15%;
-		min-height: 45%;
+		min-width: 50%;
+		min-height: 30%;
+		margin-left: 20px;
 	}
 
 	.notification {
 		/*height: 50%;*/
 		margin-right: 15px;
+		height: 35px;
+		width: 30px;
 	}
 
 	.photo {
 		height: 60%;
+		margin-right: 20px;
 	}
 }
 
