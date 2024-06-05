@@ -3,7 +3,7 @@ import { Screens } from '../types/navigation';
 import { Actions, AppStateType, Observer } from '../types/store';
 
 const emptyState: AppStateType = {
-	screen: 'home',
+	screen: 'profile',
 	posts: [],
 	notification: [],
 	user: [],

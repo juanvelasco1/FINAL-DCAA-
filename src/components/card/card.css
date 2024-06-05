@@ -43,6 +43,7 @@
 		text-align: center;
 		display: flex;
 		height: 30px;
+
 		font-family: 'Montserrat', sans-serif;
 		font-optical-sizing: auto;
 		font-weight: 80;
@@ -116,4 +117,10 @@
 	#id {
 		right: 80px;
 	}
-}
+
+	.tag {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	}
+
