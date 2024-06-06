@@ -5,6 +5,7 @@ import { loadCss } from '../../utils/styles';
 import style from './signup.css';
 import input from '../../components/login/input';
 import { addObserver, appState } from '../../store/index';
+import { createUser } from '../../utils/firebase'
 // import './components/indexPadre';
 
 const credentials = { email: '', password: '', confirmPassword: '', name: '' };
@@ -30,6 +31,7 @@ class Signup extends HTMLElement {
 				const newCredentials = [...JSON.parse(bbdd), credentials];
 				localStorage.setItem('credentials', JSON.stringify(newCredentials));
 			}
+			createUser(credentials);
 			dispatch(redirect('login'), true);
 			alert('Login successfull');
 		} else {
@@ -53,7 +55,7 @@ class Signup extends HTMLElement {
 		title.innerText = 'Sign up';
 		container.appendChild(title);
 
-		const inputContainer = this.ownerDocument.createElement('div');
+		const inputContainer = this.ownerDocument.createElement('form');
 		inputContainer.id = 'login-input_container';
 
 		const email = this.ownerDocument.createElement('input');

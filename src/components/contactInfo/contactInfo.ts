@@ -1,6 +1,6 @@
 import { loadCss } from '../../utils/styles';
 import stylesContact from './contactInfo.css';
-import { dispatch } from '../../store';
+import {addObserver, dispatch} from '../../store';
 import { redirect } from '../../store/actions';
 import { appState } from '../../store';
 
@@ -22,6 +22,7 @@ class ContactInfo extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		addObserver(this)
 	}
 
 	static get observedAttributes() {
@@ -60,15 +61,19 @@ class ContactInfo extends HTMLElement {
       <section>
       <h3>Contact Information</h3>
       <img src='src/asset/mail.png'>
-      <p>${appState.logedUserData.email}</p>
+      <p>${appState.user.email}</p>
       <img src='src/asset/linkedin.png'>
-      <p>${appState.logedUserData.name}</p>
+      <p>${appState.user.name}</p>
       </section>
       `;
 		}
 		const cssContact = this.ownerDocument.createElement('style');
 		cssContact.innerHTML = stylesContact;
 		this.shadowRoot?.appendChild(cssContact);
+
+		/*const imgPhoto = document.createElement('img');
+		imgPhoto.innerHTML = photo1;
+		this.shadowRoot?.appendChild(imgPhoto);*/
 	}
 }
 

@@ -1,4 +1,4 @@
-import { dispatch } from '../../store';
+import {appState, dispatch} from '../../store';
 import { redirect } from '../../store/actions';
 import { loadCss } from '../../utils/styles';
 import stylesHeader from './header.css';
@@ -52,13 +52,13 @@ class Header extends HTMLElement {
 
 			<link rel="stylesheet" href="../src/Components/header/header.css">
 
-			<section id='header' class='section-header' >
+			<section id='header' class='section-header px-4' >
 			<img src=${this.logo} class='logo'>
 			<div id='horizontalSpace'></div>
 
 
 			<img src=${this.notification} class='notification' id="notification-button">
-      <img id='profile-img' src=${this.photo} class='photo' >
+      <img id='profile-img' src=${appState.user?.photo} class='photo' >
 			</section>
       `;
 		}

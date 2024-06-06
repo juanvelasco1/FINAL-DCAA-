@@ -11,12 +11,13 @@ import { sectionsTypes } from './types/sections';
 import { tagsTypes } from './types/tags';
 
 
-import { addObserver, appState } from './store/index';
+import {addObserver, appState, dispatch} from './store/index';
 import { loadCss } from './utils/styles';
-
+import { auth } from './utils/firebase'
 import style from './indexAbuelo.css';
 
 import './screens/export';
+import {setUserCredentials} from "./store/actions";
 
 class AppContainer extends HTMLElement {
 	header: HTMLElement[] = [];
@@ -49,6 +50,7 @@ class AppContainer extends HTMLElement {
 				break;
 
 			case 'home':
+				dispatch(setUserCredentials({name: auth.currentUser?.displayName || "", email: auth.currentUser?.email || "", photo: auth.currentUser?.photoURL || ""}), false)
 				const home = this.ownerDocument.createElement('app-home');
 				this.shadowRoot?.appendChild(home);
 				break;
@@ -68,3 +70,43 @@ class AppContainer extends HTMLElement {
 
 customElements.define('app-container', AppContainer);
 
+// switch (appState.screen) {
+// 	case 'home':
+// 		{
+// const mainPageContainer = this.ownerDocument.createElement('div');
+// mainPageContainer.setAttribute('id', 'mainPageContainer');
+
+// const notificationsContainer = this.ownerDocument.createElement('section');
+// notificationsContainer.className = 'hidden-notifications';
+// notificationsContainer.id = 'notifications-container';
+
+// this.header.forEach((home: any) => {
+// 	mainPageContainer.appendChild(home);
+// });
+
+/*this.create.forEach((home) => {
+					console.log(home);
+					mainPageContainer.appendChild(home);
+				});*/
+
+/*this.notifications.forEach((home) => {
+					console.log(home);
+					notificationsContainer.appendChild(home);
+				});*/
+
+// mainPageContainer.appendChild(notificationsContainer);
+
+/*const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
+				mainPageContainer.appendChild(navBar);*/
+
+/* const postContainer = this.ownerDocument.createElement('div');
+				postContainer.className = "post-container"; */
+
+/*const post = this.ownerDocument.createElement('my-post') as Post;
+				post.className = "post-container";
+				postContainer.appendChild(post)
+				mainPageContainer.appendChild(postContainer);*/
+// 	this.shadowRoot?.appendChild(mainPageContainer);
+
+// 	break;
+// }

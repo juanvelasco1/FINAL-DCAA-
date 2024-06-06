@@ -47,7 +47,6 @@ class Tags extends HTMLElement {
       <button id="tagButton" class="tagB" type="button">
 			 ${this.tag}
 			 </button>
-			 </section>
       `;
 		}
 
