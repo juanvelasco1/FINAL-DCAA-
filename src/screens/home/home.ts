@@ -30,6 +30,7 @@ import { addObserver, appState, dispatch } from '../../store/index';
 import { getPosts } from '../../utils/firebase';
 import { getPostsAction } from '../../store/actions';
 
+
 //CODE
 class Home extends HTMLElement {
 	//	homes: MyCard[] = [];
