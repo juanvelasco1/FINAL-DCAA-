@@ -1,6 +1,5 @@
-export const Screens = {
-    HOME: "home",
-    LOGIN: "login",
-    SIGNUP: "signup",
-
-}
+export const NavigationTypes = {
+	HOME: 'home',
+	LOGIN: 'login',
+	SIGNUP: 'signup',
+};

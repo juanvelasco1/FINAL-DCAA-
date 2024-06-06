@@ -4,8 +4,16 @@
 	width: 1920px;
 	height: 2254px;
 } */
+
+.container-home {
+	margin-left: 30%;
+	margin-top: 15%;
+	@apply max-md:mx-4 max-md:my-32
+}
 #mainPageContainer {
 	display: flex;
+	justify-items: center;
+	align-content: center;
 	flex-direction: column;
 	/* position: absolute; */
 
@@ -29,5 +37,19 @@
 }
 
 #notifications-container {
-	margin-top: 55rem;
+	margin-top: 110px;
+	margin-right: 50px;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99000;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ntf-cont {
+	display: flex;
+	justify-content: end;
+	padding-right: 20px;
 }

@@ -58,9 +58,11 @@ class NavBar extends HTMLElement {
 
 			const tagsTitle = this.ownerDocument.createElement('h2');
 			tagsTitle.innerText = 'TAGS ';
+			tagsTitle.className = 'hid';
 			sectionNav.appendChild(tagsTitle);
 
 			this.navTags.forEach((section) => {
+				section.className = 'hid';
 				sectionNav.appendChild(section);
 			});
 

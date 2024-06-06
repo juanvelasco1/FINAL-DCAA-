@@ -10,8 +10,12 @@
 // 	};
 // };
 
-import{Screens} from '../types/navigation'
+import { Screens } from '../types/navigation';
 import { getPosts } from '../utils/firebase';
+import { Actions } from '../types/store';
+import firebase from "firebase/compat";
+import User = firebase.User;
+import {personalUser} from "../types/users";
 
 export const redirect = (payload: any) => {
 	return {
@@ -19,10 +23,12 @@ export const redirect = (payload: any) => {
 		payload: payload,
 	};
 };
-
-// export const getUsers = () => {
-//   return
-// };
+export const navigate = (screen: Screens) => {
+	return {
+		type: 'NAVIGATE',
+		payload: screen,
+	};
+};
 
 export const getPostsAction = async () => {
 	//Ir al utils de firebase y ejecutar la función getPosts
@@ -33,16 +39,47 @@ export const getPostsAction = async () => {
 	};
 };
 
-export const navigate = (screen:Screens) => {
+// export const getProfileAction = async () => {
+// 	//Ir al utils de firebase y ejecutar la función getPosts
+// 	const profile = await getProfile();
+// 	return {
+// 		action: 'GETPROFILE',
+// 		payload: profile,
+// 	};
+// };
+
+export const storageUserData = (userData: any) => {
 	return {
-		action: 'NAVIGATE',
-		payload: screen,
+		action: 'STORAGE_USER_DATA',
+		payload: userData,
 	};
 };
 
-export const setUserCredentials = (user: string) => {
-	return {
-		action: 'SETUSER',
-		payload: user,
+
+
+// export const getUsers = () => {
+//   return
+// };
+
+// export const getPostsAction = async () => {
+// 	//Ir al utils de firebase y ejecutar la función getPosts
+// 	const posts = await getPosts();
+// 	return {
+// 		action: 'GETPOSTS',
+// 		payload: posts,
+// 	};
+// };
+
+// export const navigate = (screen:Screens) => {
+// 	return {
+// 		action: 'NAVIGATE',
+// 		payload: screen,
+// 	};
+// };
+
+export const setUserCredentials = (user: personalUser) => {
+ 	return {
+ 		action: 'SETUSER',
+ 		payload: user,
 	};
 };

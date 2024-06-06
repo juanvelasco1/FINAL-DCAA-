@@ -1,5 +1,8 @@
 import { loadCss } from '../../utils/styles';
 import stylesContact from './contactInfo.css';
+import {addObserver, dispatch} from '../../store';
+import { redirect } from '../../store/actions';
+import { appState } from '../../store';
 
 export enum AttributeContact {
 	'name' = 'name',
@@ -19,6 +22,7 @@ class ContactInfo extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		addObserver(this)
 	}
 
 	static get observedAttributes() {
@@ -56,10 +60,10 @@ class ContactInfo extends HTMLElement {
 
       <section>
       <h3>Contact Information</h3>
-      <img src=${this.iconMail}>
-      <p>${this.mail}</p>
-      <img src=${this.iconLinkedin}>
-      <p>${this.name}</p>
+      <img src='src/asset/mail.png'>
+      <p>${appState.user.email}</p>
+      <img src='src/asset/linkedin.png'>
+      <p>${appState.user.name}</p>
       </section>
       `;
 		}

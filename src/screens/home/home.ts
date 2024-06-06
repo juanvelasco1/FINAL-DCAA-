@@ -1,5 +1,5 @@
 //padre
-import './components/indexPadre';
+// import './components/indexPadre';
 
 //import Datas
 
@@ -16,6 +16,8 @@ import MyHeader, { AttributeHeader } from '../../components/header/header';
 import MyNotifications, { AttributeNotifications } from '../../components/header/notifications/notifications';
 
 import MyCreate, { AttributeCreate } from '../../components/navBar/sections/create/create';
+import MyCard, { Attribute } from '../../components/card/card';
+import MyComment, { Attributes } from '../../components/card/Comments/comments';
 
 import NavBar from '../../components/navBar/navBar';
 
@@ -23,13 +25,15 @@ import Post from '../../components/card/post';
 
 import Login from '../../components/login/login';
 
-import * as styles from './home.css';
+import stylesHome from './home.css';
 import { loadCss } from '../../utils/styles';
 
 //Importar estilos
 import style from './indexAbuelo.css';
 
-import { addObserver, appState } from '../../store/index';
+import { addObserver, appState, dispatch } from '../../store/index';
+import { getPosts } from '../../utils/firebase';
+import { getPostsAction } from '../../store/actions';
 
 //CODE
 class Home extends HTMLElement {
@@ -42,7 +46,7 @@ class Home extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
-		addObserver(this); // Página de renderización dinámica
+		//addObserver(this); // Página de renderización dinámica
 
 		headerData.forEach((user) => {
 			const headerHeader = this.ownerDocument.createElement('my-header') as MyHeader;
@@ -92,27 +96,39 @@ class Home extends HTMLElement {
 		});
 	}
 
-	connectedCallback() {
+	async connectedCallback() {
+		// if (appState.posts.length === 0) {
+
+		// }
 		this.render();
 	}
 
-	render() {
-		console.log(appState);
-		switch (appState.screen) {
-			case 'home': {
-				const mainPageContainer = this.ownerDocument.createElement('div');
-				mainPageContainer.setAttribute('id', 'mainPageContainer');
-				this.shadowRoot?.appendChild(mainPageContainer);
+	async render() {
+		const action = await getPostsAction();
+		dispatch(action, false);
+		this.render2();
+	}
 
-				const notificationsContainer = this.ownerDocument.createElement('section');
-				notificationsContainer.className = 'hidden-notifications';
-				notificationsContainer.id = 'notifications-container';
+	render2() {
+		const css = this.ownerDocument.createElement('style');
+		css.innerHTML = stylesHome;
+		this.shadowRoot?.appendChild(css);
 
-				this.header.forEach((home) => {
-					mainPageContainer.appendChild(home);
-				});
+		const mainPageContainer = this.ownerDocument.createElement('div');
+		mainPageContainer.className = 'container-home';
 
-				/*this.homes.forEach((home) => {
+		mainPageContainer.setAttribute('id', 'mainPageContainer');
+		this.shadowRoot?.appendChild(mainPageContainer);
+
+		const notificationsContainer = this.ownerDocument.createElement('section');
+		notificationsContainer.className = 'hidden-notifications';
+		notificationsContainer.id = 'notifications-container';
+
+		this.header.forEach((home) => {
+			mainPageContainer.appendChild(home);
+		});
+
+		/*this.homes.forEach((home) => {
                     mainPageContainer.appendChild(home);
                 });
 
@@ -120,28 +136,26 @@ class Home extends HTMLElement {
                     mainPageContainer.appendChild(home);
                 });*/
 
-				this.create.forEach((home) => {
-					console.log(home);
-					this.shadowRoot?.appendChild(home);
-				});
+		this.create.forEach((home) => {
+			// console.log(home);
+			mainPageContainer.appendChild(home);
+		});
 
-				this.notifications.forEach((home) => {
-					console.log(home);
-					notificationsContainer.appendChild(home);
-				});
+		this.notifications.forEach((home) => {
+			// console.log(home);
+			home.className = 'ntf-cont';
+			notificationsContainer.appendChild(home);
+		});
 
-				this.shadowRoot?.appendChild(notificationsContainer);
+		mainPageContainer.appendChild(notificationsContainer);
 
-				const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
-				this.shadowRoot?.appendChild(navBar);
+		const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
+		mainPageContainer.appendChild(navBar);
 
-				const post = this.ownerDocument.createElement('my-post') as Post;
-				this.shadowRoot?.appendChild(post);
-
-				break;
-			}
-			case 'd':
-		}
+		const post = this.ownerDocument.createElement('my-post') as Post;
+		post.className = 'post-container';
+		mainPageContainer.appendChild(post);
+		this.shadowRoot?.appendChild(mainPageContainer);
 	}
 }
 export default Home;

@@ -2,11 +2,22 @@
 import './components/indexPadre';
 import { Screens } from './types/navigation';
 import { Profile } from './types/profile';
+import { postsTypes } from './types/post';
+import { createTypes } from './types/create';
+import { usersTypes } from './types/users';
+import { headerTypes } from './types/header';
+import { notificationsTypes } from './types/notifications';
+import { sectionsTypes } from './types/sections';
+import { tagsTypes } from './types/tags';
 
-import { addObserver, appState } from './store/index';
+
+import {addObserver, appState, dispatch} from './store/index';
 import { loadCss } from './utils/styles';
-
+import { auth } from './utils/firebase'
 import style from './indexAbuelo.css';
+
+import './screens/export';
+import {setUserCredentials} from "./store/actions";
 
 class AppContainer extends HTMLElement {
 	header: HTMLElement[] = [];
@@ -39,6 +50,7 @@ class AppContainer extends HTMLElement {
 				break;
 
 			case 'home':
+				dispatch(setUserCredentials({name: auth.currentUser?.displayName || "", email: auth.currentUser?.email || "", photo: auth.currentUser?.photoURL || ""}), false)
 				const home = this.ownerDocument.createElement('app-home');
 				this.shadowRoot?.appendChild(home);
 				break;
@@ -48,7 +60,7 @@ class AppContainer extends HTMLElement {
 				this.shadowRoot?.appendChild(profile);
 				break;
 
-				case 'saved':
+			case 'saved':
 				const saved = this.ownerDocument.createElement('app-saved');
 				this.shadowRoot?.appendChild(saved);
 				break;

@@ -10,10 +10,13 @@
 		left: 0px;
 		top: 0px;
 		margin: 0 auto;
+		padding: 0 5px 0 5px;
 		/* principal Blue */
 		background: #2000fb;
-		z-index: 10000;
+		z-index: 700;
 	}
+
+	
 
 	/* #notifications-container {
 		position: absolute;
@@ -53,6 +56,7 @@
 
 	.photo {
 		height: 60%;
+		@apply rounded-full;
 	}
 }
 
