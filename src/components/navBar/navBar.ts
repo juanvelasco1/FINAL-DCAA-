@@ -60,7 +60,7 @@ class NavBar extends HTMLElement {
 			tagsTitle.innerText = 'TAGS ';
 			tagsTitle.className = 'hid';
 			sectionNav.appendChild(tagsTitle);
-			tagsTitle.className ='titleTags';
+
 			this.navTags.forEach((section) => {
 				section.className = 'hid';
 				sectionNav.appendChild(section);

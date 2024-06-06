@@ -28,6 +28,7 @@ onAuthStateChanged(auth, async (user) => {
 			const posties = getSavedPosts();
 			appState.user.saved = await posties;
 			appState.posts = await getPosts();
+			console.log("DOJA " + JSON.stringify(posties) + " " + JSON.stringify(appState));
 		}
 		dispatch(redirect('home'), true)
 	} else {

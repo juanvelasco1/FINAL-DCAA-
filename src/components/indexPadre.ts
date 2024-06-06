@@ -9,6 +9,7 @@ export { default as Notifications } from './header/notifications/notifications';
 export { default as Post } from './card/post';
 export { default as Login } from './login/login';
 export { default as ContactInfo } from './contactInfo/contactInfo';
+export { default as SavedPosts} from './card/savedPost'
 
 // import  Login  from '../screens/login/login';
 // import  Home  from '../screens/home/home';

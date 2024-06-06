@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from 'firebase/auth';
-import { deleteDoc, getFirestore, collection, addDoc, getDocs, doc, setDoc, getDoc, DocumentData, updateDoc} from 'firebase/firestore';
+import { getFirestore, collection, addDoc, getDocs, doc, setDoc, getDoc, DocumentData, updateDoc, deleteDoc} from 'firebase/firestore';
 import{getStorage, ref, uploadBytes, getDownloadURL} from 'firebase/storage'
 import { Profile } from '../types/profile';
 import { postsTypes } from '../types/post';
@@ -239,30 +239,25 @@ export const savePost = async (postId: string, postData: any)=> {
 	const auth = getAuth();
 	const db = getFirestore();
 
-	// Verificar si el usuario está autenticado
-	onAuthStateChanged(auth, async (user) => {
-		if (user) {
-			try {
-				// Referencia al documento del usuario
-				const userDocRef = doc(db, "users", user.uid);
+	console.log("Si esta " + postId)
 
-				// Referencia a la subcolección savedposts dentro del documento del usuario
-				const savedPostsCollectionRef = collection(userDocRef, "savedposts");
+	try {
+		if(auth.currentUser) {
+			const userDocRef = doc(db, "users", auth.currentUser.uid);
+			const savedPostsCollectionRef = collection(userDocRef, "savedposts");
 
-				// Agregar un nuevo documento a la subcolección savedposts
-				const postDocRef = doc(savedPostsCollectionRef, postId);
-				await setDoc(postDocRef, postData);
+			const postDocRef = doc(savedPostsCollectionRef, postId);
+			await setDoc(postDocRef, postData);
 
-				console.log("Post guardado en la subcolección savedposts del usuario");
-			} catch (error) {
-				console.error("Error al guardar el post en la subcolección:", error);
-			}
-		} else {
-			console.error("Usuario no autenticado");
+			console.log("Post saved");
 		}
-	});
-}
 
+	} catch (error) {
+		console.error("Error saving:", error);
+	}
+
+
+}
 
 export const unsavePost = async (postId: string) => {
 	const auth = getAuth();
@@ -306,7 +301,6 @@ export const getSavedPosts = async () => {
 				savedPosts.push({ id: doc.id, ...doc.data() });
 			});
 
-			console.log("Wanted posts " + savedPosts);
 
 			return savedPosts;
 
@@ -317,7 +311,6 @@ export const getSavedPosts = async () => {
 		console.error("Usuario no autenticado");
 	}
 };
-
 
 //Esta funcion de getProfile esta mala porque hay que traer un usuario, no todos
 

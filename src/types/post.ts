@@ -1,5 +1,6 @@
 export interface postsTypes {
   description: string,
+  id: string,
   image: string,
   tag: string,
   user: {
@@ -7,7 +8,6 @@ export interface postsTypes {
       name: string
   },
   comment: Array<comment>
-  id: string
 
 }
 
