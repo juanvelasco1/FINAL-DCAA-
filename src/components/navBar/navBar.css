@@ -1,4 +1,4 @@
-
+@media (max-width: 1600px) {
 	.navSection {
 		/* border: 2px solid rgb(255, 9, 9); */
 		position: fixed;
@@ -43,11 +43,13 @@
 		align-items: center;
 	}
 
+
 @media (max-width: 768px) {
 	.navSection {
 		z-index: 10000;
 		position: fixed;
 		top: auto;
+		/* left: -10px; */
 		bottom: 0;
 		left: 0;
 		background-color: #f2f2f2;
@@ -57,7 +59,18 @@
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		@apply rounded-lg bg-neutral-400 px-4 overflow-scroll right-0;
+		margin-left: 0px;
+		@apply rounded-lg bg-neutral-200 overflow-scroll;
+		/* px-2    right-1 */
+	}
+
+	my-tags {
+		/* width: 200%; */
+		margin-left: 15px;
+		display: flex;
+		flex-direction: row;
+    justify-content: center;
+		align-items: center;
 	}
 
 	.hid{
@@ -92,21 +105,15 @@
 		align-items: center;
 	}
 
-	h2 {
-		margin: 0 0 10px 0;
-		font-size: 20px;
-		font-family: 'Montserrat', sans-serif;
-		font-optical-sizing: auto;
-		font-weight: bold;
-		font-style: normal;
+	my-section {
+		width: 100px;
+		height: 40px;
+		margin-left: 80px;
 		justify-content: center;
 		align-items: center;
 	}
 
-	my-tags {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	.titleTags {
+		display: none;
 	}
 }

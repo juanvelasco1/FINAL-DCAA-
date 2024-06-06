@@ -1,3 +1,6 @@
+
+/// Importar Datos
+
 //padre
 // import './components/indexPadre';
 
@@ -5,24 +8,23 @@
 
 import { userData } from '../../data/userData';
 
-//import Components
-
+// Importar Componentes
 import MyContact, { AttributeContact } from '../../components/contactInfo/contactInfo';
+import MyHeader, { AttributeHeader } from '../../components/header/header';
+import MyNotifications, { AttributeNotifications } from '../../components/header/notifications/notifications';
 
+// Importar Estilos
 import * as styles from './styles.css';
 import { loadCss } from '../../utils/styles';
 import stylesProfile from './profile.css';
-//Importar estilos
-import styleProfile from './profile.css';
 
+// Importar Otros Módulos
 import { addObserver, appState } from '../../store/index';
-import ContactInfo from '../../components/contactInfo/contactInfo';
-// import './components/indexPadre';
 import { dispatch } from '../../store';
 import { redirect } from '../../store/actions';
-
 import { getPostsAction } from '../../store/actions';
 import { headerData } from '../../data/headerData';
+
 import MyHeader, { AttributeHeader } from '../../components/header/header';
 
 import MyNotifications, { AttributeNotifications } from '../../components/header/notifications/notifications';
@@ -40,9 +42,8 @@ class Profile extends HTMLElement {
 	//	homes: MyCard[] = [];
 	//	home: MyComments[] = [];
 	header: MyHeader[] = [];
-	// contactInfo: MyContact[] = [];
 	notifications: MyNotifications[] = [];
-	contactInfo: any[] = [];
+	contactInfo: MyContact[] = [];
 	photo?: string;
 
 	constructor() {
@@ -74,6 +75,7 @@ class Profile extends HTMLElement {
 		// });
 
 
+
 		const contactInfos = this.ownerDocument.createElement('my-contact') as MyContact;
 		contactInfos.setAttribute(AttributeContact.name, appState.user.name);
 		contactInfos.setAttribute(AttributeContact.mail, appState.user.email);
@@ -84,6 +86,13 @@ class Profile extends HTMLElement {
 
 	async connectedCallback() {
 		this.render();
+	}
+
+	logout() {
+		console.log('entra');
+		indexedDB.deleteDatabase('firebaseLocalStorageDb');
+		indexedDB.deleteDatabase('firebase-heartbeat-database');
+		window.location.reload();
 	}
 
 	render() {
@@ -99,7 +108,7 @@ class Profile extends HTMLElement {
 
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = '';
-			loadCss(this, styleProfile);
+			loadCss(this, stylesProfile);
 			this.shadowRoot.innerHTML += `
 			<style>
 			${styleProfile}
@@ -199,7 +208,9 @@ class Profile extends HTMLElement {
 				console.log(fileExport)
 			}
 		});
+
 	}
 }
+
 export default Profile;
 customElements.define('app-profile', Profile);

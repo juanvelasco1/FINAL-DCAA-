@@ -2,7 +2,7 @@
 	section {
 		/* Rectangle 295 */
 
-		width: 80%;
+		/* width: 80%; */
 		height: 45px;
 
 		margin-bottom: 5px;
@@ -42,45 +42,49 @@
 }
 
 @media (max-width: 420px) {
-	section {
-		/* Rectangle 295 */
+	.section-tags {
+		height: 40px;
+		margin-bottom: 50px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		@apply overflow-scroll;
 
+		/* margin-left: 5px; */
+	}
+
+	#tagButton {
+		border: none;
+		height: 30px;
+		width: 100px;
+		/* max-width: 100%; */
+		border-radius: 45px;
+		font-family: 'Montserrat', sans-serif;
+	}
+	/* section {
 		width: 80%;
-		height: 45px;
+		height: 25px;
 
 		margin-bottom: 5px;
-
-		/*background: #bdbdbd;*/
-		border-radius: 45px;
-
-		display: flex;
+	display: flex;
 		justify-content: center;
 		align-items: center;
 	}
 	#tagButton {
-		outline: none;
-		background-color: #bdbdbd;
 
+		left: 30px;
 		border: none;
-		height: 45px;
+		height: 20px;
 		width: 100px;
 		border-radius: 45px;
 		font-family: 'Montserrat', sans-serif;
-		font-optical-sizing: auto;
-		font-weight: weight;
-		font-style: normal;
+
 	}
 	.section-tags {
-		height: 45px;
-	}
-	section p {
-		margin: 0;
 
-		width: 100%;
-		text-align: center;
 
-		font-weight: 800;
-		font-size: 16px;
-		color: #000000;
-	}
+		margin-bottom: 45px;
+
+} */
 }

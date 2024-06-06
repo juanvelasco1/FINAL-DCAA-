@@ -50,3 +50,38 @@
 	justify-content: end;
 	padding-right: 20px;
 }
+
+@media (max-width: 400px) {
+	container {
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+	}
+
+	.post-container {
+		margin-top: 70px;
+		width: 100%;
+	}
+}
+
+.hidden-notifications {
+	display: none;
+}
+
+#notifications-container {
+	margin-top: 110px;
+	margin-right: 50px;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99000;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ntf-cont {
+	display: flex;
+	justify-content: end;
+	padding-right: 20px;
+}
