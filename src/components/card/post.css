@@ -1,12 +1,7 @@
 * {
 	z-index: 100;
 }
-
 .section-nav{
 	@apply max-md:w-full w-[70%];
 
-@media (max-width: 420px) {
-	/* .my-card {
-		width: 60%;
-	} */
 }

@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from 'firebase/auth';
-import { getFirestore, collection, addDoc, getDocs, doc, setDoc, getDoc, DocumentData, updateDoc} from 'firebase/firestore';
+import { deleteDoc, getFirestore, collection, addDoc, getDocs, doc, setDoc, getDoc, DocumentData, updateDoc} from 'firebase/firestore';
 import{getStorage, ref, uploadBytes, getDownloadURL} from 'firebase/storage'
 import { Profile } from '../types/profile';
 import { postsTypes } from '../types/post';
@@ -262,6 +262,62 @@ export const savePost = async (postId: string, postData: any)=> {
 		}
 	});
 }
+
+
+export const unsavePost = async (postId: string) => {
+	const auth = getAuth();
+	const db = getFirestore();
+
+	if (auth.currentUser) {
+		try {
+			const userDocRef = doc(db, "users", auth.currentUser.uid);
+			const savedPostsCollectionRef = collection(userDocRef, "savedposts")
+			const postDocRef = doc(savedPostsCollectionRef, postId);
+			await deleteDoc(postDocRef);
+
+			console.log("Post deleted");
+		} catch (error) {
+			console.error("Error deleting post:", error);
+		}
+	} else {
+		console.error("Usuario no autenticado");
+	}
+};
+
+export const getSavedPosts = async () => {
+	const auth = getAuth();
+	const db = getFirestore();
+
+	// Verificar si el usuario está autenticado
+	if (auth.currentUser) {
+		try {
+			// Referencia al documento del usuario
+			const userDocRef = doc(db, "users", auth.currentUser.uid);
+
+			// Referencia a la subcolección savedposts dentro del documento del usuario
+			const savedPostsCollectionRef = collection(userDocRef, "savedposts");
+
+			// Obtener los documentos de la subcolección
+			const savedPostsSnapshot = await getDocs(savedPostsCollectionRef);
+
+			// Crear un array para almacenar los datos de los posts
+			const savedPosts: {id: string}[] = [];
+			savedPostsSnapshot.forEach((doc) => {
+				savedPosts.push({ id: doc.id, ...doc.data() });
+			});
+
+			console.log("Wanted posts " + savedPosts);
+
+			return savedPosts;
+
+		} catch (error) {
+			console.error("Error al obtener los posts guardados:", error);
+		}
+	} else {
+		console.error("Usuario no autenticado");
+	}
+};
+
 
 //Esta funcion de getProfile esta mala porque hay que traer un usuario, no todos
 

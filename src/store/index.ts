@@ -2,8 +2,8 @@ import { reducer } from './reducer';
 import { Screens } from '../types/navigation';
 import { Actions, AppStateType, Observer } from '../types/store';
 import {onAuthStateChanged} from "firebase/auth";
-import {auth, getPosts} from '../utils/firebase'
-import {redirect, setUserCredentials} from "./actions";
+import {auth, getPosts, getSavedPosts} from '../utils/firebase'
+import { getSavedPostsAction, redirect, setUserCredentials} from "./actions";
 import firebase from "firebase/compat";
 import User = firebase.User;
 import {personalUser} from "../types/users";
@@ -14,18 +14,20 @@ import {personalUser} from "../types/users";
 // import { PersistanceKeys } from '../utils/storage';
 // import { Actions, AppState, Observer } from '../types/store';
 
-onAuthStateChanged(auth, (user) =>{
+onAuthStateChanged(auth, async (user) => {
 
-	if(user) {
+	if (user) {
 		console.log(user)
-		if(user.uid && user.displayName && user.email && user.photoURL){
+		if (user.uid && user.displayName && user.email && user.photoURL) {
 			const data = {
 				name: user.displayName,
 				email: user.email,
 				photo: user.photoURL,
 			}
 			dispatch(setUserCredentials(data), true)
-			console.log("DOJA " + JSON.stringify(user));
+			const posties = getSavedPosts();
+			appState.user.saved = await posties;
+			appState.posts = await getPosts();
 		}
 		dispatch(redirect('home'), true)
 	} else {
@@ -50,6 +52,7 @@ const emptyState: {
 		name: '',
 		email: '',
 		photo: '',
+		saved: []
 	},
 	// user: [],
 	logedUserData: {

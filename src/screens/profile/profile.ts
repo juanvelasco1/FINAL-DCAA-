@@ -10,8 +10,6 @@ import { userData } from '../../data/userData';
 
 // Importar Componentes
 import MyContact, { AttributeContact } from '../../components/contactInfo/contactInfo';
-import MyHeader, { AttributeHeader } from '../../components/header/header';
-import MyNotifications, { AttributeNotifications } from '../../components/header/notifications/notifications';
 
 // Importar Estilos
 import * as styles from './styles.css';
@@ -111,7 +109,7 @@ class Profile extends HTMLElement {
 			loadCss(this, stylesProfile);
 			this.shadowRoot.innerHTML += `
 			<style>
-			${styleProfile}
+			${stylesProfile}
 			</style>
 
    	<section id="section-container" >
@@ -124,7 +122,7 @@ class Profile extends HTMLElement {
 					<button id="logout-button">Log Out</button>
 					<button id="edit" >Edit profile</button>
 				</div>
-			
+
       		</section>
       `;
 		}
@@ -179,7 +177,7 @@ class Profile extends HTMLElement {
 		mainPageContainer.appendChild(notificationsContainer);
 
 		const cssContact = this.ownerDocument.createElement('style');
-		cssContact.innerHTML = styleProfile;
+		cssContact.innerHTML = stylesProfile;
 
 		// const contactInfo = this.ownerDocument.createElement('my-contact') as ContactInfo;
 		// this.shadowRoot?.appendChild(contactInfo);

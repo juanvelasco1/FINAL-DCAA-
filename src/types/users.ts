@@ -11,4 +11,5 @@ export interface personalUser {
 	name: string;
 	email: string;
 	photo: string;
+	saved?: any[];
 }

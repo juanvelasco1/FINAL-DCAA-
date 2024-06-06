@@ -1,6 +1,8 @@
 import { loadCss } from '../../utils/styles';
 import stylesCard from '../card/card.css';
-
+import {appState, dispatch} from "../../store";
+import {savePostAction, unsavePostAction} from "../../store/actions";
+import {getSavedPosts} from "../../utils/firebase";
 
 export enum Attribute {
 	'photo' = 'photo',
@@ -8,7 +10,11 @@ export enum Attribute {
 	'image' = 'image',
 	'tag' = 'tag',
 	'description' = 'description',
+	'ide' = 'ide'
 }
+
+let savedPosts: {id: string}[] = [];
+
 
 class Card extends HTMLElement {
 	photo?: string;
@@ -16,10 +22,12 @@ class Card extends HTMLElement {
 	image?: string;
 	description?: string;
 	tag?: string;
+	ide?: string
 
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+		this.loadSavedPosts().then(r => this.render());
 	}
 
 	static get observedAttributes() {
@@ -29,6 +37,7 @@ class Card extends HTMLElement {
 			image: null,
 			description: null,
 			tag: null,
+			ide: null
 		};
 
 		return Object.keys(attrs);
@@ -45,6 +54,27 @@ class Card extends HTMLElement {
 
 	connectedCallback() {
 		this.render();
+	}
+
+	async saveAPost(id: string){
+		dispatch(savePostAction(id), false)
+	}
+
+	async unsaveAPost(id: string){
+		dispatch(unsavePostAction(id), false)
+	}
+
+	async loadSavedPosts() {
+		const saved = await this.getSavedPostsAct();
+		if(saved){
+			savedPosts = saved;
+		}
+
+	}
+
+	async getSavedPostsAct() {
+		const p = await getSavedPosts();
+		return p;
 	}
 
 	render() {
@@ -75,7 +105,7 @@ class Card extends HTMLElement {
                             <p><strong>${this.tag}</strong></p>
                         </div>
                         <button class="bookmark" type="button">
-                            <img class="save" id="saveButton" src="/src/asset/save.png" alt="Save">
+                            <img class="save" id="saveButton" src="/src/asset/save${this.ide && savedPosts.some(post => post.id === this.ide) ? "-full" : ""}.png" alt="Save">
                         </button>
                     </section>
 
@@ -88,6 +118,7 @@ class Card extends HTMLElement {
             </div>
       `;
 		}
+
 		const cssCard = this.ownerDocument.createElement('style');
 		cssCard.innerHTML = stylesCard;
 		this.shadowRoot?.appendChild(cssCard);
@@ -97,7 +128,7 @@ class Card extends HTMLElement {
 		changeButton?.addEventListener('click', function () {
 			if (changeButton.getAttribute('src') === '/src/asset/like.png') {
 				changeButton.setAttribute('src', '/src/asset/like-full.png');
-				//saveAPost("hola")
+
 			} else {
 				changeButton.setAttribute('src', '/src/asset/like.png');
 			}
@@ -105,21 +136,18 @@ class Card extends HTMLElement {
 
 		const changeButtonSave = this.shadowRoot?.getElementById('saveButton');
 
-		changeButtonSave?.addEventListener('click', function () {
-			if (changeButtonSave.getAttribute('src') === '/src/asset/save.png') {
 
-				changeButtonSave.setAttribute('src', '/src/asset/save-full.png');
+		changeButtonSave?.addEventListener('click',  () =>{
+			if (changeButtonSave.getAttribute('src') === '/src/asset/save.png') {
+				changeButtonSave.setAttribute('src', '/src/asset/save-full.png')
+				this.saveAPost(this.ide || 'null').then(r => changeButtonSave.setAttribute('src', '/src/asset/save-full.png'))
 
 			} else {
 				changeButtonSave.setAttribute('src', '/src/asset/save.png');
+				this.unsaveAPost(this.ide || 'null').then(r => changeButtonSave.setAttribute('src', '/src/asset/save.png'))
 			}
 		});
 
-//		const saveAPost = async (id: string) =>{
-//			await savePost(id, {id: id}).then(() => {
-//				alert("post saved")
-//			})
-//		}
 
 		// const like = document.getElementById('like');
 		// const image1 = document.getElementById('image1');

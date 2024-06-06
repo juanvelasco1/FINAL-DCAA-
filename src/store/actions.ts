@@ -11,7 +11,7 @@
 // };
 
 import { Screens } from '../types/navigation';
-import { getPosts } from '../utils/firebase';
+import {getPosts, getSavedPosts, savePost, unsavePost} from '../utils/firebase';
 import { Actions } from '../types/store';
 import firebase from "firebase/compat";
 import User = firebase.User;
@@ -83,3 +83,28 @@ export const setUserCredentials = (user: personalUser) => {
  		payload: user,
 	};
 };
+
+export const savePostAction = async (id: string) => {
+	await savePost(id, {id})
+	return{
+		action: 'SAVE_POST',
+		payload: id
+	}
+}
+
+export const unsavePostAction = async (id: string) => {
+	await unsavePost(id)
+	return{
+		action: 'UNSAVE_POST',
+		payload: id
+	}
+}
+
+export const getSavedPostsAction = async () => {
+	const payload = await getSavedPosts();
+
+	return{
+		action: 'GET_SAVED_POSTS',
+		payload: payload
+	}
+}

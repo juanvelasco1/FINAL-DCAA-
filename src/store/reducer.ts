@@ -75,6 +75,26 @@ export const reducer = (currentAction: any, currentState: any) => {
 				...currentState,
 				user: payload,
 			};
+		case 'SAVE_POST':
+			currentState.user.saved.append(payload)
+			return {
+				...currentState,
+			}
+		case 'UNSAVE_POST':
+			currentState.user.saved = currentState.user.saved.filter((item: any) => item !== payload);
+			return {
+				...currentState,
+			}
+		case 'GET_SAVED_POSTS':
+			console.log("Posts guardados:", payload);
+			return {
+				...currentState,
+				user: {
+					...currentState.user,
+					saved: payload
+				}
+			}
+
 		// Puedes manejar otras acciones aquí si es necesario
 		default:
 			return currentState;

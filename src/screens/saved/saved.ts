@@ -34,6 +34,7 @@ import style from './indexAbuelo.css';
 import { addObserver, appState, dispatch } from '../../store/index';
 import { getPosts } from '../../utils/firebase';
 import { getPostsAction, redirect } from '../../store/actions';
+import SavedPost from "../../components/card/savedPost";
 
 //CODE
 class Saved extends HTMLElement {
@@ -103,6 +104,7 @@ class Saved extends HTMLElement {
 	}
 
 	render() {
+		console.log("Pan de queso 2")
 
 		const css = this.ownerDocument.createElement("style");
         css.innerHTML = stylesHome;
@@ -137,7 +139,7 @@ class Saved extends HTMLElement {
 				const navBar = this.ownerDocument.createElement('nav-bar') as NavBar;
 				mainPageContainer.appendChild(navBar);
 
-				const post = this.ownerDocument.createElement('my-post') as Post;
+				const post = this.ownerDocument.createElement('my-savedposts') as SavedPost;
 				post.className = 'post-container';
 				mainPageContainer.appendChild(post);
 				this.shadowRoot?.appendChild(mainPageContainer);

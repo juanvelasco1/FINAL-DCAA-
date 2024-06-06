@@ -29,6 +29,7 @@ class Post extends HTMLElement {
 			card.setAttribute(Attribute.image, post.image);
 			card.setAttribute(Attribute.tag, post.tag);
 			card.setAttribute(Attribute.description, post.description);
+			card.setAttribute(Attribute.ide, post.id)
 
 			const comment = this.ownerDocument.createElement('my-comments') as MyComments;
 			if(post.comment && post.comment.name){
@@ -58,7 +59,6 @@ class Post extends HTMLElement {
 			this.cardsWithComments.forEach(({ card, comment }) => {
 				card.className = 'my-card';
 				sectionPost.appendChild(card);
-				sectionPost.appendChild(comment);
 			});
 
 			this.shadowRoot.appendChild(sectionPost);
