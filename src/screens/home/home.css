@@ -1,11 +1,19 @@
-
+/* container {
+	flex-direction: column;
+	position: relative;
+	width: 1920px;
+	height: 2254px;
+} */
 
 .container-home {
 	margin-left: 30%;
 	margin-top: 15%;
+	@apply max-md:mx-4 max-md:my-32
 }
 #mainPageContainer {
 	display: flex;
+	justify-items: center;
+	align-content: center;
 	flex-direction: column;
 	/* position: absolute; */
 
@@ -17,7 +25,12 @@
 		flex-direction: column;
 	}
 }
-
+/* .section-notifications {
+	border: 2px solid black;
+	width: 584px;
+	padding-bottom: 3rem;
+	/* position: absolute;
+  z-index: 2;} */
 
 .hidden-notifications {
 	display: none;

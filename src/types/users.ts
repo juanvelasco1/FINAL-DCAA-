@@ -6,3 +6,9 @@ export interface usersTypes {
 	iconLinkedin: string;
 	password: number;
 }
+
+export interface personalUser {
+	name: string;
+	email: string;
+	photo: string;
+}

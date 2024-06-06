@@ -3,10 +3,11 @@ import { Profile } from './profile';
 export type Observer = { render: () => void } & HTMLElement;
 
 export interface AppStateType {
+    appState: any;
 	screen: string;
 	posts: Array<any>;
 	notification: Array<any>;
-	user: Array<any>;
+	user: string;
 	logedUserData: {
 		email: string;
 		password: string;
@@ -25,6 +26,15 @@ export enum ScreenActions {
 	// 	'SAVED'= 'saved',
 }
 
+// export enum shoppingItemsActions {
+// 	'GETSHOPPINGITEMS' = 'GETSHOPPINGITEMS',
+// 	'SAVESHOPPINGITEMS' = 'SAVESHOPPINGITEMS',
+// }
 
+// export interface GetProductsAction {
+// 	action: productsActions.GETPRODUCTS;
+// 	payload: Product[];
+// 	// Pick<AppState, 'something'>;
+// }
 
 export type Actions = ScreenActions;

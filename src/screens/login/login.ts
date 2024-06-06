@@ -5,6 +5,7 @@ import input from '../../components/login/input';
 import { loadCss } from '../../utils/styles';
 import style from './login.css';
 import { addObserver, appState } from '../../store/index';
+import { logIn } from '../../utils/firebase'
 // import './components/indexPadre';
 
 const credentials = { email: '', password: '' };
@@ -24,7 +25,7 @@ class Login extends HTMLElement {
 		const resp = localStorage.getItem('credentials');
 		const res = resp ? JSON.parse(resp) : [];
 		if (this.validateUser(res, credentials.email, credentials.password)) {
-			alert('Login successfull');
+			logIn(credentials);
 			dispatch(redirect('home'), true);
 		} else {
 			alert('Email y/o contraseña incorrectos');
