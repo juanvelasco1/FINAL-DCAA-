@@ -10,19 +10,6 @@
 	/* min-height: 100vh; */
 }
 
-@media (max-width: 400px) {
-	container {
-		flex-direction: column;
-		justify-content: center;
-		align-content: center;
-	}
-
-	.post-container {
-		margin-top: 70px;
-		width: 100%;
-	}
-}
-
 .hidden-notifications {
 	display: none;
 }
@@ -43,4 +30,22 @@
 	display: flex;
 	justify-content: end;
 	padding-right: 20px;
+}
+
+@media (max-width: 400px) {
+	container {
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+	}
+
+	.post-container {
+		margin-top: 70px;
+		width: 100%;
+	}
+	nav-bar {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }

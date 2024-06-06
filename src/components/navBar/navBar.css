@@ -57,7 +57,7 @@
 		justify-content: center;
 		align-items: center;
 		margin-left: 0px;
-		 @apply rounded-lg bg-neutral-200 overflow-scroll;
+		@apply rounded-lg bg-neutral-200 overflow-scroll;
 		/* px-2    right-1 */
 	}
 	my-tags {
@@ -72,8 +72,8 @@
 	my-section {
 		width: 100px;
 		height: 40px;
-	margin-left: 100px;
-	justify-content: center;
+		margin-left: 80px;
+		justify-content: center;
 		align-items: center;
 	}
 
