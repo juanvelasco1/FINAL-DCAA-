@@ -1,9 +1,13 @@
+
 .container-home {
 	margin-left: 30%;
 	margin-top: 15%;
+	@apply max-md:mx-4 max-md:my-32
 }
 #mainPageContainer {
 	display: flex;
+	justify-items: center;
+	align-content: center;
 	flex-direction: column;
 	/* position: absolute; */
 

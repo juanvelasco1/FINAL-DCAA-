@@ -51,6 +51,7 @@
 		@apply px-2 max-md:w-10;
 	}
 
+
 	.desc {
 		/*/border: red 1px solid;/*/
 		font-family: 'Montserrat', sans-serif;
@@ -67,7 +68,6 @@
 		background: none;
 		border: none;
 	}
-
 	.heart {
 		background: none;
 		border: none;

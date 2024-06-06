@@ -1,9 +1,7 @@
-* {
-	font-family: 'Montserrat', sans-serif;
-	font-optical-sizing: auto;
-	font-weight: 80;
-	font-style: normal;
+#section-container{
+    @apply flex flex-col items-center justify-center relative h-screen;
 }
+
 
 @media (max-width: 1600px) {
 	my-contact {
@@ -109,5 +107,17 @@
 		margin-top: 10%;
 		margin-left: 30%;
 	}
+}
+
+#back-img{
+    @apply absolute top-0 left-0 m-3 w-12 z-50;
+}
+
+#user-photo{
+    @apply w-24 rounded-full;
+}
+
+#name-label{
+    @apply text-center text-xl rounded-lg mt-2;
 }
 

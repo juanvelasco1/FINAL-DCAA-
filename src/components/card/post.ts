@@ -16,7 +16,7 @@ import { appState } from '../../store';
 class Post extends HTMLElement {
 	//homes: MyCard[] = [];
 	//home: MyComments[] = [];
-	cardsWithComments: { card: MyCard }[] = []; //comment: MyComments }[] = [];
+	cardsWithComments: { card: MyCard; comment: MyComments }[] = [];
 
 	constructor() {
 		super();
@@ -30,12 +30,15 @@ class Post extends HTMLElement {
 			card.setAttribute(Attribute.tag, post.tag);
 			card.setAttribute(Attribute.description, post.description);
 
-			// const comment = this.ownerDocument.createElement('my-comments') as MyComments;
-			// comment.setAttribute(Attributes.photo, post.comment.photo);
-			// comment.setAttribute(Attributes.name, post.comment.name);
-			// comment.setAttribute(Attributes.texts, post.comment.texts);
+			const comment = this.ownerDocument.createElement('my-comments') as MyComments;
+			if(post.comment && post.comment.name){
+				comment.setAttribute(Attributes.photo, post.comment?.photo);
+				comment.setAttribute(Attributes.name, post.comment?.name);
+				comment.setAttribute(Attributes.texts, post.comment?.texts);
+			}
 
-			this.cardsWithComments.push({ card }); //comment
+
+			this.cardsWithComments.push({ card, comment });
 		});
 	}
 
@@ -52,10 +55,10 @@ class Post extends HTMLElement {
 			const sectionPost = this.ownerDocument.createElement('section');
 			sectionPost.className = 'section-nav';
 
-			this.cardsWithComments.forEach(({ card }) => { //comment
+			this.cardsWithComments.forEach(({ card, comment }) => {
 				card.className = 'my-card';
 				sectionPost.appendChild(card);
-				// sectionPost.appendChild(comment);
+				sectionPost.appendChild(comment);
 			});
 
 			this.shadowRoot.appendChild(sectionPost);
