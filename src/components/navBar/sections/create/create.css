@@ -1,106 +1,116 @@
-.hidden-create{
-    position: absolute;
-    display: none;
+* {
+	font-family: 'Montserrat', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 80;
+	font-style: normal;
+}
+
+.hidden-create {
+	position: absolute;
+	display: none;
 }
 
 .create {
-    @apply rounded-lg bg-white p-10 w-3/4 m-10 relative md:w-1/3 h-1/2 m-auto ;
+	@apply rounded-lg bg-white p-10 w-3/4 m-10 relative md:w-1/3 h-1/2 m-auto;
 }
 
-.section-create{
-    @apply flex fixed top-0 left-0 z-[1000] bg-black/50 justify-center content-center w-full h-screen;
+.section-create {
+	@apply flex fixed top-0 left-0 z-[1000] bg-black/50 justify-center content-center w-full h-screen;
 }
 
 .close {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 5px;
-    width: 20px;
-    height: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 10px;
+	width: 40px;
+	height: 40px;
 }
 
-.body{
-    display: flex;
-    flex-shrink: inherit;
-    @apply w-full space-x-4 h-2/3;
-    
-    img{
-        width: 50px;
-        height: 50px;
-    }
-    .content-text{
-        @apply bg-white/10 border-none w-full
-    }
+.body {
+	display: flex;
+	flex-shrink: inherit;
+	@apply w-full space-x-4 h-2/3;
+
+	img {
+		width: 50px;
+		height: 50px;
+	}
+	.content-text {
+		@apply bg-white/10 border-none w-full;
+	}
 }
 
-.tags{
-    display: flex;
-    @apply w-full space-x-1 h-1/3 relative mt-12 border-t-4 border-t-black content-center;
+.tags {
+	display: flex;
+	@apply w-full space-x-1 h-1/3 relative mt-12 border-t-4 border-t-black content-center;
 
-    img{
-        width: 30px;
-        height: 30px;
-        @apply my-auto;
-    }
-    input{
-        width: 100px;
-        height: 50px;
-        @apply rounded-3xl absolute right-0 bg-[#2000fb] border-none text-lg text-white my-auto;
-    }
+	img {
+		width: 30px;
+		height: 30px;
+		@apply my-auto;
+	}
+	input {
+		width: 100px;
+		height: 50px;
+		@apply rounded-3xl absolute right-0 bg-[#2000fb] border-none text-lg text-white my-auto;
+	}
 }
 
 .file-input-wrapper {
-    width: 30px;
-    height: 30px;
-    @apply my-auto;
-    position: relative;
-    display: inline-block;
+	width: 30px;
+	height: 30px;
+	@apply my-auto;
+	position: relative;
+	display: inline-block;
 }
 
 .file-input {
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 200;
-
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 200;
+}
+#text-area {
+    margin-top: 40px;
 }
 
 .upload-icon {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	transition: transform 0.3s ease;
 }
 
 .file-input-wrapper:hover .upload-icon {
-    opacity: 0.8;
-    transform: scale(1.2);
+	opacity: 0.8;
+	transform: scale(1.2);
 }
 
 .upload-label {
-    display: inline-block;
-    cursor: pointer;
-    @apply my-auto;
+	display: inline-block;
+	cursor: pointer;
+	@apply my-auto;
 }
 
 .file-name {
-    display: block;
-    margin-top: 10px;
-    @apply my-auto;
+	display: block;
+	margin-top: 10px;
+	margin-left: -40px;
+	@apply my-auto;
 }
 
 .image-preview {
-    display: block;
-    margin-top: 10px;
-    max-width: 100px; /* Adjust this value based on your needs */
-    max-height: 100px; /* Adjust this value based on your needs */
-    @apply my-auto;
+	display: block;
+	margin-top: 10px;
+	max-width: 100px; /* Adjust this value based on your needs */
+	max-height: 100px; /* Adjust this value based on your needs */
+	@apply my-auto;
 }
 
-span{
-    @apply  mx-2;
+span {
+	@apply mx-2;
 }
