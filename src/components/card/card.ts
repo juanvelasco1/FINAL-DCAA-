@@ -123,7 +123,7 @@ class Card extends HTMLElement {
 		const changeButton = this.shadowRoot?.getElementById('likeButton');
 
 		changeButton?.addEventListener('click', function () {
-			if (changeButton.getAttribute('src') === '/src/asset/like.png') {
+			if (changeButton.getAttribute('src') === '../src/asset/like.png') {
 				changeButton.setAttribute('src', '../src/asset/like-full.png');
 			} else {
 				changeButton.setAttribute('src', '../src/asset/like.png');
