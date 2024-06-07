@@ -57,10 +57,6 @@ class Comment extends HTMLElement {
 		const cssComment = this.ownerDocument.createElement('style');
 		cssComment.innerHTML = stylesComment;
 		this.shadowRoot?.appendChild(cssComment);
-
-		/*const imgPhoto = document.createElement('img');
-		imgPhoto.innerHTML = photo1;
-		this.shadowRoot?.appendChild(imgPhoto);*/
 	}
 }
 

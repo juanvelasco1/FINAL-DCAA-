@@ -20,27 +20,18 @@
 		background-color: #eaeaea;
 		height: 60px;
 		width: 250px;
-		/* position: absolute; */
-		/* z-index: 200; */
 		border-radius: 40px;
 		margin-bottom: 20px;
-		justify-content: center; /* Agrega espacio entre las notificaciones */
+		justify-content: center;
 		font-family: 'Montserrat', sans-serif;
 		font-optical-sizing: auto;
 		font-weight: weight;
 		font-style: normal;
 		padding: 2rem;
 		flex-direction: column;
-		/*justify-content: space-between;	*/
-
-
 	}
-	.section-notifications{
-
+	.section-notifications {
 	}
-	/* .noti {
-		background-color: red;
-	} */
 
 	.photo {
 		width: 60px;
@@ -58,8 +49,6 @@
 @media (max-width: 420px) {
 	.section-notifications {
 		border: 2px solid rgb(255, 0, 0);
-		/* position: absolute;
-  z-index: 2; */
 	}
 	.hidden-notifications {
 		display: none;

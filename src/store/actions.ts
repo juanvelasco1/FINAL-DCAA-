@@ -39,14 +39,6 @@ export const getPostsAction = async () => {
 	};
 };
 
-// export const getProfileAction = async () => {
-// 	//Ir al utils de firebase y ejecutar la función getPosts
-// 	const profile = await getProfile();
-// 	return {
-// 		action: 'GETPROFILE',
-// 		payload: profile,
-// 	};
-// };
 
 export const storageUserData = (userData: any) => {
 	return {

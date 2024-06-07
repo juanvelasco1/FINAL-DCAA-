@@ -1,7 +1,4 @@
 //import Datas
-
-// import { postData } from '../../data/postData';
-
 import { commentsData } from '../../data/commentsData';
 
 //import Components
@@ -14,8 +11,7 @@ import { appState } from '../../store';
 
 //CODE
 class Post extends HTMLElement {
-	//homes: MyCard[] = [];
-	//home: MyComments[] = [];
+
 	cardsWithComments: { card: MyCard; comment: MyComments }[] = [];
 
 	constructor() {

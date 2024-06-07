@@ -1,9 +1,4 @@
-/* container {
-	flex-direction: column;
-	position: relative;
-	width: 1920px;
-	height: 2254px;
-} */
+
 #mainPageContainer {
 	margin-top: 110px;
 	display: flex;
@@ -14,12 +9,7 @@
 	height: 100%;
 }
 
-/* .section-notifications {
-	border: 2px solid black;
-	width: 584px;
-	padding-bottom: 3rem;
-	/* position: absolute;
-  z-index: 2;} */
+
 
 .hidden-notifications {
 	display: none;

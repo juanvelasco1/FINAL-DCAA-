@@ -1,6 +1,6 @@
 import { loadCss } from '../../utils/styles';
 import stylesContact from './contactInfo.css';
-import {addObserver, dispatch} from '../../store';
+import { addObserver, dispatch } from '../../store';
 import { redirect } from '../../store/actions';
 import { appState } from '../../store';
 
@@ -22,7 +22,7 @@ class ContactInfo extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
-		addObserver(this)
+		addObserver(this);
 	}
 
 	static get observedAttributes() {
@@ -70,10 +70,6 @@ class ContactInfo extends HTMLElement {
 		const cssContact = this.ownerDocument.createElement('style');
 		cssContact.innerHTML = stylesContact;
 		this.shadowRoot?.appendChild(cssContact);
-
-		/*const imgPhoto = document.createElement('img');
-		imgPhoto.innerHTML = photo1;
-		this.shadowRoot?.appendChild(imgPhoto);*/
 	}
 }
 

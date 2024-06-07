@@ -92,7 +92,6 @@
 	}
 
 	.save:hover {
-		/* opacity: 0.4; */
 		transition: 0.2s;
 	}
 
@@ -111,7 +110,6 @@
 		width: 300px;
 		margin-left: 30px;
 		@apply flex flex-col items-center bg-[#F3F3F3];
-		/* w-full   z-50  mb-20   rounded-3xl */
 	}
 
 	#id {

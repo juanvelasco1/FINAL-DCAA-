@@ -44,10 +44,6 @@ class Section extends HTMLElement {
 		this.render();
 	}
 
-	/*  <style>
-			${stylesSections}
-			</style>*/
-
 	render() {
 		if (this.shadowRoot) {
 			loadCss(this, stylesSections);

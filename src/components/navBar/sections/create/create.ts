@@ -110,10 +110,6 @@ class Create extends HTMLElement {
       		</section>
       `;
 		}
-		// <img class='photo' src="${this.photo}">
-		// <img class='tag' src="${this.tag}">
-    //   					<img class='list' src="${this.list}">
-    //   					<img class='emoji' src="${this.emoji}">
 
 		const fileInput = this.shadowRoot?.querySelector('#fileInput') as HTMLElement;
 
@@ -168,9 +164,6 @@ class Create extends HTMLElement {
 		cssCreate.innerHTML = stylesCreate;
 		this.shadowRoot?.appendChild(cssCreate);
 
-		/*const imgPhoto = document.createElement('img');
-		imgPhoto.innerHTML = photo1;
-		this.shadowRoot?.appendChild(imgPhoto);*/
 	}
 }
 

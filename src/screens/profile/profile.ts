@@ -101,7 +101,7 @@ class Profile extends HTMLElement {
         ${stylesProfile}
         </style>
         <section id="section-container">
-            <img id='back-img'src="/src/asset/back.png" class="">
+            <img id='back-img'src="../src/asset/back.png" class="">
             <input class="opacity-0" id="file-input" type="file">
             <label for="file-input"><img id="user-photo" src='${appState.user.photo}' alt="User-photo" class=""></label>
             <input id="name-label" type="text" value="${appState.user?.name}" class="">

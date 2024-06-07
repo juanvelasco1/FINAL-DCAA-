@@ -1,10 +1,10 @@
-// Definir una interfaz para las props del componente
+
 export interface InputProps {
     value: string;
     onChange: (value: string) => void;
 }
 
-// Crear la clase del componente de input que extiende de HTMLElement
+
 class Input extends HTMLElement {
     private props: InputProps | undefined;
     private inputElement: HTMLInputElement | undefined;

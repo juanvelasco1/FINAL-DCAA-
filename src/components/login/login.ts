@@ -7,10 +7,9 @@ import stylesCard from '../card/card.css';
 import { redirect } from '../../store/actions';
 import MyInput, { InputProps } from './input';
 
-//CODE
+
 class Login extends HTMLElement {
-	//	homes: MyCard[] = [];
-	//	home: MyComments[] = [];
+
 
 	constructor() {
 		super();

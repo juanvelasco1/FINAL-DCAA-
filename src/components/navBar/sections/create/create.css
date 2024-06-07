@@ -75,7 +75,7 @@
 	z-index: 200;
 }
 #text-area {
-    margin-top: 40px;
+	margin-top: 40px;
 }
 
 .upload-icon {
@@ -106,8 +106,8 @@
 .image-preview {
 	display: block;
 	margin-top: 10px;
-	max-width: 100px; /* Adjust this value based on your needs */
-	max-height: 100px; /* Adjust this value based on your needs */
+	max-width: 100px;
+	max-height: 100px;
 	@apply my-auto;
 }
 

@@ -57,10 +57,6 @@ class Notifications extends HTMLElement {
 		}
 	}
 
-	/*<style>
-			${stylesHeader}
-			</style> */
-
 	render() {
 		if (this.shadowRoot) {
 			loadCss(this, stylesNotifications);
@@ -86,17 +82,6 @@ class Notifications extends HTMLElement {
 		cssHeader.innerHTML = stylesNotifications;
 		this.shadowRoot?.appendChild(cssHeader);
 
-		/*const imgLogo = document.createElement('img');
-		imgLogo.innerHTML = logo;
-		this.shadowRoot?.appendChild(imgLogo);
-
-		const imgNotification = document.createElement('img');
-		imgNotification.innerHTML = notification;
-		this.shadowRoot?.appendChild(imgNotification);
-
-		const imgPhoto = document.createElement('img');
-		imgPhoto.innerHTML = photo;
-		this.shadowRoot?.appendChild(imgPhoto);*/
 	}
 }
 

@@ -10,35 +10,25 @@
 		left: 0px;
 		top: 0px;
 		margin: 0 auto;
-		/* principal Blue */
 		background: #2000fb;
 		z-index: 10000;
 	}
 
-
-
 	.section-notifications {
 		background-color: red;
 	}
-
-
 
 	#horizontalSpace {
 		width: 75%;
 	}
 
 	.logo {
-		/* width: 222px;
-		height: 10%;*/
-
-		/* border: 5px solid rgb(255, 0, 0); */
 		min-width: 15%;
 		min-height: 45%;
 		margin-left: 30px;
 	}
 
 	.notification {
-		/*height: 50%;*/
 		margin-right: 15px;
 
 		background-color: blue;
@@ -62,7 +52,6 @@
 		left: 0px;
 		top: 0px;
 		margin: 0 auto;
-		/* principal Blue */
 		background: #2000fb;
 	}
 
@@ -71,16 +60,12 @@
 	}
 
 	.logo {
-		/* width: 222px;
-		height: 10%;*/
-
 		min-width: 50%;
 		min-height: 30%;
 		margin-left: 20px;
 	}
 
 	.notification {
-		/*height: 50%;*/
 		margin-right: 15px;
 		height: 35px;
 		width: 30px;
@@ -89,4 +74,5 @@
 	.photo {
 		height: 60%;
 		margin-right: 20px;
-	}}
+	}
+}

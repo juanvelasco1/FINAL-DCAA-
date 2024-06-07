@@ -95,12 +95,12 @@ class Card extends HTMLElement {
                     <img src="${this.image}" class="image" alt="Image">
                     <section class="actions">
                         <button class="heart" type="button">
-                            <img class="like" id="likeButton" src="/src/asset/like.png" alt="Like">
+                            <img class="like" id="likeButton" src="../src/asset/like.png" alt="Like">
                         </button>
 
 
                         <button class="bookmark" type="button">
-                            <img class="save" id="saveButton" src="/src/asset/save${
+                            <img class="save" id="saveButton" src="../src/asset/save${
 															this.ide && savedPosts.some((post) => post.id === this.ide) ? '-full' : ''
 														}.png" alt="Save">
                         </button>
@@ -115,12 +115,6 @@ class Card extends HTMLElement {
             </div>
       `;
 		}
-
-		// <img class="comment" src="/src/asset/comment.png" alt="Comment">
-
-		//                     <div class="tag">
-		//                         <p><strong>${this.tag}</strong></p>
-		//                     </div>
 
 		const cssCard = this.ownerDocument.createElement('style');
 		cssCard.innerHTML = stylesCard;
@@ -150,24 +144,8 @@ class Card extends HTMLElement {
 			}
 		});
 
-		// const like = document.getElementById('like');
-		// const image1 = document.getElementById('image1');
-		// const image2 = document.getElementById('image2');
-		// const likeF = document.getElementById('likeF');
-
-		// if (like && image1 && image2 && likeF) {
-		// 	like.style.display = image1.style.display === 'none' ? 'block' : 'none';
-		// 	likeF.style.display = image2.style.display === 'none' ? 'block' : 'none';
-		// }
 	}
 
-	/*	const photo = document.createElement('img');
-    photo.innerHTML = img;
-    this.shadowRoot?.appendChild(photo);
-
-    const imag = document.createElement('img');
-    imag.innerHTML = image;
-    this.shadowRoot?.appendChild(imag);*/
 }
 
 export default Card;

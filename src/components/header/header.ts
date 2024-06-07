@@ -1,4 +1,4 @@
-import {appState, dispatch} from '../../store';
+import { appState, dispatch } from '../../store';
 import { redirect } from '../../store/actions';
 import { loadCss } from '../../utils/styles';
 import stylesHeader from './header.css';
@@ -66,24 +66,23 @@ class Header extends HTMLElement {
 		const ProfileImg = this.shadowRoot?.querySelector('#profile-img');
 
 		ProfileImg?.addEventListener('click', () => {
-			dispatch(redirect('profile'), true)
-		})
+			dispatch(redirect('profile'), true);
+		});
 		//const notifications.container
 		const cssHeader = this.ownerDocument.createElement('style');
 		cssHeader.innerHTML = stylesHeader;
 		this.shadowRoot?.appendChild(cssHeader);
 
 		const imgButton = this.shadowRoot?.getElementById('notification-button');
-		//?.shadowRoot?//.getElementById('notifications-container');
 
 		imgButton?.addEventListener('click', () => {
 			const myCreatedSection = this.ownerDocument
 				.querySelector('app-container')
 				?.shadowRoot?.querySelector('app-home')
 				?.shadowRoot?.getElementById('notifications-container');
-			// console.log('Hola');
+
 			console.log(myCreatedSection);
-			// console.log(myCreatedSection);
+
 			if (myCreatedSection?.className === 'hidden-notifications') {
 				console.log('Mostrar');
 				myCreatedSection.classList.add('section-notifications');
