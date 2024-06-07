@@ -124,23 +124,23 @@ class Card extends HTMLElement {
 
 		changeButton?.addEventListener('click', function () {
 			if (changeButton.getAttribute('src') === '/src/asset/like.png') {
-				changeButton.setAttribute('src', '/src/asset/like-full.png');
+				changeButton.setAttribute('src', '../src/asset/like-full.png');
 			} else {
-				changeButton.setAttribute('src', '/src/asset/like.png');
+				changeButton.setAttribute('src', '../src/asset/like.png');
 			}
 		});
 
 		const changeButtonSave = this.shadowRoot?.getElementById('saveButton');
 
 		changeButtonSave?.addEventListener('click', () => {
-			if (changeButtonSave.getAttribute('src') === '/src/asset/save.png') {
-				changeButtonSave.setAttribute('src', '/src/asset/save-full.png');
+			if (changeButtonSave.getAttribute('src') === '../src/asset/save.png') {
+				changeButtonSave.setAttribute('src', '../src/asset/save-full.png');
 				this.saveAPost(this.ide || 'null').then((r) =>
-					changeButtonSave.setAttribute('src', '/src/asset/save-full.png')
+					changeButtonSave.setAttribute('src', '../src/asset/save-full.png')
 				);
 			} else {
-				changeButtonSave.setAttribute('src', '/src/asset/save.png');
-				this.unsaveAPost(this.ide || 'null').then((r) => changeButtonSave.setAttribute('src', '/src/asset/save.png'));
+				changeButtonSave.setAttribute('src', '../src/asset/save.png');
+				this.unsaveAPost(this.ide || 'null').then((r) => changeButtonSave.setAttribute('src', '../src/asset/save.png'));
 			}
 		});
 
